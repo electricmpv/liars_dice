@@ -49,6 +49,7 @@ export class RoomManager {
     this.rooms.set(roomId, room);
 
     console.log(`房间已创建: ${roomId}, 创建者: ${playerName}(${playerId})`);
+    console.log(`当前房间数量: ${this.rooms.size}, 房间列表: ${Array.from(this.rooms.keys()).join(", ")}`);
     return { roomId, playerId };
   }
 
@@ -59,9 +60,13 @@ export class RoomManager {
    * @returns 玩家ID和房间信息
    */
   joinRoom(roomId: string, playerName: string): { playerId: string, room: Room } {
+    console.log(`尝试加入房间, ID: "${roomId}", 玩家: ${playerName}`);
+    console.log(`当前房间数量: ${this.rooms.size}, 房间列表: ${Array.from(this.rooms.keys()).join(", ")}`);
+    
     // 检查房间是否存在
     const room = this.rooms.get(roomId);
     if (!room) {
+      console.error(`房间不存在, 提供的ID: "${roomId}"`);
       throw new Error("房间不存在");
     }
 
@@ -102,9 +107,13 @@ export class RoomManager {
    * @param playerId 玩家ID
    */
   leaveRoom(roomId: string, playerId: string): void {
+    console.log(`尝试离开房间, ID: "${roomId}", 玩家: ${playerId}`);
+    console.log(`当前房间数量: ${this.rooms.size}, 房间列表: ${Array.from(this.rooms.keys()).join(", ")}`);
+    
     // 检查房间是否存在
     const room = this.rooms.get(roomId);
     if (!room) {
+      console.error(`房间不存在, 提供的ID: "${roomId}"`);
       throw new Error("房间不存在");
     }
 
@@ -142,7 +151,17 @@ export class RoomManager {
    * @returns 房间信息
    */
   getRoom(roomId: string): Room | undefined {
-    return this.rooms.get(roomId);
+    console.log(`尝试获取房间信息, ID: "${roomId}"`);
+    console.log(`当前房间数量: ${this.rooms.size}, 房间列表: ${Array.from(this.rooms.keys()).join(", ")}`);
+    
+    // 检查房间是否存在
+    const room = this.rooms.get(roomId);
+    if (!room) {
+      console.error(`房间不存在, 提供的ID: "${roomId}"`);
+      throw new Error("房间不存在");
+    }
+
+    return room;
   }
 
   /**
@@ -168,14 +187,19 @@ export class RoomManager {
    * @param status 新状态
    */
   updateRoomStatus(roomId: string, status: "waiting" | "gaming" | "closed"): void {
+    console.log(`尝试更新房间状态, ID: "${roomId}", 状态: ${status}`);
+    console.log(`当前房间数量: ${this.rooms.size}, 房间列表: ${Array.from(this.rooms.keys()).join(", ")}`);
+    
+    // 检查房间是否存在
     const room = this.rooms.get(roomId);
-    if (room) {
-      room.status = status;
-      room.updatedAt = new Date();
-      this.rooms.set(roomId, room);
-      console.log(`房间状态已更新: ${roomId} -> ${status}`);
-    } else {
+    if (!room) {
+      console.error(`房间不存在, 提供的ID: "${roomId}"`);
       throw new Error("房间不存在");
     }
+
+    room.status = status;
+    room.updatedAt = new Date();
+    this.rooms.set(roomId, room);
+    console.log(`房间状态已更新: ${roomId} -> ${status}`);
   }
 }

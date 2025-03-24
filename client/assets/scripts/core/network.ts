@@ -18,12 +18,17 @@ export enum ConnectionStatus {
 export class NetworkManager {
   private static instance: NetworkManager;
   // private socket: Socket | null = null;
-  private serverUrl: string = "ws://localhost:3000";
+  private serverUrl: string = "http://localhost:3000";
   private reconnectAttempts: number = 0;
   private maxReconnectAttempts: number = 3;
   private reconnectTimeout: number = 5000; // 毫秒
   private eventHandlers: Map<string, Array<(data?: any) => void>> = new Map();
   private connectionStatus: ConnectionStatus = ConnectionStatus.DISCONNECTED;
+  
+  // 新增属性
+  private _roomId: string = '';
+  private _playerId: string = '';
+  private _room: Room | null = null;
 
   /**
    * 获取单例实例
@@ -56,7 +61,7 @@ export class NetworkManager {
     return SocketAdapter.connect(this.serverUrl, {
       reconnectionAttempts: this.maxReconnectAttempts,
       timeout: this.reconnectTimeout,
-      transports: ["websocket"]
+      transports: ["websocket", "polling"] // 添加polling作为备选传输方式
     })
     .then(() => {
       console.log("[网络][信息] 连接成功");
@@ -112,6 +117,7 @@ export class NetworkManager {
     // 房间更新
     SocketAdapter.on('roomUpdate', (room: Room) => {
       console.log("[网络][信息] 房间更新:", room);
+      this._room = room; // 更新房间信息
       this.emit('roomUpdate', room);
     });
 
@@ -166,6 +172,9 @@ export class NetworkManager {
           // 监听房间创建成功事件
           const handler = (data: {roomId: string, playerId: string}) => {
             this.off('roomCreated', handler);
+            // 保存房间ID和玩家ID
+            this._roomId = data.roomId;
+            this._playerId = data.playerId;
             resolve(data);
           };
           
@@ -185,15 +194,19 @@ export class NetworkManager {
    * 加入房间
    * @param roomId 房间ID
    * @param playerName 玩家名称
-   * @returns Promise<{roomId: string, playerId: string}>
+   * @returns Promise<{playerId: string, room: Room}>
    */
-  public joinRoom(roomId: string, playerName: string): Promise<{roomId: string, playerId: string}> {
+  public joinRoom(roomId: string, playerName: string): Promise<{playerId: string, room: Room}> {
     return new Promise((resolve, reject) => {
       this.send('joinRoom', { roomId, playerName })
         .then(() => {
           // 监听加入房间成功事件
-          const handler = (data: {roomId: string, playerId: string}) => {
+          const handler = (data: {playerId: string, room: Room}) => {
             this.off('roomJoined', handler);
+            // 保存房间ID、玩家ID和房间信息
+            this._roomId = roomId;
+            this._playerId = data.playerId;
+            this._room = data.room;
             resolve(data);
           };
           
@@ -270,6 +283,31 @@ export class NetworkManager {
     } else {
       return Promise.reject(new Error("未连接到服务器"));
     }
+  }
+
+  // 新增getter和setter
+  get roomId(): string {
+    return this._roomId;
+  }
+
+  set roomId(value: string) {
+    this._roomId = value;
+  }
+
+  get playerId(): string {
+    return this._playerId;
+  }
+
+  set playerId(value: string) {
+    this._playerId = value;
+  }
+
+  get room(): Room | null {
+    return this._room;
+  }
+
+  set room(value: Room | null) {
+    this._room = value;
   }
 }
 

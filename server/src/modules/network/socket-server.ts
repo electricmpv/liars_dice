@@ -3,6 +3,9 @@ import { RoomManager } from "../room/room-manager";
 import { ChatMessageSchema, HeartbeatSchema } from "../../../../shared/protocols/room-protocol";
 import type { ChatMessage, Heartbeat } from "../../../../shared/protocols/room-protocol";
 
+// 创建单例房间管理器
+const globalRoomManager = new RoomManager();
+
 /**
  * 骰子游戏Socket服务器
  */
@@ -17,12 +20,17 @@ export class DiceSocketServer {
    * @param roomManager 房间管理器
    */
   constructor(private port: number, roomManager?: RoomManager) {
-    this.roomManager = roomManager || new RoomManager();
+    // 使用全局房间管理器或传入的房间管理器
+    this.roomManager = roomManager || globalRoomManager;
     
     // 初始化Socket.IO服务器
     this.io = new Server(port, {
-      cors: { origin: "*" },
-      transports: ["websocket"]
+      cors: { 
+        origin: "*",
+        methods: ["GET", "POST"],
+        credentials: true
+      },
+      transports: ["websocket", "polling"]
     });
 
     // 设置连接处理
