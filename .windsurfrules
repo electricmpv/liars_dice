@@ -1,0 +1,41 @@
+By default, all responses must be in Chinese.
+# WORKSPACE RULES (D:\editors\liars_dice_demo)
+
+## 核心指令
+1. 项目路径：
+   - 绝对路径：D:\editors\liars_dice_demo
+   - 代码组织结构遵循PRD的模块化设计
+
+2. 技术栈强制要求：
+   - TypeScript严格模式（tsconfig.json）
+   - Node.js >=20.9.0
+   - Cocos Creator 3.8.2
+   - 必须使用Zod进行数据验证
+
+3. 目录结构规范：
+
+ liars_dice_demo/
+├── client/       # Cocos工程
+├── server/       # Node.js后端
+├── shared/       # 类型定义
+└── tools/        # 生成脚本
+
+4. 关键约束：
+- 所有网络通信使用Socket.IO协议
+- AI决策必须通过AgentService类路由
+- 禁止使用任何全局变量
+- 必须通过EnvChecker处理多平台适配
+
+5. 代码生成规则：
+- 文件名采用kebab-case
+- 类型定义使用.d.ts后缀
+- 配置类文件放在/config
+- 日志格式：`[模块名][级别] 消息`
+
+6. 依赖白名单：
+- 必要依赖：express, socket.io, zod, openai, pg
+- 禁止依赖：webpack, react, vue
+
+
+
+By default, all responses must be in Chinese.

@@ -1,0 +1,26 @@
+# 依赖包
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# Cocos 创建的文件
+client/library/
+client/temp/
+client/local/
+client/build/
+client/profiles/
+
+# 服务器构建输出
+server/dist/
+dist/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# IDE 文件
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
