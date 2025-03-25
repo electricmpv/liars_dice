@@ -35,14 +35,30 @@ export class SocketAdapter {
             // @ts-ignore - io对象由CDN加载的脚本提供
             this.socket = io(url, {
               ...options,
-              transports: ['websocket', 'polling'], // 尝试多种传输方式
+              transports: ['websocket', 'polling'],
               reconnection: true,
               reconnectionDelay: 1000,
               reconnectionAttempts: 10,
-              timeout: 10000 // 增加超时时间
+              timeout: 10000
+            });
+
+            console.log("[网络][调试] Socket.IO客户端初始化完成");
+            
+            // 添加心跳处理
+            this.socket.on('heartbeat:ping', (data: { timestamp: number }) => {
+              // 收到服务器心跳包后立即回复
+              this.socket.emit('heartbeat', {
+                timestamp: Date.now(),
+                clientTime: data.timestamp
+              });
             });
             
-            console.log("[网络][调试] Socket.IO客户端初始化完成");
+            this.socket.on('heartbeat:response', (data: { serverTime: number, clientTime: number }) => {
+              const latency = Date.now() - data.clientTime;
+              console.log("[网络][调试] 心跳延迟:", latency, "ms");
+            });
+            
+            
             
             this.socket.on('connect', () => {
               console.log("[网络][信息] 成功连接到服务器");
@@ -110,6 +126,19 @@ export class SocketAdapter {
    * @param event 事件名称
    * @param data 数据
    */
+  public static emitWithAck(event: string, data: any, callback: (response: any) => void): void {
+    if (this.socket && this.connectionStatus === 'connected') {
+      this.socket.emit(event, data, callback);
+    } else {
+      callback({ success: false, error: "未连接到服务器" });
+    }
+  }
+
+  /**
+   * 发送消息
+   * @param event 事件名称
+   * @param data 数据
+   */
   public static send(event: string, data: any): void {
     if (this.socket && this.connectionStatus === 'connected') {
       console.log("[网络][调试] 发送消息:", event, data);
@@ -137,6 +166,27 @@ export class SocketAdapter {
       // 如果已连接，同时注册到Socket.IO
       if (this.socket && ['connecting', 'connect_error', 'disconnect', 'error'].indexOf(event) === -1) {
         this.socket.on(event, callback as any);
+      }
+    }
+  }
+
+  /**
+   * 移除事件监听器
+   * @param event 事件名称
+   * @param callback 回调函数
+   */
+  public static off(event: string, callback: Function): void {
+    const listeners = this.eventListeners.get(event);
+    if (listeners) {
+      // 从本地事件映射中移除
+      const index = listeners.indexOf(callback);
+      if (index !== -1) {
+        listeners.splice(index, 1);
+      }
+      
+      // 如果已连接，同时从Socket.IO中移除
+      if (this.socket && ['connecting', 'connect_error', 'disconnect', 'error'].indexOf(event) === -1) {
+        this.socket.off(event, callback as any);
       }
     }
   }

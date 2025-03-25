@@ -11,6 +11,8 @@ By default, all responses must be in Chinese.
    - Node.js >=20.9.0
    - Cocos Creator 3.8.2
    - 必须使用Zod进行数据验证
+   - 必须使用yarn管理依赖
+   - 当前终端为Windows PowerShell，在Windows中，不要使用"&"和"&&"来连接命令。
 
 3. 目录结构规范：
 

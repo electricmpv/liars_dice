@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, EditBox, Label, Button, Color } from 'cc';
+import { _decorator, Component, Node, EditBox, Label, Button, Color, director } from 'cc';
 import { network } from '../core/network';
 import { NetworkErrorHandler } from '../core/error-handler';
 
@@ -14,6 +14,24 @@ export class RoomUI extends Component {
 
     @property(EditBox)
     private playerNameInput: EditBox | null = null;
+
+    // 将只读属性改为私有变量
+    private _roomId: string = '';
+    private _playerId: string = '';
+    private _room: any = null;  // 根据实际Room类型调整
+
+    // 添加getter和setter
+    public get roomId(): string {
+        return this._roomId;
+    }
+
+    public get playerId(): string {
+        return this._playerId;
+    }
+
+    public get room(): any {
+        return this._room;
+    }
 
     @property(Label)
     private statusLabel: Label | null = null;
@@ -90,68 +108,52 @@ export class RoomUI extends Component {
     /**
      * 创建房间
      */
-    public onCreateRoomClick() {
+    private async onCreateRoomClick() {
         if (this.isDebounced()) return;
 
-        this.clearError();
-
-        const playerName = this.playerNameInput?.string;
+        const playerName = this.playerNameInput?.string || '';
         if (!playerName) {
             this.showError('请输入玩家名称');
             return;
         }
 
-        network.createRoom(playerName).then(({ roomId, playerId }) => {
-            console.log('[房间][信息] 房间创建成功:', roomId, playerId);
-            // 保存房间ID和玩家ID
-            network.roomId = roomId;
-            network.playerId = playerId;
-            
-            // 显示成功消息
-            this.showSuccess(`房间创建成功，房间ID: ${roomId}`);
-            
-            // 这里可以跳转到游戏准备界面
-        }).catch(error => {
-            this.showError(`创建房间失败: ${error.message}`);
-        });
+        try {
+            const result = await network.createRoom(playerName);
+            if (result.success) {
+                this._roomId = result.roomId;  // 使用私有变量
+                this._playerId = result.playerId;
+                this.updateUI();
+            }
+        } catch (error) {
+            this.showError(`创建房间失败: ${error instanceof Error ? error.message : '未知错误'}`);
+        }
     }
 
     /**
      * 加入房间
      */
-    public onJoinRoomClick() {
+    private async onJoinRoomClick() {
         if (this.isDebounced()) return;
 
-        this.clearError();
+        const roomId = this.roomIdInput?.string || '';
+        const playerName = this.playerNameInput?.string || '';
 
-        const roomId = this.roomIdInput?.string;
-        const playerName = this.playerNameInput?.string;
-
-        if (!roomId) {
-            this.showError('请输入房间ID');
+        if (!roomId || !playerName) {
+            this.showError('请输入房间号和玩家名称');
             return;
         }
 
-        if (!playerName) {
-            this.showError('请输入玩家名称');
-            return;
+        try {
+            const result = await network.joinRoom(roomId, playerName);
+            if (result.success) {
+                this._roomId = roomId;  // 使用私有变量
+                this._playerId = result.playerId;
+                this._room = result.room;
+                this.updateUI();
+            }
+        } catch (error) {
+            this.showError(`加入房间失败: ${error instanceof Error ? error.message : '未知错误'}`);
         }
-
-        network.joinRoom(roomId, playerName).then(({ playerId, room }) => {
-            console.log('[房间][信息] 加入房间成功:', playerId, room);
-            
-            // 保存房间ID和玩家ID
-            network.roomId = roomId;
-            network.playerId = playerId;
-            network.room = room;
-            
-            // 显示成功消息
-            this.showSuccess('加入房间成功');
-            
-            // 这里可以跳转到游戏准备界面
-        }).catch(error => {
-            this.showError(`加入房间失败: ${error.message}`);
-        });
     }
 
     /**
@@ -238,6 +240,26 @@ export class RoomUI extends Component {
     }
 
     /**
+     * 更新UI状态
+     * 根据当前房间状态更新界面显示
+     */
+    private updateUI() {
+        // 显示房间面板
+        this.showRoomPanel();
+
+        // 清除错误信息
+        this.clearError();
+
+        // 显示房间信息
+        if (this._roomId && this._playerId) {
+            this.showSuccess(`成功${this._room ? '加入' : '创建'}房间：${this._roomId}`);
+            
+            // 更新房间内玩家列表等信息
+            // ...这里可以根据实际需要添加更多UI更新逻辑
+        }
+    }
+
+    /**
      * 检查防抖
      * @returns 是否防抖中
      */
@@ -258,5 +280,18 @@ export class RoomUI extends Component {
         network.connect().catch(error => {
             NetworkErrorHandler.handleConnectionError(error);
         });
+    }
+
+    // 添加游戏相关方法
+    public onStartGameClick() {
+      if (this.isDebounced()) return;
+    
+      network.startGame().then(() => {
+        console.log('[游戏][信息] 游戏开始');
+        // 这里可以切换到游戏场景
+        director.loadScene('GameScene');
+      }).catch(error => {
+        this.showError(`开始游戏失败: ${error.message}`);
+      });
     }
 }

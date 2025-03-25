@@ -8,11 +8,11 @@
     "strict": true,
     "skipLibCheck": true,
     "outDir": "dist",
-    "rootDirs": ["src", "../shared"],
+    "rootDirs": ["src", "../shared", "tests"],
     "sourceMap": true,
     "declaration": true,
     "resolveJsonModule": true
   },
-  "include": ["src/**/*", "../shared/**/*"],
-  "exclude": ["node_modules", "**/*.test.ts"]
+  "include": ["src/**/*", "../shared/**/*", "tests/**/*"],
+  "exclude": ["node_modules"]
 }
