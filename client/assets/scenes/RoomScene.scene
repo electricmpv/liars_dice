@@ -559,6 +559,36 @@
     "statusLabel": {
       "__id__": 12
     },
+    "statusIcon": null,
+    "reconnectButton": null,
+    "connectedColor": {
+      "__type__": "cc.Color",
+      "r": 0,
+      "g": 255,
+      "b": 0,
+      "a": 255
+    },
+    "connectingColor": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 165,
+      "b": 0,
+      "a": 255
+    },
+    "disconnectedColor": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    },
+    "reconnectingColor": {
+      "__type__": "cc.Color",
+      "r": 0,
+      "g": 191,
+      "b": 255,
+      "a": 255
+    },
     "_id": "45FwzKcSZF7IIjJpyE2bSP"
   },
   {

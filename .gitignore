@@ -12,6 +12,8 @@ client/build/
 client/profiles/
 
 # 服务器构建输出
+server/node_modules/
+server/coverage/
 server/dist/
 dist/
 
