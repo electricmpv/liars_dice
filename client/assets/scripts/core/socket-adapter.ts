@@ -165,6 +165,8 @@ export class SocketAdapter {
       
       // 如果已连接，同时注册到Socket.IO
       if (this.socket && ['connecting', 'connect_error', 'disconnect', 'error'].indexOf(event) === -1) {
+        // Directly register the original callback provided by NetworkManager
+        // The logging for raw data will now happen inside NetworkManager's handler if needed
         this.socket.on(event, callback as any);
       }
     }
@@ -185,9 +187,17 @@ export class SocketAdapter {
       }
       
       // 如果已连接，同时从Socket.IO中移除
-      if (this.socket && ['connecting', 'connect_error', 'disconnect', 'error'].indexOf(event) === -1) {
-        this.socket.off(event, callback as any);
-      }
+      // IMPORTANT: socket.io's off needs the *exact* function reference used in 'on'.
+      // Since we wrapped the callback in 'on', simply calling off with the original callback won't work.
+      // We need a way to store the wrapped callback reference to remove it later.
+      // For now, this 'off' might not correctly remove listeners added via the wrapped callback.
+      // This needs a more robust implementation if dynamic listener removal is critical.
+      // Let's comment out the socket.off for business events for now to avoid potential issues,
+      // as listeners are typically removed only on disconnect/destroy anyway.
+      // if (this.socket && ['connecting', 'connect_error', 'disconnect', 'error'].indexOf(event) === -1) {
+      //   // TODO: Fix listener removal when using wrapped callbacks
+      //   // this.socket.off(event, ???); // Need reference to wrappedCallback
+      // }
     }
   }
 

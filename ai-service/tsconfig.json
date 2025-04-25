@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2016", // Or a newer target like ES2020 if your Node.js version supports it
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true, // Allows importing JSON files
+    "moduleResolution": "node", // Use Node.js module resolution
+    "sourceMap": true, // Generate source maps for debugging
+    "declaration": true // Generate corresponding '.d.ts' file
+  },
+  "include": ["src/**/*"], // Specifies which files TypeScript should compile
+  "exclude": ["node_modules", "**/*.spec.ts"] // Specifies files to exclude from compilation
+}

@@ -179,10 +179,19 @@ export class NetworkManager {
     });
 
     // 房间更新
-    SocketAdapter.on('roomUpdate', (room: Room) => {
-      console.log("[网络][信息] 房间更新:", room);
-      this._room = room; // 更新房间信息
-      this.emit('roomUpdate', room);
+    SocketAdapter.on('roomUpdate', (data: any) => { // 接收原始数据 data
+      console.log("[NetworkManager] Raw 'roomUpdate' event data received:", JSON.stringify(data).substring(0, 500)); // 打印原始数据
+      // 假设服务器发送的数据结构是 { room: Room }
+      const room = data?.room; // 从 data 中提取 room 对象
+      if (room) {
+        console.log("[网络][信息] 房间更新 (extracted):", room);
+        this._room = room; // 更新房间信息
+        this.emit('roomUpdate', room); // 分发提取出的 room 对象
+      } else {
+        console.error("[NetworkManager] Received 'roomUpdate' event but 'room' data is missing or invalid:", data);
+        // 可以选择是否分发一个错误或空事件
+        // this.emit('error', { message: "Invalid roomUpdate data received", details: data });
+      }
     });
 
     // 游戏开始
@@ -195,9 +204,9 @@ export class NetworkManager {
     });
 
     // 游戏结束
-    SocketAdapter.on('gameEnd', (data: any) => {
+    SocketAdapter.on('game:game_end', (data: any) => { // 修正事件名称
       console.log("[网络][信息] 游戏结束:", data);
-      this.emit('gameEnd', data);
+      this.emit('game:game_end', data); // 保持内部事件名一致或修改 GameUI 监听器
     });
     
     // 骰子摇动结果
@@ -208,20 +217,25 @@ export class NetworkManager {
     
     // 竞价更新
     SocketAdapter.on('game:bid_update', (data: any) => {
+      console.log("[NetworkManager] Received 'game:bid_update' from SocketAdapter. Data:", JSON.stringify(data)); // 添加日志
       console.log("[网络][信息] 竞价更新:", data);
       this.emit('game:bid_update', data);
+      console.log("[NetworkManager] Emitted 'game:bid_update' internally."); // 添加日志
     });
     
     // 游戏状态更新
     SocketAdapter.on('game:state_update', (data: any) => {
+      console.log("[NetworkManager] Received 'game:state_update' from SocketAdapter. Data:", JSON.stringify(data)); // 添加日志
       console.log("[网络][信息] 游戏状态更新:", data);
       this.emit('game:state_update', data);
     });
     
     // 质疑结果
     SocketAdapter.on('game:challenge_result', (data: any) => {
+      console.log("[NetworkManager] Received 'game:challenge_result' from SocketAdapter. Data:", JSON.stringify(data)); // 添加日志
       console.log("[网络][信息] 质疑结果:", data);
       this.emit('game:challenge_result', data);
+      console.log("[NetworkManager] Emitted 'game:challenge_result' internally."); // 添加日志
     });
   }
 
@@ -256,21 +270,24 @@ export class NetworkManager {
   /**
    * 创建房间
    * @param playerName 玩家名称
-   * @returns Promise<{success: boolean, roomId: string, playerId: string}>
+   * @returns Promise<{success: boolean, data?: { playerId: string; room: Room }; error?: string}>
    */
-  public createRoom(playerName: string): Promise<{success: boolean, roomId: string, playerId: string}> {
-      return new Promise((resolve, reject) => {
+  // 修改方法签名以匹配新的返回类型
+  public createRoom(playerName: string): Promise<{success: boolean, data?: { playerId: string; room: Room }; error?: string}> {
+      // 修改返回类型以匹配服务器回调的完整结构
+      return new Promise<{success: boolean, data?: { playerId: string; room: Room }; error?: string}>((resolve, reject) => {
         SocketAdapter.emitWithAck('createRoom', { playerName }, (response: any) => {
-          if (response.success) {
-            this._roomId = response.roomId;
-            this._playerId = response.playerId;
-            resolve({
-              success: true,
-              roomId: response.roomId,
-              playerId: response.playerId
-            });
+          // 直接将服务器返回的完整响应传递给 resolve
+          if (response.success && response.data && response.data.room) {
+             // 更新本地缓存（如果需要）
+             this._roomId = response.data.room.id;
+             this._playerId = response.data.playerId;
+             this._room = response.data.room; // 缓存房间信息
+             resolve(response); // 传递完整响应
           } else {
-            reject(new Error(response.error || '创建房间失败'));
+             // 如果响应结构不符合预期或 success 为 false
+             console.error('[Network] createRoom received invalid success response:', response);
+             reject(new Error(response.error || '创建房间失败或响应格式错误'));
           }
         });
   
@@ -415,9 +432,15 @@ export class NetworkManager {
       }
     }
 
-    // SocketAdapter可能没有off方法，所以需要检查
+    // SocketAdapter可能没有off方法，所以需要检查，并且检查 SocketAdapter 实例是否仍然有效
+    // (注意：SocketAdapter 本身没有 isValid 属性，我们假设检查它是否为 null 足够)
     if (SocketAdapter && typeof SocketAdapter.off === 'function') {
-      SocketAdapter.off(event, handler);
+        try {
+            // 尝试调用 off，如果 SocketAdapter 内部状态无效，可能会抛错，但至少不会因为 SocketAdapter 本身为 null 而报错
+            SocketAdapter.off(event, handler);
+        } catch (e) {
+            console.warn(`[NetworkManager] Error calling SocketAdapter.off for event "${event}":`, e);
+        }
     }
   }
 
@@ -454,10 +477,32 @@ export class NetworkManager {
       // 生成请求ID
       const id = `${event}_${this.requestId++}`;
       
+      // 设置超时定时器
+      const timerId = setTimeout(() => {
+        // 清除挂起的请求记录
+        this.pendingRequests.delete(id);
+        const error: NetworkError = {
+          code: NetworkErrorCode.REQUEST_TIMEOUT,
+          message: `请求超时: ${event}`,
+          details: { event, data }
+        };
+        console.error(`[Network] 请求超时: ${event}`, data);
+        this.emit('error', error);
+        reject(error);
+      }, 10000); // 10秒超时
+
+      // 存储挂起的请求
+      this.pendingRequests.set(id, { resolve, reject, timer: timerId as unknown as number }); // Store timerId
+
       // 发送请求
       SocketAdapter.emitWithAck(event, { ...data, requestId: id }, (response: any) => {
+        // 清除超时定时器，因为已收到响应
+        clearTimeout(timerId);
+        // 从挂起列表中移除
+        this.pendingRequests.delete(id);
+
         console.log(`[Network] 收到响应: ${event}`, response);
-        
+
         // 如果响应包含错误
         if (!response.success) {
           const error: NetworkError = {
@@ -476,22 +521,7 @@ export class NetworkManager {
         // 成功响应
         resolve(response);
       });
-      
-      // 设置超时处理
-      setTimeout(() => {
-        const error: NetworkError = {
-          code: NetworkErrorCode.REQUEST_TIMEOUT,
-          message: `请求超时: ${event}`,
-          details: { event, data }
-        };
-        
-        console.error(`[Network] 请求超时: ${event}`, data);
-        
-        // 触发错误事件
-        this.emit('error', error);
-        
-        reject(error);
-      }, 10000);
+      // 超时处理已移到前面
     });
   }
 

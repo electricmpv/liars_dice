@@ -6,12 +6,7 @@ package-lock.json
 
 # Cocos 创建的文件
 client/library/
-client/temp/
 client/local/
-client/build/
-client/profiles/
-
-# 服务器构建输出
 server/node_modules/
 server/coverage/
 server/dist/
@@ -26,3 +21,34 @@ Thumbs.db
 .vscode/
 *.sublime-project
 *.sublime-workspace
+
+# 新增 Cocos 工程特定忽略规则
+/client/settings/
+/client/temp/
+/client/build/
+/client/profiles/
+/client/assets/**/*.meta
+/client/packages/
+
+# TypeScript 编译输出
+*.js
+*.d.ts
+!*.config.js
+!server/src/**/*.d.ts
+
+# 测试覆盖率
+coverage/
+.nyc_output/
+
+# 环境文件
+.env
+*.env.local
+*.ini
+
+# 调试日志
+*.log
+logs/
+
+# 编辑器临时文件
+*.swp
+*.swo

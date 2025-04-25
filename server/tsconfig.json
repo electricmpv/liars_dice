@@ -6,13 +6,15 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "experimentalDecorators": true, // Add this for decorator support
+    "emitDecoratorMetadata": true, // Add this for decorator metadata
     "skipLibCheck": true,
     "outDir": "dist",
-    "rootDirs": ["src", "../shared", "tests"],
+    "rootDirs": ["src", "../shared", "tests", "mcp-tools"], // 添加 mcp-tools
     "sourceMap": true,
     "declaration": true,
     "resolveJsonModule": true
   },
-  "include": ["src/**/*", "../shared/**/*", "tests/**/*"],
+  "include": ["src/**/*", "../shared/**/*", "tests/**/*", "mcp-tools/**/*"], // 添加 mcp-tools
   "exclude": ["node_modules"]
 }
