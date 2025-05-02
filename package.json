@@ -32,7 +32,10 @@
   },
   "main": "index.js",
   "dependencies": {
+    "@colyseus/monitor": "^0.16.7",
+    "@colyseus/schema": "^3.0.35",
     "@types/socket.io-client": "^3.0.0",
+    "colyseus.js": "^0.16.16",
     "socket.io-client": "^4.8.1"
   }
 }

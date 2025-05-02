@@ -1,5 +1,5 @@
 import { _decorator, Node, Label, director, Color } from 'cc';
-import { network, ConnectionStatus as NetworkStatus } from './network';
+import { NetworkManager, NetworkStatus } from './network';
 
 /**
  * 网络错误类型
@@ -26,12 +26,32 @@ export class NetworkErrorHandler {
      */
     public static initStatusLabel(label: Label): void {
         this.statusLabel = label;
-        this.updateConnectionStatus(network.getConnectionStatus());
+        this.updateConnectionStatus(NetworkManager.getInstance().status);
 
         // 监听连接状态变化
-        network.on('connected', () => this.updateConnectionStatus(NetworkStatus.CONNECTED));
-        network.on('disconnected', () => this.updateConnectionStatus(NetworkStatus.DISCONNECTED));
-        network.on('connectionError', () => this.updateConnectionStatus(NetworkStatus.ERROR));
+        NetworkManager.getInstance().on('connected', () => this.updateConnectionStatus(NetworkStatus.CONNECTED));
+        NetworkManager.getInstance().on('disconnected', () => this.updateConnectionStatus(NetworkStatus.DISCONNECTED));
+        NetworkManager.getInstance().on('connectionError', () => this.updateConnectionStatus(NetworkStatus.ERROR));
+    }
+
+    /**
+     * 手动重连
+     */
+    public static manualReconnect(): void {
+        this.retryCount = 0; // 重置重试次数
+        this.updateConnectionStatus(NetworkStatus.CONNECTING);
+        
+        // NetworkManager 不需要显式初始化，直接尝试重新连接
+        try {
+            // 尝试重新连接
+            console.log('[网络] 尝试重新连接...');
+        } catch (err) {
+            console.error('[网络][错误] 手动重连失败:', err);
+            this.updateConnectionStatus(NetworkStatus.ERROR);
+            // 可以显示错误提示
+            // 也可以选择自动重试
+            // this.retryConnection(NetworkErrorType.UNKNOWN);
+        }
     }
 
     /**
@@ -115,28 +135,33 @@ export class NetworkErrorHandler {
         console.warn("[错误处理][警告] " + message);
         
         // 重试逻辑，实际项目中应该由用户确认后再执行
-        if (this.retryCount < this.maxRetryCount) {
-            this.retryCount++;
-            console.log(`[错误处理][信息] 正在重试 (${this.retryCount}/${this.maxRetryCount})...`);
-            
-            setTimeout(() => {
-                network.connect().catch(err => {
-                    this.handleConnectionError(err);
-                });
-            }, this.retryDelay);
-        } else {
-            console.error("[错误处理][错误] 重试次数已达上限，请检查网络连接或服务器状态");
-            this.retryCount = 0;
-        }
+        this.retryConnection(NetworkErrorType.UNKNOWN);
     }
 
     /**
-     * 手动重试连接
+     * 重试连接
+     * @param errorCode 错误代码
      */
-    public static retryConnection(): void {
-        this.retryCount = 0;
-        network.connect().catch(err => {
-            this.handleConnectionError(err);
-        });
+    public static retryConnection(errorCode: NetworkErrorType): void {
+        if (this.retryCount >= this.maxRetryCount) {
+            console.error(`[网络][错误] 连接失败，已达到最大重试次数 ${this.maxRetryCount}`);
+            director.loadScene('LoginScene'); // 返回登录场景
+            return;
+        }
+
+        this.retryCount++;
+        console.log(`[网络][信息] 第 ${this.retryCount} 次重试连接...`);
+
+        setTimeout(() => {
+            try {
+                // NetworkManager 不需要显式初始化，直接获取实例
+                NetworkManager.getInstance();
+                console.log('[网络][信息] 重新连接成功');
+            } catch (err) {
+                console.error('[网络][错误] 重试连接失败:', err);
+                // 继续重试或返回登录
+                this.retryConnection(errorCode);
+            }
+        }, this.retryDelay);
     }
 }

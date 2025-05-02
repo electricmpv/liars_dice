@@ -1,5 +1,6 @@
 import { Room, Client, Clock } from "@colyseus/core";
-import { LiarDiceRoomState, PlayerState } from "./schema/LiarDiceState";
+import { MapSchema, ArraySchema } from "@colyseus/schema";
+import { LiarDiceRoomState, PlayerState } from "../../../shared/schemas/LiarDiceState";
 import { v4 as uuid } from "uuid";
 import { GameLogic } from "./game-logic";
 import { AIServiceClient } from "./ai-service-client";
@@ -7,6 +8,7 @@ import { MessageHandler } from "./message-handler";
 import { AIManager } from "./ai-manager";
 // Assuming game-types are now correctly defined/exported from a shared or local types file
 import { Face, Bid, EmptyBid, AIActionDecision } from './types/game-types'; // Adjust path if necessary
+import { debugSchema, fixPlayerState, initializeSchemaMetadata } from "../debug-schema";
 
 export class LiarDiceRoom extends Room<LiarDiceRoomState> {
 
@@ -21,61 +23,181 @@ export class LiarDiceRoom extends Room<LiarDiceRoomState> {
   // --- Colyseus Lifecycle Methods ---
 
   onCreate(options: any) {
-    console.log(`[LiarDiceRoom ${this.roomId}] Creating room...`, options);
+    try {
+      console.log(`[LiarDiceRoom ${this.roomId}] Creating room...`, options);
 
-    this.setState(new LiarDiceRoomState());
-    this.maxClients = 6; // Set max players
+      // 创建一个新的状态实例
+      const state = new LiarDiceRoomState();
+      
+      // 使用 setState 方法设置状态
+      this.setState(state);
+      
+      // 初始化 Schema 元数据，确保所有属性都正确初始化
+      initializeSchemaMetadata(this.state);
+      
+      // 调试状态Schema
+      console.log(`[LiarDiceRoom ${this.roomId}] 调试房间状态Schema`);
+      debugSchema(this.state, "LiarDiceRoomState");
+      
+      // 设置房间属性
+      this.maxClients = 6; // 最大玩家数
 
-    // Instantiate logic and manager classes AFTER setting state
-    this.gameLogic = new GameLogic();
-    this.aiClient = new AIServiceClient();
-    this.aiManager = new AIManager(this, this.aiClient); // Pass room instance and aiClient
-    this.messageHandler = new MessageHandler(this); // Pass room instance
+      // 初始化游戏逻辑和管理类
+      this.gameLogic = new GameLogic();
+      this.aiClient = new AIServiceClient();
+      this.aiManager = new AIManager(this, this.aiClient); // 传递房间实例和 AI 客户端
+      this.messageHandler = new MessageHandler(this); // 传递房间实例
 
-    // Initialize basic state properties
-    this.state.status = "waiting";
-    this.state.roundNumber = 0;
+      // 注册消息处理程序
+      this.messageHandler.registerHandlers();
 
-    // Register message handlers via the MessageHandler instance
-    this.messageHandler.registerHandlers();
+      // 设置定时器，定期检查房间状态
+      this.setSimulationInterval(() => {
+        // 检查房间状态，如果需要可以在这里添加逻辑
+      }, 1000);
 
-    console.log(`[LiarDiceRoom ${this.roomId}] Room created and waiting for players.`);
+      console.log(`[LiarDiceRoom ${this.roomId}] Room created and waiting for players.`);
+    } catch (error) {
+      console.error(`[LiarDiceRoom ${this.roomId}] Error creating room:`, error);
+      throw error; // 重新抛出错误，让 Colyseus 处理
+    }
   }
 
-  onAuth(client: Client, options: any, _request: any) {
-    console.log(`[LiarDiceRoom ${this.roomId}] Auth attempt: sessionId=${client.sessionId}`, options);
-    // TODO: Implement proper authentication based on actual login system
-    if (this.state.players.size >= this.maxClients) {
-        throw new Error("Room is full.");
+  // (可选) 玩家加入前的验证逻辑 - 现在处理游客和未来注册用户
+  onAuth(client: Client, options: any, _request: any): { playerId: string, playerName: string } {
+    console.log(`[LiarDiceRoom ${this.roomId}] Auth attempt: sessionId=${client.sessionId}, options=`, options);
+
+    // TODO: Implement database/token based authentication for registered users
+    if (options.token) {
+        // Example: Verify token, fetch user data
+        // const userData = await verifyTokenAndGetUser(options.token);
+        // if (!userData) {
+        //     throw new Error("Invalid token");
+        // }
+        // console.log(`[LiarDiceRoom ${this.roomId}] Registered user authenticated: ${userData.username}`);
+        // return { playerId: userData.id, playerName: userData.username };
+        console.warn(`[LiarDiceRoom ${this.roomId}] Token authentication not yet implemented.`);
+        // For now, let token users proceed as guests for testing
     }
-    // Consider preventing joins during active gameplay unless spectating is implemented
-    // if (this.state.status !== "waiting") {
-    //    throw new Error("Game in progress.");
-    // }
-    return true; // Allow join for now
+
+    // Guest Login Logic
+    console.log(`[LiarDiceRoom ${this.roomId}] Handling as Guest Login for ${client.sessionId}`);
+    const guestId = `guest_${uuid().substring(0, 8)}`;
+    const guestName = `游客_${guestId.substring(6)}`; // Use part of the ID for name
+    return { playerId: guestId, playerName: guestName };
   }
 
-  onJoin(client: Client, options: any) {
-    console.log(`[LiarDiceRoom ${this.roomId}] Player joined: sessionId=${client.sessionId}, Name=${options.playerName}, ID=${options.playerId}`);
+  // 玩家成功加入房间时调用 - 使用 onAuth 返回的数据 (Colyseus 0.15.x signature)
+  onJoin(client: Client, options?: any, auth?: { playerId: string, playerName: string }) {
+    try {
+      // Handle cases where onAuth might fail or not return data (though unlikely with current guest logic)
+      const playerId = auth?.playerId || `guest_${Date.now()}`;
+      const playerName = options?.playerName || auth?.playerName || `游客_${playerId.substring(6)}`;
 
-    const player = new PlayerState().assign({
-      id: options.playerId || `player_${client.sessionId}`,
-      sessionId: client.sessionId,
-      name: options.playerName || `玩家_${client.sessionId.substring(0, 4)}`,
-      diceCount: 5, // Standard starting dice count
-      isReady: false,
-      isConnected: true,
-      isAI: false // Human players are not AI
-    });
+      console.log(`[LiarDiceRoom ${this.roomId}] Player joined: sessionId=${client.sessionId}, Name=${playerName}, ID=${playerId}`);
 
-    this.state.players.set(client.sessionId, player);
+      // 创建玩家状态实例 - 使用来自 onAuth 的数据 (或备用值)
+      const player = new PlayerState();
+      
+      // 手动设置每个属性，避免使用assign方法
+      player.id = playerId;
+      player.sessionId = client.sessionId;
+      player.name = playerName;
+      player.diceCount = 5;
+      player.isReady = false;
+      player.isConnected = true;
+      player.isAI = false; // Human players are not AI
+      
+      // 调试玩家Schema
+      console.log(`[LiarDiceRoom ${this.roomId}] 调试玩家Schema`);
+      debugSchema(player, "PlayerState");
+      
+      // 确保currentDices被正确初始化
+      fixPlayerState(player);
+      
+      // 添加到状态中
+      this.state.players.set(client.sessionId, player);
 
-    // Assign host if first player
-    if (this.state.players.size === 1) {
-      this.state.hostId = client.sessionId;
-      console.log(`[LiarDiceRoom ${this.roomId}] Player ${player.name} is now the host.`);
+      // 如果是第一个加入的玩家，设为房主
+      if (this.state.players.size === 1) {
+        this.state.hostId = client.sessionId;
+        console.log(`[LiarDiceRoom ${this.roomId}] Player ${playerName} is now the host.`);
+      }
+      
+      // 检查状态是否正确同步
+      const playerCount = this.state.players.size;
+      const playerList = Array.from(this.state.players.entries()).map(([id, p]) => ({ id, name: p.name }));
+      console.log(`[LiarDiceRoom ${this.roomId}] Total players: ${playerCount}, Players: ${JSON.stringify(playerList)}, Host: ${this.state.hostId}`);
+      
+      // 再次调试整个房间状态
+      console.log(`[LiarDiceRoom ${this.roomId}] 调试更新后的房间状态Schema`);
+      debugSchema(this.state, "LiarDiceRoomState");
+      
+      // 强制广播状态更新
+      this.broadcast("stateSync", { 
+        playerCount, 
+        hostId: this.state.hostId,
+        players: Array.from(this.state.players.entries()).map(([id, p]) => ({
+          id: id,
+          name: p.name,
+          isReady: p.isReady,
+          isAI: p.isAI,
+          diceCount: p.diceCount
+        }))
+      });
+      
+      // 尝试直接发送玩家数据给客户端
+      client.send("playerData", {
+        id: client.sessionId,
+        name: playerName,
+        isHost: this.state.hostId === client.sessionId,
+        playerList: Array.from(this.state.players.entries()).map(([id, p]) => ({
+          id: id,
+          name: p.name,
+          isReady: p.isReady,
+          isAI: p.isAI,
+          diceCount: p.diceCount
+        }))
+      });
+      
+      // 延迟一下再次广播，确保客户端收到状态
+      this.clock.setTimeout(() => {
+        if (this.state.players.has(client.sessionId)) {
+          console.log(`[LiarDiceRoom ${this.roomId}] Sending delayed state update for ${client.sessionId}`);
+          
+          // 广播当前房间状态
+          this.broadcast("fullRoomState", {
+            playerCount: this.state.players.size,
+            hostId: this.state.hostId,
+            status: this.state.status || "waiting",
+            players: Array.from(this.state.players.entries()).map(([id, p]) => ({
+              id: id,
+              name: p.name,
+              isReady: p.isReady,
+              isAI: p.isAI,
+              diceCount: p.diceCount
+            }))
+          });
+          
+          // 尝试直接发送玩家数据给该客户端
+          client.send("playerData", {
+            id: client.sessionId,
+            name: playerName,
+            isHost: this.state.hostId === client.sessionId,
+            playerList: Array.from(this.state.players.entries()).map(([id, p]) => ({
+              id: id,
+              name: p.name,
+              isReady: p.isReady,
+              isAI: p.isAI,
+              diceCount: p.diceCount
+            }))
+          });
+        }
+      }, 1000);
+      
+    } catch (error) {
+      console.error(`[LiarDiceRoom ${this.roomId}] Error in onJoin:`, error);
     }
-     console.log(`[LiarDiceRoom ${this.roomId}] Total players: ${this.state.players.size}`);
   }
 
   async onLeave(client: Client, consented: boolean) {
@@ -192,10 +314,17 @@ export class LiarDiceRoom extends Room<LiarDiceRoomState> {
     if (this.state.activePlayerIds.length > 0) {
       // Get the NEW current player ID after GameLogic updated the index
       const nextPlayerId = this.state.activePlayerIds[this.state.currentPlayerIndex];
-      this.broadcast("nextTurn", { currentPlayerSessionId: nextPlayerId });
-      console.log(`[LiarDiceRoom ${this.roomId}] Turn passed to: ${this.state.players.get(nextPlayerId)?.name}`);
-      // Trigger AI check for the *new* current player
-      this.aiManager.checkAndTriggerAI();
+      // Add check for undefined nextPlayerId
+      if (!nextPlayerId) {
+          console.error(`[LiarDiceRoom ${this.roomId}] nextTurn: Could not determine next player at index ${this.state.currentPlayerIndex}. Active players: ${this.state.activePlayerIds.length}`);
+          // Game might end here, consider calling endGame? For now, just log.
+      } else {
+          this.broadcast("nextTurn", { currentPlayerSessionId: nextPlayerId });
+          // Log before potentially accessing name
+          console.log(`[LiarDiceRoom ${this.roomId}] Turn passed to ID: ${nextPlayerId}, Name: ${this.state.players.get(nextPlayerId)?.name}`);
+          // Trigger AI check for the *new* current player
+          this.aiManager.checkAndTriggerAI();
+      }
     } else {
        console.error(`[LiarDiceRoom ${this.roomId}] nextTurn: No active players left! Ending game.`);
        this.endGame();
@@ -416,7 +545,13 @@ export class LiarDiceRoom extends Room<LiarDiceRoomState> {
             // Prefer first active player if game is ongoing, otherwise first player in map
             let newHost: PlayerState | undefined;
             if (this.state.activePlayerIds.length > 0) {
-                newHost = this.state.players.get(this.state.activePlayerIds[0]);
+                const firstActiveId = this.state.activePlayerIds[0];
+                // Add check for undefined firstActiveId (though unlikely if length > 0)
+                if (firstActiveId) {
+                    newHost = this.state.players.get(firstActiveId);
+                } else {
+                    console.warn(`[LiarDiceRoom ${this.roomId}] electNewHost: activePlayerIds has length > 0 but first element is undefined?`);
+                }
             } else {
                  // Use iterator to get the first player in the players map
                  const firstPlayerEntry = this.state.players.entries().next();
@@ -430,11 +565,11 @@ export class LiarDiceRoom extends Room<LiarDiceRoomState> {
                 console.log(`[LiarDiceRoom ${this.roomId}] Host left, new host: ${newHost.name}`);
                 this.broadcast("hostChanged", { newHostId: newHost.sessionId, newHostName: newHost.name });
             } else {
-                 this.state.hostId = undefined;
+                 this.state.hostId = "";
                  console.warn(`[LiarDiceRoom ${this.roomId}] Host left, but couldn't find new host!`);
             }
         } else {
-            this.state.hostId = undefined;
+            this.state.hostId = "";
             console.log(`[LiarDiceRoom ${this.roomId}] Host left, room empty.`);
         }
    }

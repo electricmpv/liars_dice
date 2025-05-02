@@ -5,9 +5,12 @@ import { ChatItem } from '../../prefabs/chat-item';
 import { FilterTab } from '../../prefabs/filter-tab';
 import { SystemNotice } from '../../prefabs/system-notice';
 import { FriendRequest } from '../../prefabs/friend-request';
-import { RoomService } from './services/room-service';
+import { RoomService, SimplifiedRoomInfo } from './services/room-service'; // RoomService now exports SimplifiedRoomInfo adaptation helper
 import { FriendService } from './services/friend-service';
 import { ChatService } from './services/chat-service';
+import type { RoomAvailable } from 'colyseus.js'; // Import Colyseus type
+// Corrected relative path (5 levels up) and removing .ts extension
+import { RoomStatus as SharedRoomStatus } from '../../../../../shared/protocols/room-protocol';
 
 const { ccclass, property } = _decorator;
 
@@ -108,9 +111,9 @@ export class LobbyController extends Component {
     private _systemNotice: SystemNotice = null!; // 系统通知实例
 
     // 缓存的数据
-    private _cachedRooms: any[] = [];
-    private _cachedFriends: any[] = [];
-    private _cachedMessages: any[] = [];
+    private _cachedRooms: RoomAvailable[] = []; // Store RoomAvailable from RoomService
+    private _cachedFriends: any[] = []; // Keep as any[] for now, adapt later if needed
+    private _cachedMessages: any[] = []; // Keep as any[]
 
     // 用于防止重复加入
     private _isJoiningRoom: boolean = false;
@@ -412,11 +415,11 @@ export class LobbyController extends Component {
     }
 
     /**
-     * 更新房间列表
+     * 更新房间列表 (适配 Colyseus RoomAvailable)
      */
-    private updateRoomList(rooms: any[]): void {
+    private updateRoomList(rooms: RoomAvailable[]): void { // Change parameter type
         if (!this.roomListContainer || !this.roomItemPrefab) return;
-        
+
         // 缓存房间列表
         this._cachedRooms = rooms;
         
@@ -430,25 +433,29 @@ export class LobbyController extends Component {
         const filteredRooms = this._roomService.getFilteredRooms(rooms);
         
         // 添加房间项
-        filteredRooms.forEach(room => {
+        // 添加房间项 - 使用适配器转换 RoomAvailable
+        filteredRooms.forEach(roomAvailable => { // Variable renamed for clarity
+            const adaptedInfo = RoomService.adaptRoomAvailable(roomAvailable); // Use static adapter method
+
             const roomNode = instantiate(this.roomItemPrefab);
             const roomComp = roomNode.getComponent(RoomItem)!;
-            
+
+            // Pass the adapted info to the RoomItem component
             roomComp.setRoomInfo({
-                roomId: room.id,
-                roomName: room.name,
-                playerCount: room.playerCount,
-                maxPlayers: room.maxPlayers,
-                status: room.status,
-                hasPassword: room.hasPassword,
-                isPrivate: room.isPrivate,
-                hasFriends: room.hasFriends
+                roomId: adaptedInfo.id,
+                roomName: adaptedInfo.name,
+                playerCount: adaptedInfo.playerCount,
+                maxPlayers: adaptedInfo.maxPlayers,
+                status: adaptedInfo.status as SharedRoomStatus, // Cast status to expected type
+                hasPassword: adaptedInfo.hasPassword ?? false, // Provide default value
+                isPrivate: adaptedInfo.isPrivate ?? false, // Provide default value
+                hasFriends: false // TODO: Implement friend logic later
             });
-            
+
             // 监听房间点击事件
-            roomNode.on('room-item-clicked', this.onRoomItemClicked, this);
-            roomNode.on('join-room', this.onJoinRoomClicked, this);
-            
+            roomNode.on('room-item-clicked', () => this.onRoomItemClicked(adaptedInfo), this); // Pass adaptedInfo
+            roomNode.on('join-room', () => this.onJoinRoomClicked(adaptedInfo), this); // Pass adaptedInfo
+
             this.roomListContainer.addChild(roomNode);
             
             // 播放新增动画
@@ -607,10 +614,10 @@ export class LobbyController extends Component {
     }
 
     /**
-     * 房间项点击事件
+     * 房间项点击事件 (接收 SimplifiedRoomInfo)
      */
-    private onRoomItemClicked(event: any): void {
-        const roomInfo = event.detail;
+    private onRoomItemClicked(roomInfo: SimplifiedRoomInfo): void {
+        // const roomInfo = event.detail; // No longer using event detail
         console.log('房间点击:', roomInfo);
         
         // 显示房间详情
@@ -622,44 +629,40 @@ export class LobbyController extends Component {
     private _isJoiningRoom: boolean = false;
 
     /**
-     * 加入房间按钮点击事件
-     * @param roomInfo 从 RoomItem 传递过来的房间信息
+     * 加入房间按钮点击事件 (接收 SimplifiedRoomInfo)
      */
-    private onJoinRoomClicked(roomInfo: { roomId: string, roomName: string, hasPassword: boolean }): void {
+    private onJoinRoomClicked(roomInfo: SimplifiedRoomInfo): void { // Change parameter type
         if (this._isJoiningRoom) {
             console.warn('[LobbyController] Already attempting to join a room.');
             return; // 防止重复点击
         }
         this._isJoiningRoom = true; // 设置标志位
 
-        console.log('加入房间:', roomInfo);
+        console.log('加入房间 (Simplified):', roomInfo); // Log adapted info
 
-        if (!roomInfo || !roomInfo.roomId) {
-            console.error('[LobbyController] onJoinRoomClicked: 无效的 roomInfo 或 roomId');
+        // Use adaptedInfo.id instead of roomInfo.roomId
+        if (!roomInfo || !roomInfo.id) {
+            console.error('[LobbyController] onJoinRoomClicked: 无效的 roomInfo 或 id');
             this.showNotice("加入房间失败：无效的房间信息", "error");
             this._isJoiningRoom = false; // 重置标志位
             return;
         }
 
-        // 检查房间是否有密码
+        // 检查房间是否有密码 (use adaptedInfo.hasPassword)
         if (roomInfo.hasPassword) {
-            // TODO: 实现密码输入弹窗逻辑
+            // TODO: Implement password input popup logic
             this.showNotice("该房间需要密码，暂不支持加入", "warning");
             this._isJoiningRoom = false; // 重置标志位
         } else {
-            // 无密码，直接加入。
-            this.showNotice(`正在加入房间 ${roomInfo.roomName || roomInfo.roomId}...`, "info"); // 显示加载提示
-            if (typeof roomInfo.roomId === 'string') {
-                this._roomService.joinRoom(roomInfo.roomId)
-                    .finally(() => {
-                        // 无论加入成功或失败（事件已发出），重置标志位
-                        this._isJoiningRoom = false;
-                    });
-            } else {
-                 console.error('[LobbyController] onJoinRoomClicked: roomId is not a string!', roomInfo);
-                 this.showNotice("加入房间失败：无效的房间ID类型", "error");
-                 this._isJoiningRoom = false; // 重置标志位
-            }
+            // No password, join directly using adaptedInfo.id
+            this.showNotice(`正在加入房间 ${roomInfo.name || roomInfo.id}...`, "info"); // Use adapted name/id
+            // No need to check typeof id, as it's guaranteed string by interface
+            this._roomService.joinRoom(roomInfo.id)
+                .finally(() => {
+                    // Reset the flag regardless of success/failure (event is emitted by service)
+                    this._isJoiningRoom = false;
+                });
+            // No need for the 'else' block checking typeof roomId
         }
     }
 

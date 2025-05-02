@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { LiarDiceRoomState } from "./schema/LiarDiceState"; // For type hints
+import { LiarDiceRoomState } from "../../../shared/schemas/LiarDiceState"; // For type hints
 import { AI_SERVICE_URL } from './config/env-config';
 import { Face, Bid, EmptyBid, AIActionDecision } from './types/game-types';
 

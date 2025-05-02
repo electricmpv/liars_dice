@@ -5,9 +5,10 @@ import { _decorator, Component, Node, Label, Prefab, instantiate, Color } from '
 const { ccclass, property } = _decorator;
 
 // Import the shared Player type which includes isAI
-import type { Player as SharedPlayer } from '../../../../shared/protocols/room-protocol';
+import type { Player as SharedPlayer } from '../../shared/protocols/room-protocol';
 // Use the shared Player type or define a local one that includes isAI
-interface PlayerData extends SharedPlayer { // Extend or redefine to include isAI
+// Export the interface so it can be imported by other modules
+export interface PlayerData extends SharedPlayer { // Extend or redefine to include isAI
     // id, name, isReady, isAI, aiType? are inherited or defined in SharedPlayer
     diceCount: number; // Add game-specific fields if needed
     // Add other potential fields needed for display, like isOnline, isActive?

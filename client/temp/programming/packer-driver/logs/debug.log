@@ -1,0 +1,742 @@
+01:57:42 debug: 2025/5/3上午1:57:42
+01:57:42 debug: Project: D:\editors\liars_dice_demo\client
+01:57:42 debug: Targets: editor,preview
+01:57:42 debug: Incremental file seems great.
+01:57:42 debug: Engine path: D:\editors\Creator\3.8.2\resources\resources\3d\engine
+01:57:42 debug: Initializing target [Editor]
+01:57:42 debug: Loading cache
+01:57:42 debug: Loading cache costs 4.520600005984306ms.
+01:57:42 debug: Engine features shipped in editor: base,gfx-webgl,gfx-webgl2,gfx-empty,3d,animation,skeletal-animation,2d,ui,particle,particle-2d,physics-framework,physics-2d-framework,physics-2d-box2d-wasm,intersection-2d,primitive,profiler,occlusion-query,geometry-renderer,debug-renderer,audio,video,xr,light-probe,terrain,webview,tween,tiled-map,spine,dragon-bones,marionette,procedural-animation,custom-pipeline,websocket,websocket-server
+01:57:42 debug: Our import map(foo:/bar): {
+  "imports": {
+    "cc": "cce:/internal/x/cc"
+  }
+}
+01:57:42 debug: Initializing target [Preview]
+01:57:42 debug: Loading cache
+01:57:42 debug: Loading cache costs 3.6106999963521957ms.
+01:57:42 debug: Our import map(foo:/bar): {
+  "imports": {
+    "cc": "cce:/internal/x/cc"
+  }
+}
+01:57:42 debug: Sync engine features: 2d,animation,audio,base,dragon-bones,gfx-webgl,gfx-webgl2,intersection-2d,particle-2d,physics-2d-box2d,profiler,spine,tiled-map,tween,ui,video,webview
+01:57:42 debug: Reset databases. Enumerated domains: [
+  {
+    "root": "db://internal/",
+    "physical": "D:\\editors\\Creator\\3.8.2\\resources\\resources\\3d\\engine\\editor\\assets"
+  },
+  {
+    "root": "db://assets/",
+    "physical": "D:\\editors\\liars_dice_demo\\client\\assets"
+  }
+]
+01:57:42 debug: Our import map(foo:/bar): {
+  "imports": {
+    "cc": "cce:/internal/x/cc",
+    "db://internal/": "file:///D:/editors/Creator/3.8.2/resources/resources/3d/engine/editor/assets/",
+    "db://assets/": "file:///D:/editors/liars_dice_demo/client/assets/"
+  }
+}
+01:57:42 debug: Our import map(foo:/bar): {
+  "imports": {
+    "cc": "cce:/internal/x/cc",
+    "db://internal/": "file:///D:/editors/Creator/3.8.2/resources/resources/3d/engine/editor/assets/",
+    "db://assets/": "file:///D:/editors/liars_dice_demo/client/assets/"
+  }
+}
+01:57:42 debug: Pulling asset-db.
+01:57:42 debug: Fetch asset-db cost: 32.52580000460148ms.
+01:57:42 debug: Build iteration starts.
+Number of accumulated asset changes: 54
+Feature changed: false
+01:57:42 debug: Target(editor) build started.
+01:57:42 debug: Detected change: cce:/internal/x/cc. Last mtime: Thu Jan 01 1970 08:00:09 GMT+0800 (中国标准时间), Current mtime: Thu Jan 01 1970 08:00:19 GMT+0800 (中国标准时间)
+01:57:42 debug: Inspect cce:/internal/x/cc
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/base from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/base.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/gfx-webgl from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/gfx-webgl.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/gfx-webgl2 from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/gfx-webgl2.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/gfx-empty from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/gfx-empty.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/3d from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/3d.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/animation from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/animation.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/skeletal-animation from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/skeletal-animation.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/2d from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/2d.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/sorting from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/sorting.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/ui from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/ui.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/particle from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/particle.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/particle-2d from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/particle-2d.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/physics-framework from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/physics-framework.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/physics-2d-framework from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/physics-2d-framework.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/physics-2d-box2d-wasm from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/physics-2d-box2d-wasm.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/intersection-2d from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/intersection-2d.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/primitive from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/primitive.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/profiler from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/profiler.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/geometry-renderer from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/geometry-renderer.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/audio from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/audio.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/video from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/video.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/xr from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/xr.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/light-probe from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/light-probe.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/terrain from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/terrain.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/webview from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/webview.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/tween from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/tween.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/tiled-map from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/tiled-map.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/spine from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/spine.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/dragon-bones from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/dragon-bones.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/custom-pipeline from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/custom-pipeline.
+01:57:43 debug: Detected change: cce:/internal/x/prerequisite-imports. Last mtime: Thu Jan 01 1970 17:44:24 GMT+0800 (中国标准时间), Current mtime: Thu Jan 01 1970 08:00:19 GMT+0800 (中国标准时间)
+01:57:43 debug: Inspect cce:/internal/x/prerequisite-imports
+01:57:43 debug: Resolve file:///D:/editors/Creator/3.8.2/resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/Creator/3.8.2/resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/Creator/3.8.2/resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/Creator/3.8.2/resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/Creator/3.8.2/resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/GameEngine.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/GameEngine.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/GameEngine.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Detected change: cce:/internal/code-quality/cr.mjs. Last mtime: Fri May 02 2025 16:12:45 GMT+0800 (中国标准时间), Current mtime: Sat May 03 2025 01:57:23 GMT+0800 (中国标准时间)
+01:57:43 debug: Inspect cce:/internal/code-quality/cr.mjs
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/GameEngine.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../libs/colyseus-loader from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/colyseus-loader.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/colyseus-loader.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ./network from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts as cce:/internal/x/cc.
+01:57:43 debug: Create cjs interop url for 'file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.js'
+01:57:43 debug: Resolve ../colyseus-cocos-creator.js from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.mjs?cjs=&original=.js.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.mjs?cjs=&original=.js as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve ./colyseus-cocos-creator.js from file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.mjs?cjs=&original=.js as file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.js.
+01:57:43 debug: Resolve cce:/internal/ml/cjs-loader.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.js as cce:/internal/ml/cjs-loader.mjs.
+01:57:43 debug: Detected change: cce:/internal/ml/cjs-loader.mjs. Last mtime: Fri May 02 2025 16:12:45 GMT+0800 (中国标准时间), Current mtime: Sat May 03 2025 01:57:23 GMT+0800 (中国标准时间)
+01:57:43 debug: Inspect cce:/internal/ml/cjs-loader.mjs
+01:57:43 debug: Resolve cce:/internal/ml/cjs-loader.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.mjs?cjs=&original=.js as cce:/internal/ml/cjs-loader.mjs.
+01:57:43 debug: Resolve ./colyseus-cocos-creator.js from file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.mjs?cjs=&original=.js as file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.js.
+01:57:43 debug: Resolve ./colyseus-cocos-creator.js from file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.mjs?cjs=&original=.js as file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.js.
+01:57:43 debug: Resolve ../../shared/schemas/liar-dice-room-state-client from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/liar-dice-room-state-client.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/liar-dice-room-state-client.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/liar-dice-room-state-client.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ./player-state-client from file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/liar-dice-room-state-client.ts as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/player-state-client.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/player-state-client.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../../shared/schemas/player-state-client from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/player-state-client.ts.
+01:57:43 debug: Resolve ./login-manager from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/dice-animation-controller.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/dice-animation-controller.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/dice-animation-controller.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/dice-animation-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/dice-animation-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/dice-animation-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/error-handler.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/error-handler.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/error-handler.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/error-handler.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/error-handler.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/error-handler.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ./network from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/error-handler.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-engine.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-engine.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-engine.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-engine.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-engine.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-state-manager.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-state-manager.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-state-manager.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-state-manager.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-state-manager.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-state-manager.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ./network from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-state-manager.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/scene-initializer.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/scene-initializer.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/scene-initializer.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/scene-initializer.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/scene-initializer.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/scene-initializer.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ./app-initializer from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/scene-initializer.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../libs/colyseus-loader from file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/colyseus-loader.ts.
+01:57:43 debug: Resolve ../core/network from file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts.
+01:57:43 debug: Resolve ../core/login-manager from file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/colyseus-loader.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/colyseus-loader.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-browser.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-browser.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-browser.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-polyfill.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-polyfill.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-polyfill.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/node-polyfills.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/node-polyfills.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/node-polyfills.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/chat-item.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/chat-item.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/chat-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/chat-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/chat-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/count-list-item.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/count-list-item.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/count-list-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/count-list-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/count-list-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/dice-item.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/dice-item.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/dice-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/dice-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/dice-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/filter-tab.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/filter-tab.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/filter-tab.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/filter-tab.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/filter-tab.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/friend-request.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/friend-request.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/friend-request.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/friend-request.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/friend-request.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/friend-request.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ./player-item from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/friend-request.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/room-item.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/room-item.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/room-item.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/room-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/room-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/room-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/system-notice.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/system-notice.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/system-notice.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/system-notice.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/system-notice.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/liar-dice-room-state-client.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/liar-dice-room-state-client.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/liar-dice-room-state-client.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/liar-dice-room-state-client.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/player-state-client.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/player-state-client.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/player-state-client.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../prefabs/count-list-item from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/count-list-item.ts.
+01:57:43 debug: Resolve ../utils/bid-validator from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/utils/bid-validator.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/utils/bid-validator.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/utils/bid-validator.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/connection-status.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/connection-status.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/connection-status.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/connection-status.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/connection-status.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/connection-status.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../core/network from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/connection-status.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/dice-display-controller.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/dice-display-controller.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/dice-display-controller.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/dice-display-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/dice-display-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/dice-display-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/event-handler.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/event-handler.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/event-handler.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/event-handler.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ./network-manager from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/event-handler.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/network-manager.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/network-manager.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/network-manager.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../core/network from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/network-manager.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-history-panel.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-history-panel.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-history-panel.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-history-panel.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-history-panel.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-history-panel.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../core/game-state-manager from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-history-panel.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-state-manager.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-result-panel.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-result-panel.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-result-panel.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-result-panel.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-result-panel.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-result-panel.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ./player-display-controller from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-result-panel.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../core/network from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts.
+01:57:43 debug: Resolve ./player-display-controller from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts.
+01:57:43 debug: Resolve ./bid-controller from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts.
+01:57:43 debug: Resolve ./dice-display-controller from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/dice-display-controller.ts.
+01:57:43 debug: Resolve ./game-history-panel from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-history-panel.ts.
+01:57:43 debug: Resolve ./game-result-panel from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-result-panel.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../../prefabs/room-item from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/room-item.ts.
+01:57:43 debug: Resolve ../../prefabs/player-item from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts.
+01:57:43 debug: Resolve ../../prefabs/chat-item from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/chat-item.ts.
+01:57:43 debug: Resolve ../../prefabs/filter-tab from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/filter-tab.ts.
+01:57:43 debug: Resolve ../../prefabs/system-notice from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/system-notice.ts.
+01:57:43 debug: Resolve ../../prefabs/friend-request from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/friend-request.ts.
+01:57:43 debug: Resolve ./services/room-service from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../../../core/network from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts.
+01:57:43 debug: Resolve ../../../core/login-manager from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts.
+01:57:43 debug: Resolve ./services/friend-service from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/friend-service.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/friend-service.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/friend-service.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ./services/chat-service from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/chat-service.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/chat-service.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/chat-service.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/chat-service.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/chat-service.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/chat-service.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/friend-service.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/friend-service.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../core/login-manager from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts.
+01:57:43 debug: Resolve ../core/network from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts.
+01:57:43 debug: Resolve ../libs/colyseus-loader from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/colyseus-loader.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/network-manager.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/network-manager.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../core/network from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts.
+01:57:43 debug: Resolve ../core/error-handler from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/error-handler.ts.
+01:57:43 debug: Resolve ../../shared/schemas/player-state-client from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/player-state-client.ts.
+01:57:43 debug: Resolve ./ui-updater from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/ui-updater.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/ui-updater.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/ui-updater.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/ui-updater.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/ui-updater.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../prefabs/player-item from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/ui-updater.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts.
+01:57:43 debug: Resolve ./event-handler from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/event-handler.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/ui-updater.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/ui-updater.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/utils/bid-validator.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/utils/bid-validator.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-protocol.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-protocol.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-protocol.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-protocol.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve zod from file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-protocol.ts as file:///D:/editors/liars_dice_demo/node_modules/zod/lib/index.mjs.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-values.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-values.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-values.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve zod from file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.ts as file:///D:/editors/liars_dice_demo/node_modules/zod/lib/index.mjs.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/LiarDiceState.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/LiarDiceState.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/LiarDiceState.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/LiarDiceState.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ./PlayerState from file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/LiarDiceState.ts as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/PlayerState.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/PlayerState.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/PlayerState.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/PlayerState.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/liar-dice-room-state-client.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/liar-dice-room-state-client.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/player-state-client.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/player-state-client.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/types/game-types.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/types/game-types.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/shared/types/game-types.ts as cce:/internal/x/cc.
+01:57:43 debug: Target(editor) ends with cost 416.5721000134945ms.
+01:57:43 debug: Target(preview) build started.
+01:57:43 debug: Detected change: cce:/internal/x/cc. Last mtime: Thu Jan 01 1970 08:00:09 GMT+0800 (中国标准时间), Current mtime: Thu Jan 01 1970 08:00:19 GMT+0800 (中国标准时间)
+01:57:43 debug: Inspect cce:/internal/x/cc
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/2d from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/2d.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/sorting from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/sorting.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/animation from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/animation.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/audio from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/audio.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/base from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/base.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/dragon-bones from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/dragon-bones.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/gfx-webgl from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/gfx-webgl.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/gfx-webgl2 from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/gfx-webgl2.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/intersection-2d from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/intersection-2d.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/particle-2d from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/particle-2d.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/physics-2d-box2d from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/physics-2d-box2d.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/physics-2d-framework from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/physics-2d-framework.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/profiler from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/profiler.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/spine from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/spine.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/tiled-map from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/tiled-map.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/tween from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/tween.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/ui from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/ui.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/video from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/video.
+01:57:43 debug: Resolve cce:/internal/x/cc-fu/webview from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/webview.
+01:57:43 debug: Detected change: cce:/internal/x/prerequisite-imports. Last mtime: Thu Jan 01 1970 17:44:24 GMT+0800 (中国标准时间), Current mtime: Thu Jan 01 1970 08:00:19 GMT+0800 (中国标准时间)
+01:57:43 debug: Inspect cce:/internal/x/prerequisite-imports
+01:57:43 debug: Resolve file:///D:/editors/Creator/3.8.2/resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/Creator/3.8.2/resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/Creator/3.8.2/resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/Creator/3.8.2/resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/Creator/3.8.2/resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/GameEngine.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/GameEngine.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/GameEngine.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Detected change: cce:/internal/code-quality/cr.mjs. Last mtime: Fri May 02 2025 16:12:45 GMT+0800 (中国标准时间), Current mtime: Sat May 03 2025 01:57:23 GMT+0800 (中国标准时间)
+01:57:43 debug: Inspect cce:/internal/code-quality/cr.mjs
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/GameEngine.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../libs/colyseus-loader from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/colyseus-loader.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/colyseus-loader.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ./network from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts as cce:/internal/x/cc.
+01:57:43 debug: Create cjs interop url for 'file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.js'
+01:57:43 debug: Resolve ../colyseus-cocos-creator.js from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.mjs?cjs=&original=.js.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.mjs?cjs=&original=.js as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve ./colyseus-cocos-creator.js from file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.mjs?cjs=&original=.js as file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.js.
+01:57:43 debug: Resolve cce:/internal/ml/cjs-loader.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.js as cce:/internal/ml/cjs-loader.mjs.
+01:57:43 debug: Detected change: cce:/internal/ml/cjs-loader.mjs. Last mtime: Fri May 02 2025 16:12:45 GMT+0800 (中国标准时间), Current mtime: Sat May 03 2025 01:57:23 GMT+0800 (中国标准时间)
+01:57:43 debug: Inspect cce:/internal/ml/cjs-loader.mjs
+01:57:43 debug: Resolve cce:/internal/ml/cjs-loader.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.mjs?cjs=&original=.js as cce:/internal/ml/cjs-loader.mjs.
+01:57:43 debug: Resolve ./colyseus-cocos-creator.js from file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.mjs?cjs=&original=.js as file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.js.
+01:57:43 debug: Resolve ./colyseus-cocos-creator.js from file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.mjs?cjs=&original=.js as file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.js.
+01:57:43 debug: Resolve ../../shared/schemas/liar-dice-room-state-client from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/liar-dice-room-state-client.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/liar-dice-room-state-client.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/liar-dice-room-state-client.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ./player-state-client from file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/liar-dice-room-state-client.ts as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/player-state-client.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/player-state-client.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../../shared/schemas/player-state-client from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/player-state-client.ts.
+01:57:43 debug: Resolve ./login-manager from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/dice-animation-controller.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/dice-animation-controller.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/dice-animation-controller.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/dice-animation-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/dice-animation-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/dice-animation-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/error-handler.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/error-handler.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/error-handler.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/error-handler.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/error-handler.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/error-handler.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ./network from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/error-handler.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-engine.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-engine.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-engine.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-engine.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-engine.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-state-manager.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-state-manager.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-state-manager.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-state-manager.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-state-manager.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-state-manager.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ./network from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-state-manager.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/scene-initializer.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/scene-initializer.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/scene-initializer.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/scene-initializer.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/scene-initializer.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/scene-initializer.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ./app-initializer from file:///D:/editors/liars_dice_demo/client/assets/scripts/core/scene-initializer.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../libs/colyseus-loader from file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/colyseus-loader.ts.
+01:57:43 debug: Resolve ../core/network from file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts.
+01:57:43 debug: Resolve ../core/login-manager from file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/colyseus-loader.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/colyseus-loader.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-browser.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-browser.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-browser.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-polyfill.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-polyfill.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-polyfill.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/node-polyfills.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/node-polyfills.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/node-polyfills.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/chat-item.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/chat-item.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/chat-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/chat-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/chat-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/count-list-item.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/count-list-item.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/count-list-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/count-list-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/count-list-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/dice-item.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/dice-item.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/dice-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/dice-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/dice-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/filter-tab.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/filter-tab.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/filter-tab.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/filter-tab.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/filter-tab.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/friend-request.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/friend-request.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/friend-request.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/friend-request.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/friend-request.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/friend-request.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ./player-item from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/friend-request.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/room-item.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/room-item.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/room-item.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/room-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/room-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/room-item.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/system-notice.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/system-notice.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/system-notice.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/system-notice.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/system-notice.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/liar-dice-room-state-client.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/liar-dice-room-state-client.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/liar-dice-room-state-client.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/liar-dice-room-state-client.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/player-state-client.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/player-state-client.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/player-state-client.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../prefabs/count-list-item from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/count-list-item.ts.
+01:57:43 debug: Resolve ../utils/bid-validator from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/utils/bid-validator.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/utils/bid-validator.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/utils/bid-validator.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/connection-status.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/connection-status.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/connection-status.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/connection-status.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/connection-status.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/connection-status.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../core/network from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/connection-status.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/dice-display-controller.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/dice-display-controller.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/dice-display-controller.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/dice-display-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/dice-display-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/dice-display-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/event-handler.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/event-handler.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/event-handler.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/event-handler.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ./network-manager from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/event-handler.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/network-manager.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/network-manager.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/network-manager.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../core/network from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/network-manager.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-history-panel.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-history-panel.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-history-panel.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-history-panel.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-history-panel.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-history-panel.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../core/game-state-manager from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-history-panel.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-state-manager.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-result-panel.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-result-panel.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-result-panel.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-result-panel.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-result-panel.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-result-panel.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ./player-display-controller from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-result-panel.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../core/network from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts.
+01:57:43 debug: Resolve ./player-display-controller from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts.
+01:57:43 debug: Resolve ./bid-controller from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts.
+01:57:43 debug: Resolve ./dice-display-controller from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/dice-display-controller.ts.
+01:57:43 debug: Resolve ./game-history-panel from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-history-panel.ts.
+01:57:43 debug: Resolve ./game-result-panel from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-result-panel.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../../prefabs/room-item from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/room-item.ts.
+01:57:43 debug: Resolve ../../prefabs/player-item from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts.
+01:57:43 debug: Resolve ../../prefabs/chat-item from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/chat-item.ts.
+01:57:43 debug: Resolve ../../prefabs/filter-tab from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/filter-tab.ts.
+01:57:43 debug: Resolve ../../prefabs/system-notice from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/system-notice.ts.
+01:57:43 debug: Resolve ../../prefabs/friend-request from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/friend-request.ts.
+01:57:43 debug: Resolve ./services/room-service from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../../../core/network from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts.
+01:57:43 debug: Resolve ../../../core/login-manager from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts.
+01:57:43 debug: Resolve ./services/friend-service from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/friend-service.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/friend-service.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/friend-service.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ./services/chat-service from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/chat-service.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/chat-service.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/chat-service.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/chat-service.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/chat-service.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/chat-service.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/friend-service.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/friend-service.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../core/login-manager from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts.
+01:57:43 debug: Resolve ../core/network from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts.
+01:57:43 debug: Resolve ../libs/colyseus-loader from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/colyseus-loader.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/network-manager.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/network-manager.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../core/network from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts.
+01:57:43 debug: Resolve ../core/error-handler from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/error-handler.ts.
+01:57:43 debug: Resolve ../../shared/schemas/player-state-client from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/player-state-client.ts.
+01:57:43 debug: Resolve ./ui-updater from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/ui-updater.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/ui-updater.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/ui-updater.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/ui-updater.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/ui-updater.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ../prefabs/player-item from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/ui-updater.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts.
+01:57:43 debug: Resolve ./event-handler from file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/event-handler.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/ui-updater.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/ui-updater.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/utils/bid-validator.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/utils/bid-validator.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-protocol.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-protocol.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-protocol.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-protocol.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve zod from file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-protocol.ts as file:///D:/editors/liars_dice_demo/node_modules/zod/lib/index.mjs.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-values.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-values.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-values.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve zod from file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.ts as file:///D:/editors/liars_dice_demo/node_modules/zod/lib/index.mjs.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/LiarDiceState.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/LiarDiceState.ts.
+01:57:43 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/LiarDiceState.ts as cce:/internal/code-quality/cr.mjs.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/LiarDiceState.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve ./PlayerState from file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/LiarDiceState.ts as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/PlayerState.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/PlayerState.ts as cce:/internal/x/cc.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/PlayerState.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/PlayerState.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/liar-dice-room-state-client.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/liar-dice-room-state-client.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/player-state-client.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/player-state-client.ts.
+01:57:43 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/types/game-types.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/types/game-types.ts.
+01:57:43 debug: Resolve cc from file:///D:/editors/liars_dice_demo/client/assets/shared/types/game-types.ts as cce:/internal/x/cc.
+01:57:43 debug: Target(preview) ends with cost 363.3357000052929ms.
+01:57:44 debug: Pulling asset-db.
+01:57:45 debug: Fetch asset-db cost: 1150.070599988103ms.
+01:57:45 debug: Build iteration starts.
+Number of accumulated asset changes: 57
+Feature changed: false
+01:57:45 debug: Target(editor) build started.
+01:57:45 debug: Detected change: cce:/internal/x/prerequisite-imports. Last mtime: Thu Jan 01 1970 08:00:19 GMT+0800 (中国标准时间), Current mtime: Thu Jan 01 1970 08:00:21 GMT+0800 (中国标准时间)
+01:57:45 debug: Inspect cce:/internal/x/prerequisite-imports
+01:57:45 debug: Resolve file:///D:/editors/Creator/3.8.2/resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/Creator/3.8.2/resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts.
+01:57:45 debug: Create cjs interop url for 'file:///D:/editors/liars_dice_demo/client/assets/colyseus.js'
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/colyseus.js from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/colyseus.mjs?cjs=&original=.js.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/GameEngine.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/GameEngine.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/dice-animation-controller.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/dice-animation-controller.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/error-handler.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/error-handler.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-engine.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-engine.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-state-manager.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-state-manager.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/scene-initializer.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/scene-initializer.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/colyseus-loader.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/colyseus-loader.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-browser.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-browser.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-polyfill.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-polyfill.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/node-polyfills.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/node-polyfills.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/chat-item.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/chat-item.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/count-list-item.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/count-list-item.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/dice-item.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/dice-item.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/filter-tab.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/filter-tab.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/friend-request.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/friend-request.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/room-item.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/room-item.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/system-notice.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/system-notice.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/liar-dice-room-state-client.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/liar-dice-room-state-client.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/player-state-client.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/player-state-client.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/connection-status.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/connection-status.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/dice-display-controller.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/dice-display-controller.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/event-handler.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/event-handler.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-history-panel.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-history-panel.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-result-panel.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-result-panel.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/chat-service.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/chat-service.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/friend-service.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/friend-service.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/network-manager.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/network-manager.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/ui-updater.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/ui-updater.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/utils/bid-validator.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/utils/bid-validator.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-protocol.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-protocol.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-values.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-values.ts.
+01:57:45 debug: Create cjs interop url for 'file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.js'
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.js from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.mjs?cjs=&original=.js.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/LiarDiceState.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/LiarDiceState.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/PlayerState.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/PlayerState.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/liar-dice-room-state-client.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/liar-dice-room-state-client.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/player-state-client.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/player-state-client.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/types/game-types.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/types/game-types.ts.
+01:57:45 debug: Create cjs interop url for 'file:///D:/editors/liars_dice_demo/client/assets/colyseus.js'
+01:57:45 debug: Create cjs interop url for 'file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.js'
+01:57:45 debug: Target(editor) ends with cost 138.5781999975443ms.
+01:57:45 debug: Target(preview) build started.
+01:57:45 debug: Detected change: cce:/internal/x/prerequisite-imports. Last mtime: Thu Jan 01 1970 08:00:19 GMT+0800 (中国标准时间), Current mtime: Thu Jan 01 1970 08:00:21 GMT+0800 (中国标准时间)
+01:57:45 debug: Inspect cce:/internal/x/prerequisite-imports
+01:57:45 debug: Resolve file:///D:/editors/Creator/3.8.2/resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/Creator/3.8.2/resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts.
+01:57:45 debug: Create cjs interop url for 'file:///D:/editors/liars_dice_demo/client/assets/colyseus.js'
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/colyseus.js from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/colyseus.mjs?cjs=&original=.js.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/GameEngine.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/GameEngine.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/dice-animation-controller.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/dice-animation-controller.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/error-handler.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/error-handler.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-engine.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-engine.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-state-manager.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-state-manager.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/core/scene-initializer.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/core/scene-initializer.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/colyseus-loader.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/colyseus-loader.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-browser.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-browser.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-polyfill.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-polyfill.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/node-polyfills.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/node-polyfills.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/chat-item.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/chat-item.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/count-list-item.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/count-list-item.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/dice-item.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/dice-item.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/filter-tab.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/filter-tab.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/friend-request.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/friend-request.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/room-item.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/room-item.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/system-notice.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/system-notice.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/liar-dice-room-state-client.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/liar-dice-room-state-client.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/player-state-client.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/player-state-client.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/connection-status.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/connection-status.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/dice-display-controller.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/dice-display-controller.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/event-handler.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/event-handler.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-history-panel.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-history-panel.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-result-panel.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-result-panel.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/chat-service.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/chat-service.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/friend-service.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/friend-service.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/network-manager.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/network-manager.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/ui-updater.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/ui-updater.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/scripts/utils/bid-validator.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/scripts/utils/bid-validator.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-protocol.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-protocol.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-values.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-values.ts.
+01:57:45 debug: Create cjs interop url for 'file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.js'
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.js from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.mjs?cjs=&original=.js.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/LiarDiceState.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/LiarDiceState.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/PlayerState.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/PlayerState.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/liar-dice-room-state-client.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/liar-dice-room-state-client.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/player-state-client.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/player-state-client.ts.
+01:57:45 debug: Resolve file:///D:/editors/liars_dice_demo/client/assets/shared/types/game-types.ts from cce:/internal/x/prerequisite-imports as file:///D:/editors/liars_dice_demo/client/assets/shared/types/game-types.ts.
+01:57:45 debug: Create cjs interop url for 'file:///D:/editors/liars_dice_demo/client/assets/colyseus.js'
+01:57:45 debug: Create cjs interop url for 'file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.js'
+01:57:45 debug: Target(preview) ends with cost 141.30129998922348ms.

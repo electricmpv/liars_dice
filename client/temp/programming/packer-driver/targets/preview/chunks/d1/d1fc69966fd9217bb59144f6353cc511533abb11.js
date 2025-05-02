@@ -1,0 +1,147 @@
+System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _context) {
+  "use strict";
+
+  var _reporterNs, _cclegacy, PlayerState, LiarDiceRoomState, _crd;
+
+  function _reportPossibleCrUseOfPlayerState(extras) {
+    _reporterNs.report("PlayerState", "./player-state-client", _context.meta, extras);
+  }
+
+  _export("LiarDiceRoomState", void 0);
+
+  return {
+    setters: [function (_unresolved_) {
+      _reporterNs = _unresolved_;
+    }, function (_cc) {
+      _cclegacy = _cc.cclegacy;
+    }, function (_unresolved_2) {
+      PlayerState = _unresolved_2.PlayerState;
+    }],
+    execute: function () {
+      _crd = true;
+
+      _cclegacy._RF.push({}, "df401Zu67BJj7A8z76q7qro", "liar-dice-room-state-client", undefined);
+      /**
+       * 客户端专用的LiarDiceRoomState定义
+       * 用于解决Colyseus Schema导入问题
+       */
+
+
+      // 客户端使用的房间状态类，不使用装饰器
+      _export("LiarDiceRoomState", LiarDiceRoomState = class LiarDiceRoomState {
+        // 从服务器数据构造
+        constructor(data) {
+          // 玩家列表: key 是 sessionId
+          this.players = new Map();
+          // 参与当前游戏回合的玩家 sessionId 列表 (按顺序)
+          this.activePlayerIds = [];
+          // 当前轮到的玩家在 activePlayerIds 中的索引
+          this.currentPlayerIndex = 0;
+          // 当前叫价的点数 (1-6)
+          this.currentBidValue = 0;
+          // 0 表示尚未开始叫价
+          // 当前叫价的数量
+          this.currentBidCount = 0;
+          // 0 表示尚未开始叫价
+          // 上一个叫价的玩家 sessionId (用于质疑判断)
+          this.lastBidderSessionId = "";
+          // 游戏状态: waiting, playing, challenging, roundOver, finished
+          this.status = "waiting";
+          // 房主 sessionId (用于开始游戏、踢人等权限)
+          this.hostId = "";
+          // 当前游戏回合数
+          this.roundNumber = 0;
+          // 当前回合叫价次数 (用于判断是否可以质疑)
+          this.moveNumber = 0;
+          // 回合结算信息 (用于显示谁输了，输了多少骰子等)
+          this.roundResult = "";
+          // 本回合是否已经叫过 1 点 (影响 1 点是否为万能骰)
+          this.isOneCalledThisRound = false;
+
+          if (data) {
+            this.update(data);
+          }
+        } // 从服务器数据更新
+
+
+        update(data) {
+          if (!data) return; // 更新基本属性
+
+          if (data.currentPlayerIndex !== undefined) this.currentPlayerIndex = data.currentPlayerIndex;
+          if (data.currentBidValue !== undefined) this.currentBidValue = data.currentBidValue;
+          if (data.currentBidCount !== undefined) this.currentBidCount = data.currentBidCount;
+          if (data.lastBidderSessionId !== undefined) this.lastBidderSessionId = data.lastBidderSessionId;
+          if (data.status !== undefined) this.status = data.status;
+          if (data.hostId !== undefined) this.hostId = data.hostId;
+          if (data.roundNumber !== undefined) this.roundNumber = data.roundNumber;
+          if (data.moveNumber !== undefined) this.moveNumber = data.moveNumber;
+          if (data.roundResult !== undefined) this.roundResult = data.roundResult;
+          if (data.isOneCalledThisRound !== undefined) this.isOneCalledThisRound = data.isOneCalledThisRound; // 更新玩家ID列表
+
+          if (data.activePlayerIds) {
+            this.activePlayerIds = [...data.activePlayerIds];
+          } // 更新玩家列表
+
+
+          if (data.players) {
+            // 清空当前玩家列表
+            this.players.clear(); // 处理不同类型的players对象
+
+            if (typeof data.players.forEach === 'function') {
+              // 如果是MapSchema或类似Map的对象
+              data.players.forEach((playerData, sessionId) => {
+                this.players.set(sessionId, new (_crd && PlayerState === void 0 ? (_reportPossibleCrUseOfPlayerState({
+                  error: Error()
+                }), PlayerState) : PlayerState)(playerData));
+              });
+            } else if (typeof data.players === 'object') {
+              // 如果是普通对象
+              for (var sessionId in data.players) {
+                if (Object.prototype.hasOwnProperty.call(data.players, sessionId)) {
+                  this.players.set(sessionId, new (_crd && PlayerState === void 0 ? (_reportPossibleCrUseOfPlayerState({
+                    error: Error()
+                  }), PlayerState) : PlayerState)(data.players[sessionId]));
+                }
+              }
+            }
+          }
+        } // 获取当前玩家
+
+
+        getCurrentPlayer() {
+          if (this.activePlayerIds.length === 0 || this.currentPlayerIndex < 0 || this.currentPlayerIndex >= this.activePlayerIds.length) {
+            return undefined;
+          }
+
+          var currentPlayerId = this.activePlayerIds[this.currentPlayerIndex];
+          return this.players.get(currentPlayerId);
+        } // 获取上一个叫价的玩家
+
+
+        getLastBidder() {
+          if (!this.lastBidderSessionId) {
+            return undefined;
+          }
+
+          return this.players.get(this.lastBidderSessionId);
+        } // 获取所有玩家数组
+
+
+        getAllPlayers() {
+          return Array.from(this.players.values());
+        } // 获取活跃玩家数组（按照游戏顺序）
+
+
+        getActivePlayers() {
+          return this.activePlayerIds.map(id => this.players.get(id)).filter(player => player !== undefined);
+        }
+
+      });
+
+      _cclegacy._RF.pop();
+
+      _crd = false;
+    }
+  };
+});
+//# sourceMappingURL=d1fc69966fd9217bb59144f6353cc511533abb11.js.map

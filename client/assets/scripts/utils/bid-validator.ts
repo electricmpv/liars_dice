@@ -1,4 +1,4 @@
-import { Bid, Face } from '../../../../shared/protocols/game-types.d';
+import { Bid, Face } from '../../shared/protocols/game-types.d';
 
 /**
  * 叫价验证器

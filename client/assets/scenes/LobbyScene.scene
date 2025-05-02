@@ -4928,14 +4928,11 @@
     "statusLabel": {
       "__id__": 125
     },
-    "currentPlayerIndicator": null,
     "readyIndicator": null,
-    "activeIndicator": null,
     "offlineIndicator": null,
-    "diceContainer": null,
-    "diceCountLabel": null,
     "defaultAvatar": null,
     "aiAvatars": [],
+    "aiIcon": null,
     "_id": "0942ltYaZJ74hPyuiekUMK"
   },
   {

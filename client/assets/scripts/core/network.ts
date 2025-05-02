@@ -1,25 +1,22 @@
-// import { io, Socket } from "socket.io-client";
-import { ChatMessage, Room } from "../../../../shared/protocols/room-protocol";
-import { Face, Bid } from "../../../../shared/protocols/game-types.d";
-import { SocketAdapter } from "./socket-adapter";
+// 直接从Colyseus插件导入
+// @ts-ignore - 忽略类型检查，因为这是一个JavaScript文件
+import * as ColyseusModule from '../colyseus-cocos-creator.js';
+import { LiarDiceRoomState } from '../../shared/schemas/liar-dice-room-state-client';
+import { PlayerState } from '../../shared/schemas/player-state-client';
+import { LoginManager } from './login-manager';
 
 /**
  * 网络管理器错误类型定义
  */
 export enum NetworkErrorCode {
+    CLIENT_INIT_ERROR = 1000,
     CONNECTION_ERROR = 1001,
     CONNECTION_TIMEOUT = 1002,
     CONNECTION_CLOSED = 1003,
-    REQUEST_TIMEOUT = 1004,
-    SERVER_ERROR = 1005,
-    INVALID_RESPONSE = 1006,
+    ROOM_JOIN_ERROR = 2000,
     ROOM_NOT_FOUND = 2001,
     ROOM_FULL = 2002,
-    PLAYER_NOT_FOUND = 3001,
-    GAME_NOT_FOUND = 4001,
-    GAME_ALREADY_STARTED = 4002,
-    INVALID_BID = 4003,
-    NOT_YOUR_TURN = 4004,
+    SERVER_ERROR = 5000,
     UNKNOWN_ERROR = 9999
 }
 
@@ -27,7 +24,7 @@ export enum NetworkErrorCode {
  * 网络错误详情
  */
 export interface NetworkError {
-    code: NetworkErrorCode;
+    code: number;
     message: string;
     details?: any;
 }
@@ -38,611 +35,975 @@ export interface NetworkError {
 export enum NetworkStatus {
     DISCONNECTED = 'disconnected',
     CONNECTING = 'connecting',
+    JOINING_ROOM = 'joining',
     CONNECTED = 'connected',
-    RECONNECTING = 'reconnecting'
+    RECONNECTING = 'reconnecting',
+    ERROR = 'error'
 }
 
 /**
- * 网络连接状态
+ * 骰子游戏房间选项
  */
-export enum ConnectionStatus {
-  DISCONNECTED = "disconnected",
-  CONNECTING = "connecting",
-  CONNECTED = "connected",
-  ERROR = "error"
+export interface LiarDiceRoomOptions {
+    playerName: string;
+    create?: boolean;
+    roomId?: string;
 }
 
 /**
  * 网络管理器类
+ * 负责处理与Colyseus服务器的通信
  */
 export class NetworkManager {
-  private static instance: NetworkManager;
-  // private socket: Socket | null = null;
-  private serverUrl: string = "http://localhost:3000";
-  private reconnectAttempts: number = 0;
-  private maxReconnectAttempts: number = 3;
-  private reconnectTimeout: number = 5000; // 毫秒
-  private eventHandlers: Map<string, Array<(data?: any) => void>> = new Map();
-  private connectionStatus: ConnectionStatus = ConnectionStatus.DISCONNECTED;
-  private _status: NetworkStatus = NetworkStatus.DISCONNECTED;
-  private autoReconnect: boolean = true;
-  private retryCount: number = 0;
-  private MAX_RETRIES: number = 5;
-  private requestId: number = 0;
-  private pendingRequests: Map<string, { 
-      resolve: (value: any) => void, 
-      reject: (error: NetworkError) => void,
-      timer: number
-  }> = new Map();
-  
-  // 新增属性
-  private _roomId: string = '';
-  private _playerId: string = '';
-  private _room: Room | null = null;
-  private _gameId: string = '';
-
-  /**
-   * 获取单例实例
-   * @returns NetworkManager实例
-   */
-  public static getInstance(): NetworkManager {
-    if (!NetworkManager.instance) {
-      NetworkManager.instance = new NetworkManager();
+    private static instance: NetworkManager;
+    private colyseusClient: Colyseus.Client | null = null;
+    private colyseusRoom: Colyseus.Room<LiarDiceRoomState> | null = null;
+    
+    // 支持多个服务器 URL，按优先级排序
+    private serverUrls: string[] = [
+        "ws://localhost:3000",
+        "ws://127.0.0.1:3000",
+        "wss://liars-dice-server.example.com" // 如果有生产环境服务器，可以添加
+    ];
+    private currentServerUrlIndex: number = 0;
+    private get serverUrl(): string {
+        return this.serverUrls[this.currentServerUrlIndex];
     }
-    return NetworkManager.instance;
-  }
-
-  /**
-   * 获取当前连接状态
-   * @returns 连接状态
-   */
-  public getConnectionStatus(): ConnectionStatus {
-    return this.connectionStatus;
-  }
-
-  /**
-   * 连接到服务器
-   * @returns Promise
-   */
-  public connect(): Promise<void> {
-    // 如果已经连接，直接返回成功
-    if (this.connectionStatus === ConnectionStatus.CONNECTED) {
-      return Promise.resolve();
+    
+    // 状态和会话信息
+    private _status: NetworkStatus = NetworkStatus.DISCONNECTED;
+    private _roomId: string = '';
+    private _sessionId: string = '';
+    private _lastState: LiarDiceRoomState | null = null;
+    
+    // 事件处理器
+    private eventHandlers: Map<string, Array<(data?: any) => void>> = new Map();
+    
+    /**
+     * 私有构造函数，确保单例模式
+     */
+    private constructor() {
+        // 私有构造函数，防止直接实例化
     }
-
-    // 设置连接中状态
-    this.connectionStatus = ConnectionStatus.CONNECTING;
-    this._status = NetworkStatus.CONNECTING;
-    this.emit('connecting');
     
-    console.log("[网络][信息] 正在连接到服务器:", this.serverUrl);
-
-    // 创建Socket连接
-    return SocketAdapter.connect(this.serverUrl, {
-      reconnectionAttempts: this.maxReconnectAttempts,
-      timeout: this.reconnectTimeout,
-      transports: ["websocket", "polling"] // 添加polling作为备选传输方式
-    })
-    .then(() => {
-      console.log("[网络][信息] 连接成功");
-      this.connectionStatus = ConnectionStatus.CONNECTED;
-      this._status = NetworkStatus.CONNECTED;
-      this.emit('connected');
-      this.reconnectAttempts = 0;
-
-      // 设置socket事件监听
-      SocketAdapter.on('disconnect', () => {
-        console.log("[网络][信息] 连接断开");
-        this.connectionStatus = ConnectionStatus.DISCONNECTED;
-        this._status = NetworkStatus.DISCONNECTED;
-        this.emit('disconnected');
-      });
-
-      SocketAdapter.on('connect_error', (error: Error) => {
-        console.error("[网络][错误] 连接错误:", error);
-        this.connectionStatus = ConnectionStatus.ERROR;
-        this._status = NetworkStatus.DISCONNECTED;
-        this.emit('connectionError', error);
-      });
-
-      // 业务事件监听
-      this.setupBusinessEvents();
-    })
-    .catch((error) => {
-      console.error("[网络][错误] 连接失败:", error);
-      this.connectionStatus = ConnectionStatus.ERROR;
-      this._status = NetworkStatus.DISCONNECTED;
-      this.emit('connectionError', error);
-      
-      // 尝试重连
-      if (this.reconnectAttempts < this.maxReconnectAttempts) {
-        this.reconnectAttempts++;
-        console.log(`[网络][信息] 尝试重连 (${this.reconnectAttempts}/${this.maxReconnectAttempts})...`);
-        
-        setTimeout(() => {
-          this.connect();
-        }, this.reconnectTimeout);
-      }
-      
-      throw error;
-    });
-  }
-
-  /**
-   * 设置业务事件监听
-   */
-  private setupBusinessEvents(): void {
-    // 聊天消息
-    SocketAdapter.on('chatMessage', (message: ChatMessage) => {
-      console.log("[网络][信息] 收到聊天消息:", message);
-      this.emit('chatMessage', message);
-    });
-
-    // 房间更新
-    SocketAdapter.on('roomUpdate', (data: any) => { // 接收原始数据 data
-      console.log("[NetworkManager] Raw 'roomUpdate' event data received:", JSON.stringify(data).substring(0, 500)); // 打印原始数据
-      // 假设服务器发送的数据结构是 { room: Room }
-      const room = data?.room; // 从 data 中提取 room 对象
-      if (room) {
-        console.log("[网络][信息] 房间更新 (extracted):", room);
-        this._room = room; // 更新房间信息
-        this.emit('roomUpdate', room); // 分发提取出的 room 对象
-      } else {
-        console.error("[NetworkManager] Received 'roomUpdate' event but 'room' data is missing or invalid:", data);
-        // 可以选择是否分发一个错误或空事件
-        // this.emit('error', { message: "Invalid roomUpdate data received", details: data });
-      }
-    });
-
-    // 游戏开始
-    SocketAdapter.on('gameStart', (data: any) => {
-      console.log("[网络][信息] 游戏开始:", data);
-      if (data.gameId) {
-        this._gameId = data.gameId;
-      }
-      this.emit('gameStart', data);
-    });
-
-    // 游戏结束
-    SocketAdapter.on('game:game_end', (data: any) => { // 修正事件名称
-      console.log("[网络][信息] 游戏结束:", data);
-      this.emit('game:game_end', data); // 保持内部事件名一致或修改 GameUI 监听器
-    });
-    
-    // 骰子摇动结果
-    SocketAdapter.on('game:dice_roll', (data: any) => {
-      console.log("[网络][信息] 骰子结果:", data);
-      this.emit('game:dice_roll', data);
-    });
-    
-    // 竞价更新
-    SocketAdapter.on('game:bid_update', (data: any) => {
-      console.log("[NetworkManager] Received 'game:bid_update' from SocketAdapter. Data:", JSON.stringify(data)); // 添加日志
-      console.log("[网络][信息] 竞价更新:", data);
-      this.emit('game:bid_update', data);
-      console.log("[NetworkManager] Emitted 'game:bid_update' internally."); // 添加日志
-    });
-    
-    // 游戏状态更新
-    SocketAdapter.on('game:state_update', (data: any) => {
-      console.log("[NetworkManager] Received 'game:state_update' from SocketAdapter. Data:", JSON.stringify(data)); // 添加日志
-      console.log("[网络][信息] 游戏状态更新:", data);
-      this.emit('game:state_update', data);
-    });
-    
-    // 质疑结果
-    SocketAdapter.on('game:challenge_result', (data: any) => {
-      console.log("[NetworkManager] Received 'game:challenge_result' from SocketAdapter. Data:", JSON.stringify(data)); // 添加日志
-      console.log("[网络][信息] 质疑结果:", data);
-      this.emit('game:challenge_result', data);
-      console.log("[NetworkManager] Emitted 'game:challenge_result' internally."); // 添加日志
-    });
-  }
-
-  /**
-   * 断开连接
-   */
-  public disconnect(): void {
-    SocketAdapter.disconnect();
-    this.connectionStatus = ConnectionStatus.DISCONNECTED;
-    this._status = NetworkStatus.DISCONNECTED;
-  }
-
-  /**
-   * 发送消息
-   * @param event 事件名称
-   * @param data 数据
-   * @returns Promise
-   */
-  public send(event: string, data: any): Promise<void> {
-    if (!SocketAdapter || this.connectionStatus !== ConnectionStatus.CONNECTED) {
-      console.error("[网络][错误] 未连接到服务器，无法发送消息");
-      return Promise.reject(new Error("未连接到服务器"));
+    /**
+     * 获取单例实例
+     */
+    public static getInstance(): NetworkManager {
+        if (!NetworkManager.instance) {
+            NetworkManager.instance = new NetworkManager();
+        }
+        return NetworkManager.instance;
     }
-
-    return new Promise<void>((resolve) => {
-      SocketAdapter.emitWithAck(event, data, (response: any) => {
-        resolve();
-      });
-    });
-  }
-
-  /**
-   * 创建房间
-   * @param playerName 玩家名称
-   * @returns Promise<{success: boolean, data?: { playerId: string; room: Room }; error?: string}>
-   */
-  // 修改方法签名以匹配新的返回类型
-  public createRoom(playerName: string): Promise<{success: boolean, data?: { playerId: string; room: Room }; error?: string}> {
-      // 修改返回类型以匹配服务器回调的完整结构
-      return new Promise<{success: boolean, data?: { playerId: string; room: Room }; error?: string}>((resolve, reject) => {
-        SocketAdapter.emitWithAck('createRoom', { playerName }, (response: any) => {
-          // 直接将服务器返回的完整响应传递给 resolve
-          if (response.success && response.data && response.data.room) {
-             // 更新本地缓存（如果需要）
-             this._roomId = response.data.room.id;
-             this._playerId = response.data.playerId;
-             this._room = response.data.room; // 缓存房间信息
-             resolve(response); // 传递完整响应
-          } else {
-             // 如果响应结构不符合预期或 success 为 false
-             console.error('[Network] createRoom received invalid success response:', response);
-             reject(new Error(response.error || '创建房间失败或响应格式错误'));
-          }
-        });
-  
-        setTimeout(() => {
-          reject(new Error("创建房间超时"));
-        }, 5000);
-      });
-  }
-
-  /**
-   * 加入房间
-   * @param roomId 房间ID
-   * @param playerName 玩家名称
-   * @returns Promise<{success: boolean, playerId: string, room: Room}>
-   */
-  public joinRoom(roomId: string, playerName: string): Promise<{success: boolean, playerId: string, room: Room}> {
-      return new Promise((resolve, reject) => {
-        SocketAdapter.emitWithAck('joinRoom', { roomId, playerName }, (response: any) => {
-          if (response.success) {
-            this._roomId = roomId;
-            this._playerId = response.playerId;
-            this._room = response.room;
-            resolve({
-              success: true,
-              playerId: response.playerId,
-              room: response.room
+    
+    /**
+     * 获取当前网络状态
+     */
+    public get status(): NetworkStatus {
+        return this._status;
+    }
+    
+    /**
+     * 获取当前房间ID
+     */
+    public get roomId(): string {
+        return this._roomId;
+    }
+    
+    /**
+     * 获取当前会话ID
+     */
+    public get sessionId(): string {
+        return this._sessionId;
+    }
+    
+    /**
+     * 获取当前房间状态
+     */
+    public get roomState(): LiarDiceRoomState | null {
+        return this._lastState;
+    }
+    
+    /**
+     * 触发事件
+     * @param eventName 事件名称
+     * @param data 事件数据
+     */
+    public emit(eventName: string, data?: any): void {
+        const handlers = this.eventHandlers.get(eventName);
+        if (handlers) {
+            handlers.forEach(handler => {
+                try {
+                    handler(data);
+                } catch (error) {
+                    console.error(`[网络][错误] 事件处理器出错 ${eventName}:`, error);
+                }
             });
-          } else {
-            reject(new Error(response.error || '加入房间失败'));
-          }
-        });
-
-        setTimeout(() => {
-          reject(new Error("加入房间超时"));
-        }, 5000);
-      });
-  }
-
-  /**
-   * 发送聊天消息
-   * @param content 消息内容
-   * @returns Promise<void>
-   */
-  public sendChatMessage(content: string): Promise<void> {
-    if (!this._roomId || !this._playerId) {
-      return Promise.reject(new Error("未加入房间"));
-    }
-
-    return this.send('chatMessage', {
-      roomId: this._roomId,
-      senderId: this._playerId,
-      content
-    });
-  }
-
-  /**
-   * 离开房间
-   * @returns Promise<void>
-   */
-  public leaveRoom(): Promise<void> {
-    if (!this._roomId || !this._playerId) {
-      return Promise.resolve();
-    }
-
-    return new Promise((resolve, reject) => {
-      SocketAdapter.emitWithAck('leaveRoom', {
-        roomId: this._roomId,
-        playerId: this._playerId
-      }, (response: any) => {
-        if (response.success) {
-          this._roomId = '';
-          this._playerId = '';
-          this._room = null;
-          resolve();
-        } else {
-          reject(new Error(response.error || '离开房间失败'));
         }
-      });
-
-      setTimeout(() => {
-        reject(new Error("离开房间超时"));
-      }, 5000);
-    });
-  }
-
-  /**
-   * 获取房间ID
-   */
-  public get roomId(): string {
-    return this._roomId;
-  }
-
-  /**
-   * 获取玩家ID
-   */
-  public get playerId(): string {
-    return this._playerId;
-  }
-
-  /**
-   * 获取房间信息
-   */
-  public get room(): Room | null {
-    return this._room;
-  }
-  
-  /**
-   * 获取游戏ID
-   */
-  public get gameId(): string {
-    return this._gameId;
-  }
-
-  /**
-   * 添加事件监听
-   * @param event 事件名称
-   * @param handler 处理函数
-   */
-  public on(event: string, handler: (data?: any) => void): void {
-    if (!this.eventHandlers.has(event)) {
-      this.eventHandlers.set(event, []);
     }
-    this.eventHandlers.get(event)?.push(handler);
-
-    // 如果是Socket.IO事件，还需要添加对应的监听
-    if (SocketAdapter) {
-      SocketAdapter.on(event, handler);
+    
+    /**
+     * 注册事件监听
+     * @param eventName 事件名称
+     * @param handler 事件处理器
+     */
+    public on(eventName: string, handler: (data?: any) => void): void {
+        if (!this.eventHandlers.has(eventName)) {
+            this.eventHandlers.set(eventName, []);
+        }
+        const handlers = this.eventHandlers.get(eventName);
+        if (handlers && !handlers.includes(handler)) {
+            handlers.push(handler);
+        }
     }
-  }
-
-  /**
-   * 移除事件监听
-   * @param event 事件名称
-   * @param handler 处理函数
-   */
-  public off(event: string, handler: (data?: any) => void): void {
-    const handlers = this.eventHandlers.get(event);
-    if (handlers) {
-      const index = handlers.indexOf(handler);
-      if (index !== -1) {
-        handlers.splice(index, 1);
-      }
+    
+    /**
+     * 移除事件监听
+     * @param eventName 事件名称
+     * @param handler 事件处理器
+     */
+    public off(eventName: string, handler: (data?: any) => void): void {
+        const handlers = this.eventHandlers.get(eventName);
+        if (handlers) {
+            const index = handlers.indexOf(handler);
+            if (index !== -1) {
+                handlers.splice(index, 1);
+            }
+        }
     }
-
-    // SocketAdapter可能没有off方法，所以需要检查，并且检查 SocketAdapter 实例是否仍然有效
-    // (注意：SocketAdapter 本身没有 isValid 属性，我们假设检查它是否为 null 足够)
-    if (SocketAdapter && typeof SocketAdapter.off === 'function') {
+    
+    /**
+     * 移除特定事件的所有监听器
+     * @param eventName 事件名称
+     */
+    public offAll(eventName: string): void {
+        this.eventHandlers.delete(eventName);
+    }
+    
+    /**
+     * 创建错误对象
+     * @param code 错误代码
+     * @param message 错误消息
+     * @param details 详细信息
+     * @returns 错误对象
+     */
+    private _createError(code: NetworkErrorCode, message: string, details?: any): NetworkError {
+        return { code, message, details };
+    }
+    
+    /**
+     * 初始化Colyseus客户端
+     * @returns 成功返回true，失败返回false
+     */
+    private _initColyseusClient(): boolean {
         try {
-            // 尝试调用 off，如果 SocketAdapter 内部状态无效，可能会抛错，但至少不会因为 SocketAdapter 本身为 null 而报错
-            SocketAdapter.off(event, handler);
-        } catch (e) {
-            console.warn(`[NetworkManager] Error calling SocketAdapter.off for event "${event}":`, e);
+            if (!this.colyseusClient) {
+                console.log(`[网络] 初始化 Colyseus 客户端，服务器地址: ${this.serverUrl}`);
+                
+                // 获取Client构造函数，兼容不同的导出方式
+                let ClientCtor: any;
+                if (typeof ColyseusModule === "function") {
+                    // 情况A：ColyseusModule本身就是构造函数
+                    ClientCtor = ColyseusModule;
+                } else if (ColyseusModule.Client) {
+                    // 情况B：ColyseusModule.Client存在
+                    ClientCtor = ColyseusModule.Client;
+                } else if (ColyseusModule.default) {
+                    // 情况C：放在.default里
+                    ClientCtor = ColyseusModule.default.Client || ColyseusModule.default;
+                } else {
+                    throw new Error("无法找到 Colyseus.Client 构造函数");
+                }
+                
+                // 确保使用正确的协议和配置
+                const serverUrl = this.serverUrl;
+                console.log(`[网络] 使用服务器地址: ${serverUrl}`);
+                
+                // 禁用 withCredentials，避免 CORS 错误
+                this.colyseusClient = new ClientCtor(serverUrl, { 
+                    headers: {},
+                    urlBuilder: null,
+                    // 添加自定义配置来禁用 withCredentials
+                    httpOptions: { 
+                        withCredentials: false,
+                        // 添加重试和超时设置
+                        retryCount: 3,
+                        retryDelay: 1500,
+                        timeout: 10000
+                    } 
+                });
+            }
+            return true;
+        } catch (error) {
+            console.error('[网络][错误] 初始化 Colyseus 客户端失败:', error);
+            this._status = NetworkStatus.ERROR;
+            this.emit('error', this._createError(NetworkErrorCode.CLIENT_INIT_ERROR, '初始化客户端失败', error));
+            return false;
         }
     }
-  }
-
-  /**
-   * 触发事件
-   * @param event 事件名称
-   * @param data 数据
-   */
-  private emit(event: string, data?: any): void {
-    const handlers = this.eventHandlers.get(event);
-    if (handlers) {
-      handlers.forEach(handler => handler(data));
+    
+    /**
+     * 尝试下一个服务器URL
+     * @returns 是否有下一个URL可尝试
+     */
+    private _tryNextServerUrl(): boolean {
+        if (this.currentServerUrlIndex < this.serverUrls.length - 1) {
+            this.currentServerUrlIndex++;
+            console.log(`[网络] 尝试下一个服务器地址: ${this.serverUrl}`);
+            this.colyseusClient = null; // 重置客户端，强制重新初始化
+            return true;
+        }
+        return false;
     }
-  }
-
-  /**
-   * 发送请求并等待响应
-   * @param event 事件名
-   * @param data 请求数据
-   * @returns Promise<any>
-   */
-  public request(event: string, data: any): Promise<any> {
-    return new Promise((resolve, reject) => {
-      // 检查连接状态
-      if (!SocketAdapter || this.connectionStatus !== ConnectionStatus.CONNECTED) {
-        const error: NetworkError = {
-          code: NetworkErrorCode.CONNECTION_CLOSED,
-          message: '网络连接已关闭'
-        };
-        reject(error);
-        return;
-      }
-      
-      // 生成请求ID
-      const id = `${event}_${this.requestId++}`;
-      
-      // 设置超时定时器
-      const timerId = setTimeout(() => {
-        // 清除挂起的请求记录
-        this.pendingRequests.delete(id);
-        const error: NetworkError = {
-          code: NetworkErrorCode.REQUEST_TIMEOUT,
-          message: `请求超时: ${event}`,
-          details: { event, data }
-        };
-        console.error(`[Network] 请求超时: ${event}`, data);
-        this.emit('error', error);
-        reject(error);
-      }, 10000); // 10秒超时
-
-      // 存储挂起的请求
-      this.pendingRequests.set(id, { resolve, reject, timer: timerId as unknown as number }); // Store timerId
-
-      // 发送请求
-      SocketAdapter.emitWithAck(event, { ...data, requestId: id }, (response: any) => {
-        // 清除超时定时器，因为已收到响应
-        clearTimeout(timerId);
-        // 从挂起列表中移除
-        this.pendingRequests.delete(id);
-
-        console.log(`[Network] 收到响应: ${event}`, response);
-
-        // 如果响应包含错误
-        if (!response.success) {
-          const error: NetworkError = {
-            code: NetworkErrorCode.SERVER_ERROR,
-            message: response.error || '服务器错误',
-            details: { event, data }
-          };
-          
-          // 触发错误事件
-          this.emit('error', error);
-          
-          reject(error);
-          return;
+    
+    /**
+     * 重置服务器URL索引到第一个
+     */
+    private _resetServerUrlIndex(): void {
+        this.currentServerUrlIndex = 0;
+    }
+    
+    /**
+     * 加入或创建骰子游戏房间
+     * @param options 选项，如玩家名称、是否创建新房间、房间ID等
+     * @returns Promise<Colyseus.Room<LiarDiceRoomState>>
+     */
+    public async joinLiarDiceRoom(options: LiarDiceRoomOptions): Promise<Colyseus.Room<LiarDiceRoomState>> {
+        // 1. 确保客户端已初始化
+        if (!this._initColyseusClient()) {
+            throw this._createError(NetworkErrorCode.CLIENT_INIT_ERROR, '初始化客户端失败');
         }
         
-        // 成功响应
-        resolve(response);
-      });
-      // 超时处理已移到前面
-    });
-  }
-
-  /**
-   * 处理连接错误
-   */
-  private handleConnectionError(): void {
-    console.error('[Network] 连接错误');
-    
-    const networkError: NetworkError = {
-      code: NetworkErrorCode.CONNECTION_ERROR,
-      message: '服务器连接错误'
-    };
-    
-    // 更新状态
-    this._status = NetworkStatus.DISCONNECTED;
-    
-    // 触发错误事件
-    this.emit('error', networkError);
-    
-    // 尝试重连
-    if (this.autoReconnect && this.retryCount < this.MAX_RETRIES) {
-      this._status = NetworkStatus.RECONNECTING;
-      this.emit('status', this._status);
-      
-      this.retryCount++;
-      
-      console.log(`[Network] 尝试重连 (${this.retryCount}/${this.MAX_RETRIES})...`);
-      
-      // 指数退避重试
-      const delay = Math.min(1000 * Math.pow(2, this.retryCount - 1), 10000);
-      
-      setTimeout(() => {
-        this.connect();
-      }, delay);
-    } else if (this.retryCount >= this.MAX_RETRIES) {
-      // 达到最大重试次数
-      this.emit('reconnect_failed');
-      
-      // 重置重试计数
-      this.retryCount = 0;
+        // 2. 如果已在房间中，先离开
+        if (this.colyseusRoom) {
+            console.warn("[网络][警告] 已经在一个房间中，将先离开旧房间...");
+            try {
+                await this.leaveRoom();
+            } catch (error) {
+                console.error("[网络][错误] 离开旧房间失败:", error);
+                // 继续尝试加入新房间
+            }
+        }
+        
+        // 3. 设置状态
+        this._status = NetworkStatus.JOINING_ROOM;
+        this.emit('statusChange', this._status);
+        
+        try {
+            console.log(`[网络] ${options.create ? '创建' : '加入'}房间, 玩家名称: ${options.playerName}${options.roomId ? ', 房间ID: ' + options.roomId : ''}`);
+            
+            // 4. 根据选项决定是创建还是加入房间
+            if (options.create) {
+                // 创建新房间
+                this.colyseusRoom = await this.colyseusClient!.create<LiarDiceRoomState>("liar_dice", {
+                    playerName: options.playerName,
+                    userId: LoginManager.currentPlayerId // 传递用户ID
+                });
+            } else if (options.roomId) {
+                // 加入指定ID的房间
+                this.colyseusRoom = await this.colyseusClient!.joinById<LiarDiceRoomState>(
+                    options.roomId,
+                    {
+                        playerName: options.playerName,
+                        userId: LoginManager.currentPlayerId
+                    }
+                );
+            } else {
+                // 加入任意可用房间，如果没有则创建
+                this.colyseusRoom = await this.colyseusClient!.joinOrCreate<LiarDiceRoomState>(
+                    "liar_dice",
+                    {
+                        playerName: options.playerName,
+                        userId: LoginManager.currentPlayerId
+                    }
+                );
+            }
+            
+            // 5. 设置房间相关信息
+            this._roomId = this.colyseusRoom.roomId;
+            this._sessionId = this.colyseusRoom.sessionId;
+            this._status = NetworkStatus.CONNECTED;
+            
+            // 6. 设置房间监听器
+            this._setupRoomListeners();
+            
+            // 7. 触发连接成功事件
+            this.emit('connected', {
+                roomId: this._roomId,
+                sessionId: this._sessionId
+            });
+            this.emit('statusChange', this._status);
+            
+            console.log(`[网络] 成功${options.create ? '创建' : '加入'}房间, ID: ${this._roomId}, 会话ID: ${this._sessionId}`);
+            
+            return this.colyseusRoom;
+            
+        } catch (error) {
+            // 8. 处理连接错误
+            console.error(`[网络][错误] ${options.create ? '创建' : '加入'}房间失败:`, error);
+            
+            // 尝试下一个服务器地址
+            if (this._tryNextServerUrl()) {
+                console.log('[网络] 尝试使用下一个服务器地址重新连接...');
+                return this.joinLiarDiceRoom(options);
+            }
+            
+            // 重置服务器索引，以便下次从第一个开始尝试
+            this._resetServerUrlIndex();
+            
+            // 设置错误状态
+            this._status = NetworkStatus.ERROR;
+            this.emit('statusChange', this._status);
+            
+            // 根据错误类型创建具体错误
+            let errorCode = NetworkErrorCode.ROOM_JOIN_ERROR;
+            let errorMessage = '加入房间失败';
+            
+            if (error instanceof Error) {
+                if (error.message.includes('not found')) {
+                    errorCode = NetworkErrorCode.ROOM_NOT_FOUND;
+                    errorMessage = '房间不存在';
+                } else if (error.message.includes('full')) {
+                    errorCode = NetworkErrorCode.ROOM_FULL;
+                    errorMessage = '房间已满';
+                } else if (error.message.includes('timeout') || error.message.includes('timed out')) {
+                    errorCode = NetworkErrorCode.CONNECTION_TIMEOUT;
+                    errorMessage = '连接超时';
+                }
+            }
+            
+            const networkError = this._createError(errorCode, errorMessage, error);
+            this.emit('error', networkError);
+            throw networkError;
+        }
     }
-  }
-
-  /**
-   * 获取当前网络状态
-   */
-  public get status(): NetworkStatus {
-    return this._status;
-  }
-
-  /**
-   * 开始游戏
-   * @returns Promise<{gameId: string}>
-   */
-  public startGame(): Promise<{gameId: string}> {
-    if (!this._roomId || !this._playerId) {
-      return Promise.reject(new Error("未加入房间"));
+    
+    /**
+     * 离开当前房间
+     */
+    public async leaveRoom(): Promise<void> {
+        if (this.colyseusRoom) {
+            try {
+                console.log(`[网络] 离开房间: ${this._roomId}`);
+                await this.colyseusRoom.leave();
+            } catch (error) {
+                console.error('[网络][错误] 离开房间时出错:', error);
+            } finally {
+                this._cleanupRoomConnection(NetworkErrorCode.CONNECTION_CLOSED);
+            }
+        } else {
+            console.warn('[网络][警告] 尝试离开房间，但当前未在任何房间中');
+        }
     }
     
-    return this.request('startGame', { roomId: this._roomId });
-  }
-  
-  /**
-   * 摇骰子
-   * @param gameId 游戏ID
-   * @param playerId 玩家ID
-   * @returns Promise<{dices: Face[]}>
-   */
-  public rollDice(gameId: string, playerId: string): Promise<{dices: Face[]}> {
-    if (!gameId || !playerId) {
-      return Promise.reject(new Error("游戏ID或玩家ID无效"));
+    /**
+     * 断开与服务器的连接
+     */
+    public disconnect(): void {
+        this.leaveRoom();
+        if (this.colyseusClient) {
+            console.log('[网络] 断开与服务器的连接');
+            // Colyseus.js 客户端没有显式的断开连接方法，离开房间即可
+            this.colyseusClient = null;
+        }
+        this._status = NetworkStatus.DISCONNECTED;
+        this.emit('statusChange', this._status);
+        this.emit('disconnected');
     }
     
-    return this.request('game:roll_dice', { 
-      gameId,
-      playerId
-    });
-  }
-  
-  /**
-   * 发送竞价
-   * @param gameId 游戏ID
-   * @param playerId 玩家ID
-   * @param bid 竞价[面值,数量]
-   * @returns Promise<void>
-   */
-  public placeBid(gameId: string, playerId: string, bid: Bid): Promise<void> {
-    return this.request('game:bid', {
-      gameId,
-      playerId,
-      bid
-    });
-  }
-  
-  /**
-   * 发送质疑
-   * @param gameId 游戏ID
-   * @param playerId 玩家ID
-   * @returns Promise<void>
-   */
-  public challenge(gameId: string, playerId: string): Promise<void> {
-    return this.request('game:challenge', {
-      gameId,
-      playerId
-    });
-  }
-  
-  /**
-   * 发送即时喊（Spot On）
-   * @param gameId 游戏ID
-   * @param playerId 玩家ID
-   * @returns Promise<void>
-   */
-  public spotOn(gameId: string, playerId: string): Promise<void> {
-    return this.request('game:spot_on', {
-      gameId,
-      playerId
-    });
-  }
+    /**
+     * 向服务器发送消息
+     * @param type 消息类型
+     * @param payload 消息内容
+     */
+    public send(type: string, payload?: any): void {
+        if (!this.colyseusRoom) {
+            console.error("[网络] 不在房间内，无法发送消息:", type);
+            this.emit('error', this._createError(NetworkErrorCode.CONNECTION_CLOSED, '不在房间内，无法发送消息'));
+            return;
+        }
+        
+        try {
+            console.log(`[网络] 发送消息: ${type}`, payload);
+            this.colyseusRoom.send(type, payload);
+        } catch (error) {
+            console.error(`[网络][错误] 发送消息 ${type} 失败:`, error);
+            this.emit('error', this._createError(NetworkErrorCode.CONNECTION_ERROR, '发送消息失败', error));
+        }
+    }
+    
+    /**
+     * 初始化客户端
+     * @private
+     * @returns 是否初始化成功
+     */
+    private _initClient(): boolean {
+        return this._initColyseusClient();
+    }
+    
+    // 已删除重复的 getAvailableRooms 方法，使用下面的实现
+    
+    /**
+     * 设置房间监听器
+     */
+    private _setupRoomListeners(): void {
+        if (!this.colyseusRoom) {
+            console.error('[网络] 无法设置房间监听器：房间未初始化');
+            return;
+        }
+        
+        console.log(`[网络][${this.colyseusRoom.roomId}] 设置房间监听器...`);
+        
+        try {
+            // 尝试访问state，如果出错则说明Schema版本不兼容
+            const stateTest = this.colyseusRoom.state;
+            console.log(`[网络] 房间状态类型: ${stateTest ? typeof stateTest : 'undefined'}`);
+            
+            // 监听房间状态变化
+            this.colyseusRoom.onStateChange((state: any) => {
+                try {
+                    // 将服务器的Schema状态转换为客户端可用的普通对象
+                    const clientState = this._convertSchemaToClientState(state);
+                    this._lastState = clientState;
+                    this.emit('stateChange', clientState);
+                } catch (error) {
+                    console.error('[网络] 处理状态变化时出错:', error);
+                }
+            });
+            
+            // 监听房间错误
+            this.colyseusRoom.onError((code: number, message?: string) => {
+                console.error(`[网络][错误] 房间错误: ${code} - ${message}`);
+                this.emit('error', this._createError(
+                    NetworkErrorCode.SERVER_ERROR,
+                    message || '服务器错误',
+                    { code }
+                ));
+            });
+            
+            // 监听房间离开事件
+            this.colyseusRoom.onLeave((code: number) => {
+                console.log(`[网络] 离开房间，代码: ${code}`);
+                this._cleanupRoomConnection(code);
+            });
+            
+            // 监听所有消息
+            this.colyseusRoom.onMessage("*", (data: any) => {
+                try {
+                    // 从数据中提取类型和消息
+                    const { type, message } = data;
+                    const eventType = String(type);
+                    console.log(`[网络] 收到消息: ${eventType}`, message);
+                    
+                    // 触发对应类型的事件
+                    this.emit(eventType, message);
+                    
+                    // 同时触发通用消息事件
+                    this.emit('message', { type: eventType, message });
+                } catch (error) {
+                    console.error('[网络] 处理消息时出错:', error);
+                }
+            });
+            
+            // 尝试安全地处理初始玩家列表
+            this._safelyProcessInitialPlayers();
+            
+            // 使用 onStateChange 来监听玩家变化
+            this.colyseusRoom.onStateChange((state: any) => {
+                try {
+                    this._safelyProcessPlayerChanges(state);
+                } catch (error) {
+                    console.error('[网络] 处理玩家变化时出错:', error);
+                }
+            });
+        } catch (error) {
+            console.error('[网络] 设置房间监听器时出错:', error);
+            // 尝试基本的错误恢复
+            this.emit('error', this._createError(
+                NetworkErrorCode.CLIENT_INIT_ERROR,
+                '设置房间监听器失败，可能是Schema版本不兼容',
+                { originalError: error }
+            ));
+        }
+    }
+    
+    /**
+     * 安全地处理初始玩家列表
+     * @private
+     */
+    private _safelyProcessInitialPlayers(): void {
+        try {
+            if (!this.colyseusRoom || !this.colyseusRoom.state) return;
+            
+            // 尝试多种方式访问玩家列表
+            const state = this.colyseusRoom.state;
+            
+            // 方法1: 使用forEach (如果是MapSchema)
+            if (state.players && typeof state.players.forEach === 'function') {
+                state.players.forEach((player: any, sessionId: string) => {
+                    try {
+                        const playerData = this._extractPlayerData(player);
+                        console.log(`[网络] 初始玩家: ${playerData.name} (${sessionId})`);
+                        this.emit('playerJoin', { player: playerData, sessionId });
+                    } catch (e) {
+                        console.error(`[网络] 处理玩家数据时出错:`, e);
+                    }
+                });
+                return;
+            }
+            
+            // 方法2: 尝试作为普通对象处理
+            if (state.players && typeof state.players === 'object') {
+                Object.keys(state.players).forEach(sessionId => {
+                    try {
+                        const player = (state.players as any)[sessionId];
+                        const playerData = this._extractPlayerData(player);
+                        console.log(`[网络] 初始玩家(对象模式): ${playerData.name} (${sessionId})`);
+                        this.emit('playerJoin', { player: playerData, sessionId });
+                    } catch (e) {
+                        console.error(`[网络] 处理玩家数据时出错:`, e);
+                    }
+                });
+                return;
+            }
+            
+            console.log(`[网络] 无法遍历玩家列表，可能是 Schema 版本不兼容`);
+        } catch (error) {
+            console.error('[网络] 处理初始玩家列表时出错:', error);
+        }
+    }
+    /**
+     * 安全地处理玩家变化
+     * @param state 服务器状态
+     * @private
+     */
+    private _safelyProcessPlayerChanges(state: any): void {
+        if (!state || !this._lastState) return;
+        
+        try {
+            // 将服务器状态转换为客户端可用的格式
+            const clientState = this._convertSchemaToClientState(state);
+            
+            // 处理玩家加入和状态变化
+            if (clientState.players) {
+                Object.entries(clientState.players).forEach(([sessionId, player]) => {
+                    const previousPlayers = this._lastState?.players;
+                    let previousPlayer = null;
+                    
+                    // 尝试获取之前的玩家数据
+                    if (previousPlayers instanceof Map) {
+                        previousPlayer = previousPlayers.get(sessionId);
+                    } else if (previousPlayers && typeof previousPlayers === 'object') {
+                        previousPlayer = (previousPlayers as any)[sessionId];
+                    }
+                    
+                    if (!previousPlayer) {
+                        // 新玩家加入
+                        console.log(`[网络] 玩家加入: ${player.name} (${sessionId})`);
+                        this.emit('playerJoin', { player, sessionId });
+                    } else if (JSON.stringify(previousPlayer) !== JSON.stringify(player)) {
+                        // 玩家状态变化
+                        console.log(`[网络] 玩家 ${player.name} (${sessionId}) 状态变化`);
+                        this.emit('playerChange', { player, sessionId });
+                    }
+                });
+            }
+            
+            // 处理玩家离开
+            if (this._lastState.players) {
+                // 获取上一个状态的玩家列表
+                const lastPlayers = this._lastState.players instanceof Map ? 
+                    Array.from(this._lastState.players.entries()) : 
+                    Object.entries(this._lastState.players);
+                
+                // 遍历玩家列表，使用类型断言确保类型安全
+                lastPlayers.forEach((entry) => {
+                    const sessionId = entry[0];
+                    const player = entry[1] as PlayerState;
+                    const currentPlayers = clientState.players;
+                    let playerExists = false;
+                    
+                    // 检查玩家是否还存在
+                    if (currentPlayers instanceof Map) {
+                        playerExists = currentPlayers.has(sessionId);
+                    } else if (currentPlayers && typeof currentPlayers === 'object') {
+                        playerExists = sessionId in currentPlayers;
+                    }
+                    
+                    if (!playerExists) {
+                        // 玩家离开
+                        console.log(`[网络] 玩家离开: ${player.name} (${sessionId})`);
+                        this.emit('playerLeave', { player: player as PlayerState, sessionId });
+                    }
+                });
+            }
+            
+            this._lastState = clientState;
+        } catch (error) {
+            console.error('[网络] 处理玩家变化时出错:', error);
+        }
+    }
+    
+    private _convertSchemaToClientState(state: any): LiarDiceRoomState {
+        if (!state) return new LiarDiceRoomState();
+        
+        try {
+            // 创建新的客户端状态对象
+            const clientState = new LiarDiceRoomState();
+            
+            // 复制基本属性
+            if (state.activePlayerIds) {
+                clientState.activePlayerIds = this._extractArrayData(state.activePlayerIds);
+            }
+            
+            clientState.currentPlayerIndex = this._getNumberProperty(state, 'currentPlayerIndex', 0);
+            clientState.currentBidValue = this._getNumberProperty(state, 'currentBidValue', 0);
+            clientState.currentBidCount = this._getNumberProperty(state, 'currentBidCount', 0);
+            clientState.lastBidderSessionId = this._getStringProperty(state, 'lastBidderSessionId', '');
+            clientState.status = this._getStringProperty(state, 'status', 'waiting');
+            clientState.hostId = this._getStringProperty(state, 'hostId', '');
+            clientState.roundNumber = this._getNumberProperty(state, 'roundNumber', 0);
+            clientState.moveNumber = this._getNumberProperty(state, 'moveNumber', 0);
+            clientState.roundResult = this._getStringProperty(state, 'roundResult', '');
+            clientState.isOneCalledThisRound = this._getBooleanProperty(state, 'isOneCalledThisRound', false);
+            
+            // 处理玩家列表
+            if (state.players) {
+                // 如果是MapSchema，使用forEach
+                if (typeof state.players.forEach === 'function') {
+                    state.players.forEach((player: any, sessionId: string) => {
+                        const playerData = this._extractPlayerData(player);
+                        clientState.players.set(sessionId, playerData);
+                    });
+                }
+                // 如果是普通对象，使用Object.entries
+                else if (typeof state.players === 'object') {
+                    Object.entries(state.players).forEach(([sessionId, player]) => {
+                        const playerData = this._extractPlayerData(player as any);
+                        clientState.players.set(sessionId, playerData);
+                    });
+                }
+            }
+            
+            return clientState;
+        } catch (error) {
+            console.error('[网络] 转换Schema状态时出错:', error);
+            return new LiarDiceRoomState();
+        }
+    }
+    
+    /**
+     * 提取玩家数据
+     * @param player 服务器玩家数据
+     * @returns 客户端玩家数据
+     * @private
+     */
+    private _extractPlayerData(player: any): PlayerState {
+        const playerData = new PlayerState();
+        
+        if (!player) return playerData;
+        
+        try {
+            // 复制基本属性
+            playerData.id = this._getStringProperty(player, 'id', '');
+            playerData.sessionId = this._getStringProperty(player, 'sessionId', '');
+            playerData.name = this._getStringProperty(player, 'name', '');
+            playerData.diceCount = this._getNumberProperty(player, 'diceCount', 0);
+            playerData.isReady = this._getBooleanProperty(player, 'isReady', false);
+            playerData.isConnected = this._getBooleanProperty(player, 'isConnected', true);
+            playerData.isAI = this._getBooleanProperty(player, 'isAI', false);
+            playerData.aiType = this._getStringProperty(player, 'aiType', '');
+            
+            // 如果有骰子数据，也复制过来
+            if (player.currentDices) {
+                playerData.currentDices = this._extractArrayData(player.currentDices);
+            }
+        } catch (error) {
+            console.error('[网络] 提取玩家数据时出错:', error);
+        }
+        
+        return playerData;
+    }
+    
+    /**
+     * 安全地提取数组数据
+     * @param arr 数组或ArraySchema
+     * @returns 普通数组
+     * @private
+     */
+    private _extractArrayData(arr: any): any[] {
+        if (!arr) return [];
+        
+        try {
+            // 如果是ArraySchema，使用toArray方法
+            if (typeof arr.toArray === 'function') {
+                return arr.toArray();
+            }
+            
+            // 如果是普通数组，直接返回
+            if (Array.isArray(arr)) {
+                return [...arr];
+            }
+            
+            // 如果是类数组对象，转换为数组
+            if (typeof arr.forEach === 'function') {
+                const result: any[] = [];
+                arr.forEach((item: any) => result.push(item));
+                return result;
+            }
+            
+            // 如果是普通对象，尝试转换为数组
+            if (typeof arr === 'object') {
+                return Object.values(arr);
+            }
+        } catch (error) {
+            console.error('[网络] 提取数组数据时出错:', error);
+        }
+        
+        return [];
+    }
+    
+    /**
+     * 安全地获取字符串属性
+     * @param obj 对象
+     * @param prop 属性名
+     * @param defaultValue 默认值
+     * @returns 字符串值
+     * @private
+     */
+    private _getStringProperty(obj: any, prop: string, defaultValue: string = ''): string {
+        if (!obj) return defaultValue;
+        
+        try {
+            // 尝试直接访问
+            if (obj[prop] !== undefined) {
+                return String(obj[prop]);
+            }
+            
+            // 尝试通过getter访问
+            if (typeof obj.get === 'function') {
+                const value = obj.get(prop);
+                if (value !== undefined) {
+                    return String(value);
+                }
+            }
+        } catch (error) {
+            // 忽略错误，返回默认值
+        }
+        
+        return defaultValue;
+    }
+    
+    /**
+     * 安全地获取数字属性
+     * @param obj 对象
+     * @param prop 属性名
+     * @param defaultValue 默认值
+     * @returns 数字值
+     * @private
+     */
+    private _getNumberProperty(obj: any, prop: string, defaultValue: number = 0): number {
+        if (!obj) return defaultValue;
+        
+        try {
+            // 尝试直接访问
+            if (obj[prop] !== undefined) {
+                const num = Number(obj[prop]);
+                return isNaN(num) ? defaultValue : num;
+            }
+            
+            // 尝试通过getter访问
+            if (typeof obj.get === 'function') {
+                const value = obj.get(prop);
+                if (value !== undefined) {
+                    const num = Number(value);
+                    return isNaN(num) ? defaultValue : num;
+                }
+            }
+        } catch (error) {
+            // 忽略错误，返回默认值
+        }
+        
+        return defaultValue;
+    }
+    
+    /**
+     * 安全地获取布尔属性
+     * @param obj 对象
+     * @param prop 属性名
+     * @param defaultValue 默认值
+     * @returns 布尔值
+     * @private
+     */
+    private _getBooleanProperty(obj: any, prop: string, defaultValue: boolean = false): boolean {
+        if (!obj) return defaultValue;
+        
+        try {
+            // 尝试直接访问
+            if (obj[prop] !== undefined) {
+                return Boolean(obj[prop]);
+            }
+            
+            // 尝试通过getter访问
+            if (typeof obj.get === 'function') {
+                const value = obj.get(prop);
+                if (value !== undefined) {
+                    return Boolean(value);
+                }
+            }
+        } catch (error) {
+            // 忽略错误，返回默认值
+        }
+        
+        return defaultValue;
+    }
+    
+    /**
+     * 清理房间连接相关状态并触发断开连接事件
+     * @param code 断开连接的代码
+     */
+    private _cleanupRoomConnection(code: number): void {
+        if (!this.colyseusRoom && this._status === NetworkStatus.DISCONNECTED) {
+            return; // 避免重复清理
+        }
+        
+        // 记录之前的房间ID，用于日志
+        const prevRoomId = this._roomId;
+        
+        // 重置房间相关状态
+        this.colyseusRoom = null;
+        this._roomId = '';
+        this._sessionId = '';
+        this._lastState = null;
+        this._status = NetworkStatus.DISCONNECTED;
+        
+        // 触发状态变化和断开连接事件
+        console.log(`[网络] 房间连接已清理: ${prevRoomId}`);
+        this.emit('statusChange', this._status);
+        this.emit('roomDisconnected', { code, roomId: prevRoomId });
+    }
+    
+    /**
+     * 获取可用房间列表
+     * @param roomName 可选的房间名称过滤
+     * @returns Promise<RoomAvailable[]>
+     */
+    public async getAvailableRooms(roomName?: string): Promise<any[]> {
+        if (!this._initColyseusClient()) {
+            throw this._createError(NetworkErrorCode.CLIENT_INIT_ERROR, '初始化客户端失败');
+        }
+        
+        try {
+            console.log('[网络] 获取可用房间列表...');
+            
+            // 构造正确的HTTP URL，而不是WebSocket URL
+            let httpUrl = this.serverUrl.replace('ws://', 'http://').replace('wss://', 'https://');
+            const path = roomName ? `/rooms/${roomName}` : '/rooms';
+            console.log(`[网络] 请求房间列表URL: ${httpUrl}${path}`);
+            
+            // 使用正确的HTTP URL请求
+            const response = await this.colyseusClient!.http.get(path);
+            
+            // 处理响应数据，确保返回数组
+            const rooms = Array.isArray(response) ? response : [];
+            
+            console.log(`[网络] 找到 ${rooms.length} 个可用房间`);
+            return rooms;
+        } catch (error) {
+            console.error('[网络][错误] 获取可用房间列表失败:', error);
+            
+            // 尝试下一个服务器地址
+            if (this._tryNextServerUrl()) {
+                console.log('[网络] 尝试使用下一个服务器地址重新获取房间列表...');
+                // 重置客户端并重试
+                this.colyseusClient = null;
+                this._initColyseusClient();
+                return this.getAvailableRooms(roomName);
+            }
+            
+            // 重置服务器索引，以便下次从第一个开始尝试
+            this._resetServerUrlIndex();
+            
+            const networkError = this._createError(
+                NetworkErrorCode.CONNECTION_ERROR,
+                '获取可用房间列表失败',
+                error
+            );
+            this.emit('error', networkError);
+            throw networkError;
+        }
+    }
+    
+    /**
+     * 重新连接到之前的房间
+     * @param sessionId 之前的会话ID
+     * @param roomId 之前的房间ID
+     * @returns Promise<boolean> 是否重连成功
+     */
+    public async reconnect(sessionId: string, roomId: string): Promise<boolean> {
+        if (!sessionId || !roomId) {
+            console.error('[网络][错误] 重连失败: 缺少会话ID或房间ID');
+            return false;
+        }
+        
+        if (!this._initColyseusClient()) {
+            return false;
+        }
+        
+        this._status = NetworkStatus.RECONNECTING;
+        this.emit('statusChange', this._status);
+        
+        try {
+            console.log(`[网络] 尝试重连到房间: ${roomId}, 会话ID: ${sessionId}`);
+            
+            // Colyseus.js 客户端可能没有直接的 reconnect 方法
+            // 我们使用 joinById 来模拟重连
+            this.colyseusRoom = await this.colyseusClient!.joinById<LiarDiceRoomState>(
+                roomId,
+                {
+                    sessionId: sessionId,
+                    reconnect: true
+                }
+            );
+            
+            this._roomId = this.colyseusRoom.roomId;
+            this._sessionId = this.colyseusRoom.sessionId;
+            this._status = NetworkStatus.CONNECTED;
+            
+            this._setupRoomListeners();
+            
+            this.emit('reconnected', {
+                roomId: this._roomId,
+                sessionId: this._sessionId
+            });
+            this.emit('statusChange', this._status);
+            
+            console.log(`[网络] 重连成功, 房间ID: ${this._roomId}, 会话ID: ${this._sessionId}`);
+            
+            return true;
+        } catch (error) {
+            console.error('[网络][错误] 重连失败:', error);
+            
+            // 尝试下一个服务器地址
+            if (this._tryNextServerUrl()) {
+                console.log('[网络] 尝试使用下一个服务器地址重新重连...');
+                return this.reconnect(sessionId, roomId);
+            }
+            
+            // 重置服务器索引，以便下次从第一个开始尝试
+            this._resetServerUrlIndex();
+            
+            this._status = NetworkStatus.ERROR;
+            this.emit('statusChange', this._status);
+            
+            const networkError = this._createError(
+                NetworkErrorCode.CONNECTION_ERROR,
+                '重连失败',
+                error
+            );
+            this.emit('error', networkError);
+            
+            return false;
+        }
+    }
 }
-
-// 导出单例
-export const network = NetworkManager.getInstance();

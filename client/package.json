@@ -1,7 +1,12 @@
 {
   "name": "client",
+  "version": "1.0.0",
   "uuid": "580a07ff-ab0b-47ce-90cd-fd71f4811e63",
   "creator": {
     "version": "3.8.2"
+  },
+  "dependencies": {
+    "colyseus.js": "^0.14.0",
+    "events": "^3.3.0"
   }
 }

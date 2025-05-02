@@ -1,4 +1,4 @@
-import { LiarDiceRoomState, PlayerState } from "./schema/LiarDiceState";
+import { LiarDiceRoomState, PlayerState } from "../../../shared/schemas/LiarDiceState";
 import { Face, Bid, EmptyBid } from './types/game-types';
 
 export class GameLogic {
@@ -85,9 +85,9 @@ export class GameLogic {
         state.status = "playing";
         state.currentBidCount = 0;
         state.currentBidValue = 0;
-        state.lastBidderSessionId = undefined;
+        state.lastBidderSessionId = "";
         state.moveNumber = 0;
-        state.roundResult = undefined;
+        state.roundResult = "";
         state.isOneCalledThisRound = false;
 
         // Adjust currentPlayerIndex (e.g., loser starts or based on removal)
@@ -108,9 +108,16 @@ export class GameLogic {
         });
 
         const currentPlayerSessionId = state.activePlayerIds[state.currentPlayerIndex];
-        console.log(`[GameLogic] New round ${state.roundNumber} started. Current player: ${state.players.get(currentPlayerSessionId)?.name}`);
+        // Add check for undefined currentPlayerSessionId
+        if (!currentPlayerSessionId) {
+            console.error(`[GameLogic] startNewRound: Could not determine current player at index ${state.currentPlayerIndex}. Active players: ${state.activePlayerIds.length}`);
+            return null; // Indicate round couldn't start properly
+        }
+        // Log before potentially accessing name which might be undefined too
+        console.log(`[GameLogic] New round ${state.roundNumber} started. Current player ID: ${currentPlayerSessionId}, Name: ${state.players.get(currentPlayerSessionId)?.name}`);
 
-        return { currentPlayerSessionId, rolledDice: rolledDiceForClients };
+        // Ensure the returned sessionId is definitely a string
+        return { currentPlayerSessionId: currentPlayerSessionId, rolledDice: rolledDiceForClients };
     }
 
     /**
@@ -177,7 +184,7 @@ export class GameLogic {
         }
 
         // Rule 3: Bidding non-'1' after '1'
-        if (bidValue !== 1 && currentValue === 1) {
+        if (currentValue === 1) {
             const requiredCount = currentCount * 2 + 1;
             const isValid = count >= requiredCount; // Must be at least double plus one
             if (!isValid) console.warn(`[ValidateBid] Invalid non-'1' after '1': Count ${count} < required ${requiredCount}`);
@@ -303,7 +310,14 @@ export class GameLogic {
         }
         state.currentPlayerIndex = (state.currentPlayerIndex + 1) % state.activePlayerIds.length;
         const nextPlayerId = state.activePlayerIds[state.currentPlayerIndex];
-        console.log(`[GameLogic] Turn passes to: ${state.players.get(nextPlayerId)?.name} (${nextPlayerId})`);
+        // Add check for undefined nextPlayerId
+        if (!nextPlayerId) {
+            console.error(`[GameLogic] nextTurn: Could not determine next player at index ${state.currentPlayerIndex}. Active players: ${state.activePlayerIds.length}`);
+            // This case might indicate the game should end, but let the calling context handle it for now.
+        } else {
+             // Log before potentially accessing name
+             console.log(`[GameLogic] Turn passes to ID: ${nextPlayerId}, Name: ${state.players.get(nextPlayerId)?.name}`);
+        }
         // LiarDiceRoom will handle broadcasting and checking for AI
     }
 

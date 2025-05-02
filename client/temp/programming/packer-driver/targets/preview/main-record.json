@@ -1,0 +1,6863 @@
+{
+  "modules": {
+    "cce:/internal/x/cc": {
+      "mTimestamp": 19119.228100001812,
+      "chunkId": "93ba276ea7b26ffcdc433fab14afc1ed6f05647b",
+      "imports": [
+        {
+          "value": "cce:/internal/x/cc-fu/2d",
+          "resolved": "__unresolved_0",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 14
+            },
+            "end": {
+              "line": 1,
+              "column": 40
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/x/cc-fu/sorting",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 14
+            },
+            "end": {
+              "line": 2,
+              "column": 45
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/x/cc-fu/animation",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 14
+            },
+            "end": {
+              "line": 3,
+              "column": 47
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/x/cc-fu/audio",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 14
+            },
+            "end": {
+              "line": 4,
+              "column": 43
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/x/cc-fu/base",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 14
+            },
+            "end": {
+              "line": 5,
+              "column": 42
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/x/cc-fu/dragon-bones",
+          "resolved": "__unresolved_5",
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 14
+            },
+            "end": {
+              "line": 6,
+              "column": 50
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/x/cc-fu/gfx-webgl",
+          "resolved": "__unresolved_6",
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 14
+            },
+            "end": {
+              "line": 7,
+              "column": 47
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/x/cc-fu/gfx-webgl2",
+          "resolved": "__unresolved_7",
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 14
+            },
+            "end": {
+              "line": 8,
+              "column": 48
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/x/cc-fu/intersection-2d",
+          "resolved": "__unresolved_8",
+          "loc": {
+            "start": {
+              "line": 9,
+              "column": 14
+            },
+            "end": {
+              "line": 9,
+              "column": 53
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/x/cc-fu/particle-2d",
+          "resolved": "__unresolved_9",
+          "loc": {
+            "start": {
+              "line": 10,
+              "column": 14
+            },
+            "end": {
+              "line": 10,
+              "column": 49
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/x/cc-fu/physics-2d-box2d",
+          "resolved": "__unresolved_10",
+          "loc": {
+            "start": {
+              "line": 11,
+              "column": 14
+            },
+            "end": {
+              "line": 11,
+              "column": 54
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/x/cc-fu/physics-2d-framework",
+          "resolved": "__unresolved_11",
+          "loc": {
+            "start": {
+              "line": 12,
+              "column": 14
+            },
+            "end": {
+              "line": 12,
+              "column": 58
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/x/cc-fu/profiler",
+          "resolved": "__unresolved_12",
+          "loc": {
+            "start": {
+              "line": 13,
+              "column": 14
+            },
+            "end": {
+              "line": 13,
+              "column": 46
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/x/cc-fu/spine",
+          "resolved": "__unresolved_13",
+          "loc": {
+            "start": {
+              "line": 14,
+              "column": 14
+            },
+            "end": {
+              "line": 14,
+              "column": 43
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/x/cc-fu/tiled-map",
+          "resolved": "__unresolved_14",
+          "loc": {
+            "start": {
+              "line": 15,
+              "column": 14
+            },
+            "end": {
+              "line": 15,
+              "column": 47
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/x/cc-fu/tween",
+          "resolved": "__unresolved_15",
+          "loc": {
+            "start": {
+              "line": 16,
+              "column": 14
+            },
+            "end": {
+              "line": 16,
+              "column": 43
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/x/cc-fu/ui",
+          "resolved": "__unresolved_16",
+          "loc": {
+            "start": {
+              "line": 17,
+              "column": 14
+            },
+            "end": {
+              "line": 17,
+              "column": 40
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/x/cc-fu/video",
+          "resolved": "__unresolved_17",
+          "loc": {
+            "start": {
+              "line": 18,
+              "column": 14
+            },
+            "end": {
+              "line": 18,
+              "column": 43
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/x/cc-fu/webview",
+          "resolved": "__unresolved_18",
+          "loc": {
+            "start": {
+              "line": 19,
+              "column": 14
+            },
+            "end": {
+              "line": 19,
+              "column": 45
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "external",
+            "specifierOrURL": "cce:/internal/x/cc-fu/2d"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "external",
+            "specifierOrURL": "cce:/internal/x/cc-fu/sorting"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "external",
+            "specifierOrURL": "cce:/internal/x/cc-fu/animation"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "external",
+            "specifierOrURL": "cce:/internal/x/cc-fu/audio"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "external",
+            "specifierOrURL": "cce:/internal/x/cc-fu/base"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "external",
+            "specifierOrURL": "cce:/internal/x/cc-fu/dragon-bones"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "external",
+            "specifierOrURL": "cce:/internal/x/cc-fu/gfx-webgl"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "external",
+            "specifierOrURL": "cce:/internal/x/cc-fu/gfx-webgl2"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "external",
+            "specifierOrURL": "cce:/internal/x/cc-fu/intersection-2d"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "external",
+            "specifierOrURL": "cce:/internal/x/cc-fu/particle-2d"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "external",
+            "specifierOrURL": "cce:/internal/x/cc-fu/physics-2d-box2d"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "external",
+            "specifierOrURL": "cce:/internal/x/cc-fu/physics-2d-framework"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "external",
+            "specifierOrURL": "cce:/internal/x/cc-fu/profiler"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "external",
+            "specifierOrURL": "cce:/internal/x/cc-fu/spine"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "external",
+            "specifierOrURL": "cce:/internal/x/cc-fu/tiled-map"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "external",
+            "specifierOrURL": "cce:/internal/x/cc-fu/tween"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "external",
+            "specifierOrURL": "cce:/internal/x/cc-fu/ui"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "external",
+            "specifierOrURL": "cce:/internal/x/cc-fu/video"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "external",
+            "specifierOrURL": "cce:/internal/x/cc-fu/webview"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "cce:/internal/x/prerequisite-imports": {
+      "mTimestamp": 21539.028300002217,
+      "chunkId": "6d8fd2b0177941b032ddc0733af48a561fb60657",
+      "imports": [
+        {
+          "value": "file:///D:/editors/Creator/3.8.2/resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts",
+          "resolved": "__unresolved_0",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 7
+            },
+            "end": {
+              "line": 4,
+              "column": 121
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/colyseus.js",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 7
+            },
+            "end": {
+              "line": 5,
+              "column": 69
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/GameEngine.ts",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 7
+            },
+            "end": {
+              "line": 6,
+              "column": 84
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 7
+            },
+            "end": {
+              "line": 7,
+              "column": 89
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/dice-animation-controller.ts",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 7
+            },
+            "end": {
+              "line": 8,
+              "column": 99
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/error-handler.ts",
+          "resolved": "__unresolved_5",
+          "loc": {
+            "start": {
+              "line": 9,
+              "column": 7
+            },
+            "end": {
+              "line": 9,
+              "column": 87
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-engine.ts",
+          "resolved": "__unresolved_6",
+          "loc": {
+            "start": {
+              "line": 10,
+              "column": 7
+            },
+            "end": {
+              "line": 10,
+              "column": 85
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-state-manager.ts",
+          "resolved": "__unresolved_7",
+          "loc": {
+            "start": {
+              "line": 11,
+              "column": 7
+            },
+            "end": {
+              "line": 11,
+              "column": 92
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts",
+          "resolved": "__unresolved_8",
+          "loc": {
+            "start": {
+              "line": 12,
+              "column": 7
+            },
+            "end": {
+              "line": 12,
+              "column": 87
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts",
+          "resolved": "__unresolved_9",
+          "loc": {
+            "start": {
+              "line": 13,
+              "column": 7
+            },
+            "end": {
+              "line": 13,
+              "column": 81
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/scene-initializer.ts",
+          "resolved": "__unresolved_10",
+          "loc": {
+            "start": {
+              "line": 14,
+              "column": 7
+            },
+            "end": {
+              "line": 14,
+              "column": 91
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts",
+          "resolved": "__unresolved_11",
+          "loc": {
+            "start": {
+              "line": 15,
+              "column": 7
+            },
+            "end": {
+              "line": 15,
+              "column": 90
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/colyseus-loader.ts",
+          "resolved": "__unresolved_12",
+          "loc": {
+            "start": {
+              "line": 16,
+              "column": 7
+            },
+            "end": {
+              "line": 16,
+              "column": 89
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-browser.ts",
+          "resolved": "__unresolved_13",
+          "loc": {
+            "start": {
+              "line": 17,
+              "column": 7
+            },
+            "end": {
+              "line": 17,
+              "column": 88
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-polyfill.ts",
+          "resolved": "__unresolved_14",
+          "loc": {
+            "start": {
+              "line": 18,
+              "column": 7
+            },
+            "end": {
+              "line": 18,
+              "column": 89
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/node-polyfills.ts",
+          "resolved": "__unresolved_15",
+          "loc": {
+            "start": {
+              "line": 19,
+              "column": 7
+            },
+            "end": {
+              "line": 19,
+              "column": 88
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/chat-item.ts",
+          "resolved": "__unresolved_16",
+          "loc": {
+            "start": {
+              "line": 20,
+              "column": 7
+            },
+            "end": {
+              "line": 20,
+              "column": 86
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/count-list-item.ts",
+          "resolved": "__unresolved_17",
+          "loc": {
+            "start": {
+              "line": 21,
+              "column": 7
+            },
+            "end": {
+              "line": 21,
+              "column": 92
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/dice-item.ts",
+          "resolved": "__unresolved_18",
+          "loc": {
+            "start": {
+              "line": 22,
+              "column": 7
+            },
+            "end": {
+              "line": 22,
+              "column": 86
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/filter-tab.ts",
+          "resolved": "__unresolved_19",
+          "loc": {
+            "start": {
+              "line": 23,
+              "column": 7
+            },
+            "end": {
+              "line": 23,
+              "column": 87
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/friend-request.ts",
+          "resolved": "__unresolved_20",
+          "loc": {
+            "start": {
+              "line": 24,
+              "column": 7
+            },
+            "end": {
+              "line": 24,
+              "column": 91
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts",
+          "resolved": "__unresolved_21",
+          "loc": {
+            "start": {
+              "line": 25,
+              "column": 7
+            },
+            "end": {
+              "line": 25,
+              "column": 88
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/room-item.ts",
+          "resolved": "__unresolved_22",
+          "loc": {
+            "start": {
+              "line": 26,
+              "column": 7
+            },
+            "end": {
+              "line": 26,
+              "column": 86
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/system-notice.ts",
+          "resolved": "__unresolved_23",
+          "loc": {
+            "start": {
+              "line": 27,
+              "column": 7
+            },
+            "end": {
+              "line": 27,
+              "column": 90
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/liar-dice-room-state-client.ts",
+          "resolved": "__unresolved_24",
+          "loc": {
+            "start": {
+              "line": 28,
+              "column": 7
+            },
+            "end": {
+              "line": 28,
+              "column": 111
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/player-state-client.ts",
+          "resolved": "__unresolved_25",
+          "loc": {
+            "start": {
+              "line": 29,
+              "column": 7
+            },
+            "end": {
+              "line": 29,
+              "column": 103
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts",
+          "resolved": "__unresolved_26",
+          "loc": {
+            "start": {
+              "line": 30,
+              "column": 7
+            },
+            "end": {
+              "line": 30,
+              "column": 86
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/connection-status.ts",
+          "resolved": "__unresolved_27",
+          "loc": {
+            "start": {
+              "line": 31,
+              "column": 7
+            },
+            "end": {
+              "line": 31,
+              "column": 89
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/dice-display-controller.ts",
+          "resolved": "__unresolved_28",
+          "loc": {
+            "start": {
+              "line": 32,
+              "column": 7
+            },
+            "end": {
+              "line": 32,
+              "column": 95
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/event-handler.ts",
+          "resolved": "__unresolved_29",
+          "loc": {
+            "start": {
+              "line": 33,
+              "column": 7
+            },
+            "end": {
+              "line": 33,
+              "column": 85
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-history-panel.ts",
+          "resolved": "__unresolved_30",
+          "loc": {
+            "start": {
+              "line": 34,
+              "column": 7
+            },
+            "end": {
+              "line": 34,
+              "column": 90
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-result-panel.ts",
+          "resolved": "__unresolved_31",
+          "loc": {
+            "start": {
+              "line": 35,
+              "column": 7
+            },
+            "end": {
+              "line": 35,
+              "column": 89
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts",
+          "resolved": "__unresolved_32",
+          "loc": {
+            "start": {
+              "line": 36,
+              "column": 7
+            },
+            "end": {
+              "line": 36,
+              "column": 79
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts",
+          "resolved": "__unresolved_33",
+          "loc": {
+            "start": {
+              "line": 37,
+              "column": 7
+            },
+            "end": {
+              "line": 37,
+              "column": 94
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/chat-service.ts",
+          "resolved": "__unresolved_34",
+          "loc": {
+            "start": {
+              "line": 38,
+              "column": 7
+            },
+            "end": {
+              "line": 38,
+              "column": 99
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/friend-service.ts",
+          "resolved": "__unresolved_35",
+          "loc": {
+            "start": {
+              "line": 39,
+              "column": 7
+            },
+            "end": {
+              "line": 39,
+              "column": 101
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts",
+          "resolved": "__unresolved_36",
+          "loc": {
+            "start": {
+              "line": 40,
+              "column": 7
+            },
+            "end": {
+              "line": 40,
+              "column": 99
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts",
+          "resolved": "__unresolved_37",
+          "loc": {
+            "start": {
+              "line": 41,
+              "column": 7
+            },
+            "end": {
+              "line": 41,
+              "column": 80
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/network-manager.ts",
+          "resolved": "__unresolved_38",
+          "loc": {
+            "start": {
+              "line": 42,
+              "column": 7
+            },
+            "end": {
+              "line": 42,
+              "column": 87
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts",
+          "resolved": "__unresolved_39",
+          "loc": {
+            "start": {
+              "line": 43,
+              "column": 7
+            },
+            "end": {
+              "line": 43,
+              "column": 97
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts",
+          "resolved": "__unresolved_40",
+          "loc": {
+            "start": {
+              "line": 44,
+              "column": 7
+            },
+            "end": {
+              "line": 44,
+              "column": 79
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/ui-updater.ts",
+          "resolved": "__unresolved_41",
+          "loc": {
+            "start": {
+              "line": 45,
+              "column": 7
+            },
+            "end": {
+              "line": 45,
+              "column": 82
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/scripts/utils/bid-validator.ts",
+          "resolved": "__unresolved_42",
+          "loc": {
+            "start": {
+              "line": 46,
+              "column": 7
+            },
+            "end": {
+              "line": 46,
+              "column": 88
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-protocol.ts",
+          "resolved": "__unresolved_43",
+          "loc": {
+            "start": {
+              "line": 47,
+              "column": 7
+            },
+            "end": {
+              "line": 47,
+              "column": 91
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-values.ts",
+          "resolved": "__unresolved_44",
+          "loc": {
+            "start": {
+              "line": 48,
+              "column": 7
+            },
+            "end": {
+              "line": 48,
+              "column": 89
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.js",
+          "resolved": "__unresolved_45",
+          "loc": {
+            "start": {
+              "line": 49,
+              "column": 7
+            },
+            "end": {
+              "line": 49,
+              "column": 91
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.ts",
+          "resolved": "__unresolved_46",
+          "loc": {
+            "start": {
+              "line": 50,
+              "column": 7
+            },
+            "end": {
+              "line": 50,
+              "column": 91
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/LiarDiceState.ts",
+          "resolved": "__unresolved_47",
+          "loc": {
+            "start": {
+              "line": 51,
+              "column": 7
+            },
+            "end": {
+              "line": 51,
+              "column": 89
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/PlayerState.ts",
+          "resolved": "__unresolved_48",
+          "loc": {
+            "start": {
+              "line": 52,
+              "column": 7
+            },
+            "end": {
+              "line": 52,
+              "column": 87
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/liar-dice-room-state-client.ts",
+          "resolved": "__unresolved_49",
+          "loc": {
+            "start": {
+              "line": 53,
+              "column": 7
+            },
+            "end": {
+              "line": 53,
+              "column": 103
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/player-state-client.ts",
+          "resolved": "__unresolved_50",
+          "loc": {
+            "start": {
+              "line": 54,
+              "column": 7
+            },
+            "end": {
+              "line": 54,
+              "column": 95
+            }
+          }
+        },
+        {
+          "value": "file:///D:/editors/liars_dice_demo/client/assets/shared/types/game-types.ts",
+          "resolved": "__unresolved_51",
+          "loc": {
+            "start": {
+              "line": 55,
+              "column": 7
+            },
+            "end": {
+              "line": 55,
+              "column": 84
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/Creator/3.8.2/resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/colyseus.mjs?cjs=&original=.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/GameEngine.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/dice-animation-controller.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/error-handler.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-engine.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-state-manager.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/scene-initializer.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/colyseus-loader.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-browser.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-polyfill.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/node-polyfills.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/chat-item.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/count-list-item.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/dice-item.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/filter-tab.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/friend-request.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/room-item.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/system-notice.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/liar-dice-room-state-client.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/player-state-client.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/connection-status.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/dice-display-controller.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/event-handler.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-history-panel.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-result-panel.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/chat-service.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/friend-service.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/network-manager.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/ui-updater.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/utils/bid-validator.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-protocol.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-values.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.mjs?cjs=&original=.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/LiarDiceState.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/PlayerState.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/liar-dice-room-state-client.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/player-state-client.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/shared/types/game-types.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/Creator/3.8.2/resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts": {
+      "mTimestamp": {
+        "mtime": 1725440192182.053,
+        "uuid": "b2bd1fa7-8d7c-49c5-a158-df29a6d3a594"
+      },
+      "chunkId": "9f52f51eb98baede33f5e3acf63efd87a9fe94a1",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 220
+            },
+            "end": {
+              "line": 1,
+              "column": 224
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/GameEngine.ts": {
+      "mTimestamp": {
+        "mtime": 1745833121934.5854,
+        "uuid": "acdc4cdb-c115-4457-b037-480f357a546a"
+      },
+      "chunkId": "f8e1f0ccdd97972ee791e41b7482258d1cb27a1a",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "cce:/internal/code-quality/cr.mjs": {
+      "mTimestamp": 1746208643860,
+      "chunkId": "6a5019a719a9014c047e67aa1cf34453ab8392ce",
+      "imports": [],
+      "type": "esm",
+      "resolutions": []
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/dice-animation-controller.ts": {
+      "mTimestamp": {
+        "mtime": 1745833095460.5,
+        "uuid": "a74a0c45-6ef2-4b80-b83f-ec069a9cdfdb"
+      },
+      "chunkId": "b1886b63a4d91b06bea17b4c05f20d7577a85a8e",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 62
+            },
+            "end": {
+              "line": 1,
+              "column": 66
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/error-handler.ts": {
+      "mTimestamp": {
+        "mtime": 1746023979697.5034,
+        "uuid": "6f2dfa21-76f0-46a8-ba97-8c1d15e8b7ff"
+      },
+      "chunkId": "f9149631582fcd458c18fb6750dc6a7b4896f8bb",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 57
+            },
+            "end": {
+              "line": 1,
+              "column": 61
+            }
+          }
+        },
+        {
+          "value": "./network",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 46
+            },
+            "end": {
+              "line": 2,
+              "column": 57
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts": {
+      "mTimestamp": {
+        "mtime": 1746208094595.305,
+        "uuid": "95f0984a-b634-4924-bbcf-94e18fc8598e"
+      },
+      "chunkId": "a142dfa950effff018b46e864ecd5b31c95ca035",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "../colyseus-cocos-creator.js",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 32
+            },
+            "end": {
+              "line": 3,
+              "column": 62
+            }
+          }
+        },
+        {
+          "value": "../../shared/schemas/liar-dice-room-state-client",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 34
+            },
+            "end": {
+              "line": 4,
+              "column": 84
+            }
+          }
+        },
+        {
+          "value": "../../shared/schemas/player-state-client",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 28
+            },
+            "end": {
+              "line": 5,
+              "column": 70
+            }
+          }
+        },
+        {
+          "value": "./login-manager",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 29
+            },
+            "end": {
+              "line": 6,
+              "column": 46
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.mjs?cjs=&original=.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/liar-dice-room-state-client.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/player-state-client.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/colyseus-browser.ts": {
+      "erroneous": true,
+      "mTimestamp": 0,
+      "chunkId": "9e7a50d03b092693685ca1374a1234e75cd9c284"
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts": {
+      "mTimestamp": {
+        "mtime": 1745839321716.419,
+        "uuid": "8dc9b81a-d9dc-4bb5-87bf-766004d5a56c"
+      },
+      "chunkId": "ec7698af004f050c93cf8ab05be3428812759efb",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 38
+            },
+            "end": {
+              "line": 1,
+              "column": 42
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-engine.ts": {
+      "mTimestamp": {
+        "mtime": 1745833142366.9402,
+        "uuid": "26cb73e0-61cd-4ab5-8e63-4a3fa3089136"
+      },
+      "chunkId": "5dbcb9b3b00ed0c3918bd2270cd1c14ddfd61364",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 73
+            },
+            "end": {
+              "line": 1,
+              "column": 77
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-state-manager.ts": {
+      "mTimestamp": {
+        "mtime": 1746023940366.4353,
+        "uuid": "7ad6804b-3993-47a1-ace9-e8d796a579b4"
+      },
+      "chunkId": "4d0f6fd4c7fbcb38c6d151f13c4371811f4c607d",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 28
+            },
+            "end": {
+              "line": 1,
+              "column": 32
+            }
+          }
+        },
+        {
+          "value": "./network",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 31
+            },
+            "end": {
+              "line": 4,
+              "column": 42
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/colyseus-loader.ts": {
+      "mTimestamp": {
+        "mtime": 1745993992150.4275,
+        "uuid": "85aec9c1-fea2-4ea1-b509-f7069b10f94a"
+      },
+      "chunkId": "e9dccea890aac2812efb84e0bdb32b3268347f87",
+      "imports": [
+        {
+          "value": "cc"
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-browser.ts": {
+      "mTimestamp": {
+        "mtime": 1745739136170.3162,
+        "uuid": "565f8984-0a5b-496e-aa00-05a80cdfac39"
+      },
+      "chunkId": "6a561adbc7bcd478ad77b5660af5b0051725cac0",
+      "imports": [
+        {
+          "value": "cc"
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/events-polyfill.ts": {
+      "mTimestamp": {
+        "mtime": 1745739097715.5603,
+        "uuid": "cb7413b4-c7b5-4cd0-9240-a82fbf19ebdd"
+      },
+      "chunkId": "3790c5ab897d685985b83bf27508959da6a556a3",
+      "imports": [
+        {
+          "value": "cc"
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/node-polyfills.ts": {
+      "mTimestamp": {
+        "mtime": 1745740786856.4841,
+        "uuid": "01198d45-d66d-41d4-a2ec-b5343fef79a8"
+      },
+      "chunkId": "7c5882169485e8addd9c7b64a4bb955e965e2773",
+      "imports": [
+        {
+          "value": "cc"
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/chat-item.ts": {
+      "mTimestamp": {
+        "mtime": 1742974412529.5688,
+        "uuid": "310d2b62-de49-4efc-a278-7a25a40c6663"
+      },
+      "chunkId": "a233f6b2d6545cf8ed5ce06d657889dbae7ab211",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 121
+            },
+            "end": {
+              "line": 1,
+              "column": 125
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/count-list-item.ts": {
+      "mTimestamp": {
+        "mtime": 1744975052056.3545,
+        "uuid": "504f6b0f-edfe-4009-bad8-7991d812ed07"
+      },
+      "chunkId": "894e88b11047f8279f1238d0f2a90209316912f5",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 73
+            },
+            "end": {
+              "line": 1,
+              "column": 77
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/dice-item.ts": {
+      "mTimestamp": {
+        "mtime": 1742974073896.7307,
+        "uuid": "b2c5113a-2a8c-43e3-a1fb-03c80b131dd0"
+      },
+      "chunkId": "c13226e23edd9b6de93804133563937fcf66a307",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 122
+            },
+            "end": {
+              "line": 1,
+              "column": 126
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/filter-tab.ts": {
+      "mTimestamp": {
+        "mtime": 1743068228736.0283,
+        "uuid": "fe88dc3e-02d5-44e6-b4d7-ce44ecf7f593"
+      },
+      "chunkId": "a1e39b0181830a8a89a4ea243e17121f5598e5ae",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 90
+            },
+            "end": {
+              "line": 1,
+              "column": 94
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/friend-request.ts": {
+      "mTimestamp": {
+        "mtime": 1743068287369.0718,
+        "uuid": "4e98b594-9c0e-443b-a52c-affe34e9c83d"
+      },
+      "chunkId": "4f34a100457f4341e1c839cb1aa7e6a3067c5e83",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 83
+            },
+            "end": {
+              "line": 1,
+              "column": 87
+            }
+          }
+        },
+        {
+          "value": "./player-item",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 27
+            },
+            "end": {
+              "line": 2,
+              "column": 42
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts": {
+      "mTimestamp": {
+        "mtime": 1745140103205.0996,
+        "uuid": "60ace894-38d3-442b-bd69-fb9295e01165"
+      },
+      "chunkId": "66ffa386cc7bc2acd1b41049ff811dfde94e564f",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 121
+            },
+            "end": {
+              "line": 1,
+              "column": 125
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/room-item.ts": {
+      "mTimestamp": {
+        "mtime": 1744701815014.5764,
+        "uuid": "6ba348c1-e08c-45d9-97e6-cd691e1977d2"
+      },
+      "chunkId": "d5fa23d4987bd25e804c205e1b1abfc07cb26e33",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 98
+            },
+            "end": {
+              "line": 1,
+              "column": 102
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/system-notice.ts": {
+      "mTimestamp": {
+        "mtime": 1744645917307.7466,
+        "uuid": "70d7534d-a8d9-4d32-af40-abaee1249c6c"
+      },
+      "chunkId": "3999aaa9008db4892a2f96152939e8977a50237c",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 111
+            },
+            "end": {
+              "line": 1,
+              "column": 115
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts": {
+      "mTimestamp": {
+        "mtime": 1745833041750.848,
+        "uuid": "9ca5c68d-67d5-4281-8bd6-6d61a7ba1c6a"
+      },
+      "chunkId": "ebb27ee661c032dfe91d1cae3d081087d7695ddd",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 114
+            },
+            "end": {
+              "line": 1,
+              "column": 118
+            }
+          }
+        },
+        {
+          "value": "../prefabs/count-list-item",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 30
+            },
+            "end": {
+              "line": 2,
+              "column": 58
+            }
+          }
+        },
+        {
+          "value": "../utils/bid-validator",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 29
+            },
+            "end": {
+              "line": 4,
+              "column": 53
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/count-list-item.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/utils/bid-validator.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/utils/bid-validator.ts": {
+      "mTimestamp": {
+        "mtime": 1745832908645.3755,
+        "uuid": "71b58452-6d8b-4147-ab67-ca5f1961f837"
+      },
+      "chunkId": "5774a61aa2ff3244ef49216109b578abb1e55ca2",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/connection-status.ts": {
+      "mTimestamp": {
+        "mtime": 1746024240245.2925,
+        "uuid": "4983c982-5952-428a-8766-a6cf1d47cc80"
+      },
+      "chunkId": "64103c172f2e7b45066d39c062e540c20408d28a",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 66
+            },
+            "end": {
+              "line": 1,
+              "column": 70
+            }
+          }
+        },
+        {
+          "value": "../core/network",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 46
+            },
+            "end": {
+              "line": 2,
+              "column": 63
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/dice-display-controller.ts": {
+      "mTimestamp": {
+        "mtime": 1745833021118.7776,
+        "uuid": "d1140daa-523d-40e9-b378-95aeef8e501d"
+      },
+      "chunkId": "7315cd04267b08dfbeaf826439200f51f18d93ab",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 111
+            },
+            "end": {
+              "line": 1,
+              "column": 115
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/event-handler.ts": {
+      "mTimestamp": {
+        "mtime": 1745837580950.9492,
+        "uuid": "059be0fb-b5d2-4e75-b778-95ea558530b2"
+      },
+      "chunkId": "acc0c6beb35fefa926a46e9e4903a66b3b08afb1",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "./network-manager",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 31
+            },
+            "end": {
+              "line": 1,
+              "column": 50
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/network-manager.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/network-manager.ts": {
+      "mTimestamp": {
+        "mtime": 1746170325982.0586,
+        "uuid": "2011f430-3f63-44c9-bcaf-6fabc2994186"
+      },
+      "chunkId": "8afe7650b045a95b93458d7b369e5455e031303a",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "../core/network",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 85
+            },
+            "end": {
+              "line": 1,
+              "column": 102
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-history-panel.ts": {
+      "mTimestamp": {
+        "mtime": 1745053469917.1907,
+        "uuid": "348c77e3-7273-490f-b8f0-3e4b73b35879"
+      },
+      "chunkId": "237dc8e462bb54a7dda5701af54159d99427c85c",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 91
+            },
+            "end": {
+              "line": 1,
+              "column": 95
+            }
+          }
+        },
+        {
+          "value": "../core/game-state-manager",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 46
+            },
+            "end": {
+              "line": 2,
+              "column": 74
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/game-state-manager.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-result-panel.ts": {
+      "mTimestamp": {
+        "mtime": 1745081122405.847,
+        "uuid": "789151a1-dbb0-4a75-8dbc-e0fa4f0c4534"
+      },
+      "chunkId": "5d4a8bca050e6cb4612487ecff556e2c841b40be",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 66
+            },
+            "end": {
+              "line": 1,
+              "column": 70
+            }
+          }
+        },
+        {
+          "value": "./player-display-controller",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 40
+            },
+            "end": {
+              "line": 2,
+              "column": 69
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts": {
+      "mTimestamp": {
+        "mtime": 1745837062423.5,
+        "uuid": "799ede45-cd65-444b-ac7b-7b781e57e6f9"
+      },
+      "chunkId": "479f250f08518223e1a55e0e809da9743fd777d1",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 79
+            },
+            "end": {
+              "line": 1,
+              "column": 83
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-ui.ts": {
+      "mTimestamp": {
+        "mtime": 1746023076516.4468,
+        "uuid": "1c1e511a-27ff-49d8-b53c-cc11a7638cdf"
+      },
+      "chunkId": "4361dea7aac2c6b66a45d8d916c3dcb1c8bd0b5c",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 85
+            },
+            "end": {
+              "line": 1,
+              "column": 89
+            }
+          }
+        },
+        {
+          "value": "../core/network",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 63
+            },
+            "end": {
+              "line": 2,
+              "column": 80
+            }
+          }
+        },
+        {
+          "value": "./player-display-controller",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 40
+            },
+            "end": {
+              "line": 4,
+              "column": 69
+            }
+          }
+        },
+        {
+          "value": "./bid-controller",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 30
+            },
+            "end": {
+              "line": 5,
+              "column": 48
+            }
+          }
+        },
+        {
+          "value": "./dice-display-controller",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 38
+            },
+            "end": {
+              "line": 6,
+              "column": 65
+            }
+          }
+        },
+        {
+          "value": "./game-history-panel",
+          "resolved": "__unresolved_5",
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 33
+            },
+            "end": {
+              "line": 7,
+              "column": 55
+            }
+          }
+        },
+        {
+          "value": "./game-result-panel",
+          "resolved": "__unresolved_6",
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 32
+            },
+            "end": {
+              "line": 8,
+              "column": 53
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/player-display-controller.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/bid-controller.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/dice-display-controller.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-history-panel.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/game-result-panel.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/lobby-controller.ts": {
+      "mTimestamp": {
+        "mtime": 1745815296780.1658,
+        "uuid": "9f645e2d-b1ff-4f93-9755-60a164df808e"
+      },
+      "chunkId": "e8705763ad3bc96b0039baaceb86fb6147b0ad35",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 87
+            },
+            "end": {
+              "line": 1,
+              "column": 91
+            }
+          }
+        },
+        {
+          "value": "../../prefabs/room-item",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 25
+            },
+            "end": {
+              "line": 2,
+              "column": 50
+            }
+          }
+        },
+        {
+          "value": "../../prefabs/player-item",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 27
+            },
+            "end": {
+              "line": 3,
+              "column": 54
+            }
+          }
+        },
+        {
+          "value": "../../prefabs/chat-item",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 25
+            },
+            "end": {
+              "line": 4,
+              "column": 50
+            }
+          }
+        },
+        {
+          "value": "../../prefabs/filter-tab",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 26
+            },
+            "end": {
+              "line": 5,
+              "column": 52
+            }
+          }
+        },
+        {
+          "value": "../../prefabs/system-notice",
+          "resolved": "__unresolved_5",
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 29
+            },
+            "end": {
+              "line": 6,
+              "column": 58
+            }
+          }
+        },
+        {
+          "value": "../../prefabs/friend-request",
+          "resolved": "__unresolved_6",
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 30
+            },
+            "end": {
+              "line": 7,
+              "column": 60
+            }
+          }
+        },
+        {
+          "value": "./services/room-service",
+          "resolved": "__unresolved_7",
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 48
+            },
+            "end": {
+              "line": 8,
+              "column": 73
+            }
+          }
+        },
+        {
+          "value": "./services/friend-service",
+          "resolved": "__unresolved_8",
+          "loc": {
+            "start": {
+              "line": 9,
+              "column": 30
+            },
+            "end": {
+              "line": 9,
+              "column": 57
+            }
+          }
+        },
+        {
+          "value": "./services/chat-service",
+          "resolved": "__unresolved_9",
+          "loc": {
+            "start": {
+              "line": 10,
+              "column": 28
+            },
+            "end": {
+              "line": 10,
+              "column": 53
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/room-item.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/chat-item.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/filter-tab.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/system-notice.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/friend-request.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/friend-service.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/chat-service.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/room-service.ts": {
+      "mTimestamp": {
+        "mtime": 1746024534063.655,
+        "uuid": "e3b4528a-2286-4546-a594-9006d9aa9f94"
+      },
+      "chunkId": "a8f27a9aac29afae6097a948fd95a578f1c4c725",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 40
+            },
+            "end": {
+              "line": 1,
+              "column": 44
+            }
+          }
+        },
+        {
+          "value": "../../../core/network",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 31
+            },
+            "end": {
+              "line": 2,
+              "column": 54
+            }
+          }
+        },
+        {
+          "value": "../../../core/login-manager",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 29
+            },
+            "end": {
+              "line": 3,
+              "column": 58
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/friend-service.ts": {
+      "mTimestamp": {
+        "mtime": 1743068561462.1497,
+        "uuid": "f323e427-64b1-46e9-81ad-831bc6f57fac"
+      },
+      "chunkId": "3928da13f344a05e0b685d1c676d00a14449ae97",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/lobby/services/chat-service.ts": {
+      "mTimestamp": {
+        "mtime": 1743068609660.8032,
+        "uuid": "792f02c8-3da0-498c-997e-abf344a83aa4"
+      },
+      "chunkId": "f63d1d657388e6b44184d8daab18d2bf9f287d12",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 20
+            },
+            "end": {
+              "line": 1,
+              "column": 24
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/login-ui.ts": {
+      "mTimestamp": {
+        "mtime": 1746023124220.3108,
+        "uuid": "dd01cf08-f22e-4906-a6ba-4fd7a00d6c8a"
+      },
+      "chunkId": "85f0c3045a9c03a0f88a9607bc6dd48e06fdd952",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 83
+            },
+            "end": {
+              "line": 1,
+              "column": 87
+            }
+          }
+        },
+        {
+          "value": "../core/login-manager",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 29
+            },
+            "end": {
+              "line": 2,
+              "column": 52
+            }
+          }
+        },
+        {
+          "value": "../core/network",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 46
+            },
+            "end": {
+              "line": 3,
+              "column": 63
+            }
+          }
+        },
+        {
+          "value": "../libs/colyseus-loader",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 53
+            },
+            "end": {
+              "line": 4,
+              "column": 78
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/colyseus-loader.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts": {
+      "mTimestamp": {
+        "mtime": 1746167381112.78,
+        "uuid": "18a38c85-1504-413e-8978-cae0b2874e0f"
+      },
+      "chunkId": "82e5c189723cab957c8c4f398974c450211e3d6b",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 117
+            },
+            "end": {
+              "line": 1,
+              "column": 121
+            }
+          }
+        },
+        {
+          "value": "../core/network",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 63
+            },
+            "end": {
+              "line": 2,
+              "column": 80
+            }
+          }
+        },
+        {
+          "value": "../core/error-handler",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 36
+            },
+            "end": {
+              "line": 3,
+              "column": 59
+            }
+          }
+        },
+        {
+          "value": "../../shared/schemas/player-state-client",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 28
+            },
+            "end": {
+              "line": 7,
+              "column": 70
+            }
+          }
+        },
+        {
+          "value": "./ui-updater",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 12,
+              "column": 26
+            },
+            "end": {
+              "line": 12,
+              "column": 40
+            }
+          }
+        },
+        {
+          "value": "./event-handler",
+          "resolved": "__unresolved_5",
+          "loc": {
+            "start": {
+              "line": 13,
+              "column": 29
+            },
+            "end": {
+              "line": 13,
+              "column": 46
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/error-handler.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/player-state-client.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/ui-updater.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/event-handler.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/node_modules/@colyseus/schema/build/umd/index.mjs?cjs=&original=.js": {
+      "mTimestamp": 1745565761354,
+      "chunkId": "8a108b0b3704e571e064637c2d07dfb61a61bf3d",
+      "imports": [
+        {
+          "value": "./index.js",
+          "resolved": "__unresolved_0",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 36
+            },
+            "end": {
+              "line": 2,
+              "column": 48
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 19
+            },
+            "end": {
+              "line": 3,
+              "column": 52
+            }
+          }
+        },
+        {
+          "value": "./index.js",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 14
+            },
+            "end": {
+              "line": 8,
+              "column": 26
+            }
+          }
+        },
+        {
+          "value": "./index.js",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 9,
+              "column": 29
+            },
+            "end": {
+              "line": 9,
+              "column": 41
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/node_modules/@colyseus/schema/build/umd/index.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/node_modules/@colyseus/schema/build/umd/index.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/node_modules/@colyseus/schema/build/umd/index.js"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/node_modules/@colyseus/schema/build/umd/index.js": {
+      "mTimestamp": 1745565761354,
+      "chunkId": "368447f6b2fdede3e4fda2104c87770a8fa7adb0",
+      "imports": [
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_0",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 23
+            },
+            "end": {
+              "line": 1,
+              "column": 56
+            }
+          }
+        }
+      ],
+      "type": "commonjs",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "cce:/internal/ml/cjs-loader.mjs": {
+      "mTimestamp": 1746208643860,
+      "chunkId": "a0d063530de23ddade53e1a935bf64c81277c061",
+      "imports": [],
+      "type": "esm",
+      "resolutions": []
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/ui-updater.ts": {
+      "mTimestamp": {
+        "mtime": 1746167341719.867,
+        "uuid": "1c0ae505-3177-4e83-9845-eb5b8f5ff770"
+      },
+      "chunkId": "c1d04f24f244ef6b9fe905ba367bf6abb0291465",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 93
+            },
+            "end": {
+              "line": 1,
+              "column": 97
+            }
+          }
+        },
+        {
+          "value": "../prefabs/player-item",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 27
+            },
+            "end": {
+              "line": 6,
+              "column": 51
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/prefabs/player-item.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/libs/colyseus.mjs?cjs=&original=.js": {
+      "mTimestamp": 1745741474428.9092,
+      "chunkId": "a7f2dce2066f15ecfbd28ac8aba529a21c843c1f",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "./colyseus.js",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 36
+            },
+            "end": {
+              "line": 2,
+              "column": 51
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 19
+            },
+            "end": {
+              "line": 3,
+              "column": 52
+            }
+          }
+        },
+        {
+          "value": "./colyseus.js",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 14
+            },
+            "end": {
+              "line": 8,
+              "column": 29
+            }
+          }
+        },
+        {
+          "value": "./colyseus.js",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 9,
+              "column": 29
+            },
+            "end": {
+              "line": 9,
+              "column": 44
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/libs/colyseus.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/libs/colyseus.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/libs/colyseus.js"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/libs/colyseus.js": {
+      "mTimestamp": {
+        "mtime": 1745741474428.9092,
+        "uuid": "4063c82e-e396-4fa3-b784-e2e1026cb0e7"
+      },
+      "chunkId": "62504ae9d8d2a6c0c80ccb0af90b1cd58c0e5b76",
+      "imports": [
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_0",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 23
+            },
+            "end": {
+              "line": 1,
+              "column": 56
+            }
+          }
+        }
+      ],
+      "type": "commonjs",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/shared-exports.ts": {
+      "mTimestamp": {
+        "mtime": 1745828936153.1165,
+        "uuid": "1cf44518-a15a-4bd8-acdd-43c54b745d4d"
+      },
+      "chunkId": "a89fb3eaca159474ae54285aa18904435876cf38",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "shared/schemas/LiarDiceState",
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 14
+            },
+            "end": {
+              "line": 5,
+              "column": 44
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "error",
+            "text": "Error: 以 file:///D:/editors/liars_dice_demo/client/assets/scripts/shared-exports.ts 为起点找不到模块 \"shared/schemas/LiarDiceState\""
+          },
+          "messages": [
+            {
+              "level": "warn",
+              "text": "你是否遗漏了扩展名？请注意你不能在模块说明符中省略扩展名。"
+            }
+          ]
+        }
+      ]
+    },
+    "file:///d:/editors/liars_dice_demo/shared/protocols/game-protocol.ts": {
+      "mTimestamp": 1745134931185.0374,
+      "chunkId": "44efe76d7abf70b1d00db7182407b3e34d835a12",
+      "imports": [
+        {
+          "value": "zod",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 18
+            },
+            "end": {
+              "line": 1,
+              "column": 23
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/index.mjs"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/index.mjs": {
+      "mTimestamp": 1742796876874,
+      "chunkId": "aa6af875b92502e2fbdb66ce43b2f3fb8d52fe48",
+      "imports": [],
+      "type": "esm",
+      "resolutions": []
+    },
+    "file:///d:/editors/liars_dice_demo/shared/protocols/game-values.ts": {
+      "mTimestamp": 1742891046339.8865,
+      "chunkId": "4d17fe2b55cf0b56158e0786f70ee4a872f18b98",
+      "imports": [],
+      "type": "esm",
+      "resolutions": []
+    },
+    "file:///d:/editors/liars_dice_demo/shared/protocols/room-protocol.ts": {
+      "mTimestamp": 1745134914059.278,
+      "chunkId": "5445c87754dc93b35f4490d8621928447f005a92",
+      "imports": [
+        {
+          "value": "zod",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 18
+            },
+            "end": {
+              "line": 1,
+              "column": 23
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/index.mjs"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///d:/editors/liars_dice_demo/shared/schemas/LiarDiceState.ts": {
+      "mTimestamp": 1745745919234.7695,
+      "chunkId": "e011aaa1152024e0d6123525875eaea14912ce8d",
+      "imports": [
+        {
+          "value": "@colyseus/schema",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 53
+            },
+            "end": {
+              "line": 1,
+              "column": 71
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/@colyseus/schema/build/umd/index.mjs?cjs=&original=.js"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///d:/editors/liars_dice_demo/node_modules/@colyseus/schema/build/umd/index.mjs?cjs=&original=.js": {
+      "mTimestamp": 1745565761354,
+      "chunkId": "c72c17a8fc310228ef5544f0208745fd1314e6e1",
+      "imports": [
+        {
+          "value": "./index.js",
+          "resolved": "__unresolved_0",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 36
+            },
+            "end": {
+              "line": 2,
+              "column": 48
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 19
+            },
+            "end": {
+              "line": 3,
+              "column": 52
+            }
+          }
+        },
+        {
+          "value": "./index.js",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 14
+            },
+            "end": {
+              "line": 8,
+              "column": 26
+            }
+          }
+        },
+        {
+          "value": "./index.js",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 9,
+              "column": 29
+            },
+            "end": {
+              "line": 9,
+              "column": 41
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/@colyseus/schema/build/umd/index.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/@colyseus/schema/build/umd/index.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/@colyseus/schema/build/umd/index.js"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///d:/editors/liars_dice_demo/node_modules/@colyseus/schema/build/umd/index.js": {
+      "mTimestamp": 1745565761354,
+      "chunkId": "7d27b121653473082b53f23751b078da9c0e697a",
+      "imports": [
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_0",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 23
+            },
+            "end": {
+              "line": 1,
+              "column": 56
+            }
+          }
+        }
+      ],
+      "type": "commonjs",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.mjs?cjs=&original=.js": {
+      "mTimestamp": 1742790089435.003,
+      "chunkId": "50d16a3aa9d70bb6be15527f22843a7c62eb5e38",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "./room-protocol.js",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 36
+            },
+            "end": {
+              "line": 2,
+              "column": 56
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 19
+            },
+            "end": {
+              "line": 3,
+              "column": 52
+            }
+          }
+        },
+        {
+          "value": "./room-protocol.js",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 14
+            },
+            "end": {
+              "line": 8,
+              "column": 34
+            }
+          }
+        },
+        {
+          "value": "./room-protocol.js",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 9,
+              "column": 29
+            },
+            "end": {
+              "line": 9,
+              "column": 49
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/shared/protocols/room-protocol.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/shared/protocols/room-protocol.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/shared/protocols/room-protocol.js"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///d:/editors/liars_dice_demo/shared/protocols/room-protocol.js": {
+      "mTimestamp": 1742790089435.003,
+      "chunkId": "f9c24b8af072ea9a99acacbed2a022b92631a88d",
+      "imports": [
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_0",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 23
+            },
+            "end": {
+              "line": 1,
+              "column": 56
+            }
+          }
+        },
+        {
+          "value": "zod",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 36
+            },
+            "end": {
+              "line": 2,
+              "column": 41
+            }
+          }
+        }
+      ],
+      "type": "commonjs",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/index.js"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/index.js": {
+      "mTimestamp": 1742796876874,
+      "chunkId": "cb5347fc45574295828eee4541127a19fe8f1b59",
+      "imports": [
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_0",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 23
+            },
+            "end": {
+              "line": 1,
+              "column": 56
+            }
+          }
+        },
+        {
+          "value": "./external",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 36
+            },
+            "end": {
+              "line": 2,
+              "column": 48
+            }
+          }
+        },
+        {
+          "value": "./external",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 37
+            },
+            "end": {
+              "line": 3,
+              "column": 49
+            }
+          }
+        }
+      ],
+      "type": "commonjs",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/external.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/external.js"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/external.js": {
+      "mTimestamp": 1742796876874,
+      "chunkId": "147831e1c275b2366d003041097cc6571ef22c5f",
+      "imports": [
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_0",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 23
+            },
+            "end": {
+              "line": 1,
+              "column": 56
+            }
+          }
+        },
+        {
+          "value": "./errors",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 36
+            },
+            "end": {
+              "line": 2,
+              "column": 46
+            }
+          }
+        },
+        {
+          "value": "./helpers/parseUtil",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 37
+            },
+            "end": {
+              "line": 3,
+              "column": 58
+            }
+          }
+        },
+        {
+          "value": "./helpers/typeAliases",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 37
+            },
+            "end": {
+              "line": 4,
+              "column": 60
+            }
+          }
+        },
+        {
+          "value": "./helpers/util",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 37
+            },
+            "end": {
+              "line": 5,
+              "column": 53
+            }
+          }
+        },
+        {
+          "value": "./types",
+          "resolved": "__unresolved_5",
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 37
+            },
+            "end": {
+              "line": 6,
+              "column": 46
+            }
+          }
+        },
+        {
+          "value": "./ZodError",
+          "resolved": "__unresolved_6",
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 37
+            },
+            "end": {
+              "line": 7,
+              "column": 49
+            }
+          }
+        }
+      ],
+      "type": "commonjs",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/errors.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/helpers/parseUtil.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/helpers/typeAliases.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/helpers/util.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/types.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/ZodError.js"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/errors.js": {
+      "mTimestamp": 1742796876874,
+      "chunkId": "38e02f34781f8a32381a0d29d85bb56c10d5fa6e",
+      "imports": [
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_0",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 23
+            },
+            "end": {
+              "line": 1,
+              "column": 56
+            }
+          }
+        },
+        {
+          "value": "./locales/en",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 36
+            },
+            "end": {
+              "line": 2,
+              "column": 50
+            }
+          }
+        }
+      ],
+      "type": "commonjs",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/locales/en.js"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/locales/en.js": {
+      "mTimestamp": 1742796876874,
+      "chunkId": "b593564442e55619cadb25f58ea3031f8392e221",
+      "imports": [
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_0",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 23
+            },
+            "end": {
+              "line": 1,
+              "column": 56
+            }
+          }
+        },
+        {
+          "value": "../helpers/util",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 36
+            },
+            "end": {
+              "line": 2,
+              "column": 53
+            }
+          }
+        },
+        {
+          "value": "../ZodError",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 37
+            },
+            "end": {
+              "line": 3,
+              "column": 50
+            }
+          }
+        }
+      ],
+      "type": "commonjs",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/helpers/util.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/ZodError.js"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/helpers/util.js": {
+      "mTimestamp": 1742796876874,
+      "chunkId": "689c76a914d3c15d6cd1dbc585516b2f5fb17b6a",
+      "imports": [
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_0",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 23
+            },
+            "end": {
+              "line": 1,
+              "column": 56
+            }
+          }
+        }
+      ],
+      "type": "commonjs",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/ZodError.js": {
+      "mTimestamp": 1742796876874,
+      "chunkId": "9ec87b46b64f6630c8b9bc711d7a2835413d8632",
+      "imports": [
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_0",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 23
+            },
+            "end": {
+              "line": 1,
+              "column": 56
+            }
+          }
+        },
+        {
+          "value": "./helpers/util",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 36
+            },
+            "end": {
+              "line": 2,
+              "column": 52
+            }
+          }
+        }
+      ],
+      "type": "commonjs",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/helpers/util.js"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/helpers/parseUtil.js": {
+      "mTimestamp": 1742796876874,
+      "chunkId": "726c5c38bcdf6795eb153e716df2a9dc5d0f93b2",
+      "imports": [
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_0",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 23
+            },
+            "end": {
+              "line": 1,
+              "column": 56
+            }
+          }
+        },
+        {
+          "value": "../errors",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 36
+            },
+            "end": {
+              "line": 2,
+              "column": 47
+            }
+          }
+        },
+        {
+          "value": "../locales/en",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 37
+            },
+            "end": {
+              "line": 3,
+              "column": 52
+            }
+          }
+        }
+      ],
+      "type": "commonjs",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/errors.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/locales/en.js"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/helpers/typeAliases.js": {
+      "mTimestamp": 1742796876874,
+      "chunkId": "833da4d36fdb1b1d48fcad9dac49c3dbecabc3f7",
+      "imports": [
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_0",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 23
+            },
+            "end": {
+              "line": 1,
+              "column": 56
+            }
+          }
+        }
+      ],
+      "type": "commonjs",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/types.js": {
+      "mTimestamp": 1742796876874,
+      "chunkId": "b88aa2ce4102a2d2ca2c22138e8ea7019aedcc77",
+      "imports": [
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_0",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 23
+            },
+            "end": {
+              "line": 1,
+              "column": 56
+            }
+          }
+        },
+        {
+          "value": "./errors",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 36
+            },
+            "end": {
+              "line": 2,
+              "column": 46
+            }
+          }
+        },
+        {
+          "value": "./helpers/errorUtil",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 37
+            },
+            "end": {
+              "line": 3,
+              "column": 58
+            }
+          }
+        },
+        {
+          "value": "./helpers/parseUtil",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 37
+            },
+            "end": {
+              "line": 4,
+              "column": 58
+            }
+          }
+        },
+        {
+          "value": "./helpers/util",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 37
+            },
+            "end": {
+              "line": 5,
+              "column": 53
+            }
+          }
+        },
+        {
+          "value": "./ZodError",
+          "resolved": "__unresolved_5",
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 37
+            },
+            "end": {
+              "line": 6,
+              "column": 49
+            }
+          }
+        }
+      ],
+      "type": "commonjs",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/errors.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/helpers/errorUtil.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/helpers/parseUtil.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/helpers/util.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/ZodError.js"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///d:/editors/liars_dice_demo/node_modules/zod/lib/helpers/errorUtil.js": {
+      "mTimestamp": 1742796876874,
+      "chunkId": "35a4aacc68040740cfb0fbc787f0d7c087429cae",
+      "imports": [
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_0",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 23
+            },
+            "end": {
+              "line": 1,
+              "column": 56
+            }
+          }
+        }
+      ],
+      "type": "commonjs",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///d:/editors/liars_dice_demo/shared/types/game-types.ts": {
+      "mTimestamp": 1745568874448.4717,
+      "chunkId": "24c900a925ab534c9d61858704f37004ddc16a86",
+      "imports": [],
+      "type": "esm",
+      "resolutions": []
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-protocol.ts": {
+      "mTimestamp": {
+        "mtime": 1745134931185.0374,
+        "uuid": "0ec8e608-010c-4304-812d-7f01c051d9eb"
+      },
+      "chunkId": "49b3c60efcb09ed7fac3198c1f482f83f5cae3a8",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "zod",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 18
+            },
+            "end": {
+              "line": 1,
+              "column": 23
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/node_modules/zod/lib/index.mjs"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/node_modules/zod/lib/index.mjs": {
+      "mTimestamp": 1742796876874,
+      "chunkId": "dfe0ce5afa444e97dcf9cd079fa0e4cfab69a222",
+      "imports": [],
+      "type": "esm",
+      "resolutions": []
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/game-values.ts": {
+      "mTimestamp": {
+        "mtime": 1742891046339.8865,
+        "uuid": "8799a4a7-235e-4104-a812-b0ce09360cb4"
+      },
+      "chunkId": "1394e67abeeb3cc0a6c38003c7cb157d271aabd9",
+      "imports": [
+        {
+          "value": "cc"
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/shared/protocols/room-protocol.ts": {
+      "mTimestamp": {
+        "mtime": 1745134914059.278,
+        "uuid": "f8ba16c1-6d1d-4ffd-9434-1be6e3dd12be"
+      },
+      "chunkId": "34ff98923f0f58661d26c4d6c844cb29a0140950",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "zod",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 18
+            },
+            "end": {
+              "line": 1,
+              "column": 23
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/node_modules/zod/lib/index.mjs"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/LiarDiceState.ts": {
+      "mTimestamp": {
+        "mtime": 1746170875528.8792,
+        "uuid": "4c9d85a3-e344-464f-b212-3c81e29a3519"
+      },
+      "chunkId": "9157da5e97a97a6f74c18e7e533120b41af97ab1",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "./PlayerState",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 28
+            },
+            "end": {
+              "line": 1,
+              "column": 43
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/PlayerState.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/shared/types/game-types.ts": {
+      "mTimestamp": {
+        "mtime": 1745568874448.4717,
+        "uuid": "d3a2ac98-e9fd-4b19-9b72-18bce39ce8ff"
+      },
+      "chunkId": "78ab09d69da47be0a6c658266eb22af210e99121",
+      "imports": [
+        {
+          "value": "cc"
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/PlayerState.ts": {
+      "mTimestamp": {
+        "mtime": 1746170799135.0293,
+        "uuid": "a803099f-fc2a-4241-9786-ee8c865251a3"
+      },
+      "chunkId": "d3815155bca92ff9f8e7f89ad2b3286152a6748a",
+      "imports": [
+        {
+          "value": "cc"
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/liar-dice-room-state-client.ts": {
+      "mTimestamp": {
+        "mtime": 1745837452014.6897,
+        "uuid": "e877e7ce-96cb-4be5-aff3-bfdcd6dd1e20"
+      },
+      "chunkId": "d5b6d55159167f1c83c2a3ad246594231b9de946",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/shared/schemas/player-state-client.ts": {
+      "mTimestamp": {
+        "mtime": 1745837429714.5771,
+        "uuid": "8c754962-d112-46bc-98bc-ca1c66725c53"
+      },
+      "chunkId": "ddb8c3d086f739cb3fe2a0254013783a2c911824",
+      "imports": [
+        {
+          "value": "cc"
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts": {
+      "mTimestamp": {
+        "mtime": 1746022667002.0713,
+        "uuid": "867578c2-d0ec-490a-920c-9d8d94feb8d9"
+      },
+      "chunkId": "e850a985e91e2361b81e827a4ab0ca0c6b2f5f49",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 54
+            },
+            "end": {
+              "line": 1,
+              "column": 58
+            }
+          }
+        },
+        {
+          "value": "../libs/colyseus-loader",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 35
+            },
+            "end": {
+              "line": 2,
+              "column": 60
+            }
+          }
+        },
+        {
+          "value": "./network",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 31
+            },
+            "end": {
+              "line": 3,
+              "column": 42
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/colyseus-loader.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/scene-initializer.ts": {
+      "mTimestamp": {
+        "mtime": 1745839334615.6558,
+        "uuid": "cf0b359e-2c16-459d-97ba-f5035d4e326a"
+      },
+      "chunkId": "815370894e856e54660b2fd794264a0d5e191f5b",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 60
+            },
+            "end": {
+              "line": 1,
+              "column": 64
+            }
+          }
+        },
+        {
+          "value": "./app-initializer",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 31
+            },
+            "end": {
+              "line": 2,
+              "column": 50
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/app-initializer.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/debug/colyseus-tester.ts": {
+      "mTimestamp": {
+        "mtime": 1746022589603.4497,
+        "uuid": "3b2fbb57-3916-40d7-8a86-e747783c2877"
+      },
+      "chunkId": "4a9ad245aaaea92890790aa9a7b1fd7ac5180231",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 59
+            },
+            "end": {
+              "line": 1,
+              "column": 63
+            }
+          }
+        },
+        {
+          "value": "../libs/colyseus-loader",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 53
+            },
+            "end": {
+              "line": 2,
+              "column": 78
+            }
+          }
+        },
+        {
+          "value": "../core/network",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 31
+            },
+            "end": {
+              "line": 3,
+              "column": 48
+            }
+          }
+        },
+        {
+          "value": "../core/login-manager",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 29
+            },
+            "end": {
+              "line": 4,
+              "column": 52
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/libs/colyseus-loader.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/network.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/core/login-manager.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/external/colyseus.mjs?cjs=&original=.js": {
+      "mTimestamp": 1745993697801.4412,
+      "chunkId": "1448ea7baa910b16bef11ac579f0358814230467",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "./colyseus.js",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 36
+            },
+            "end": {
+              "line": 2,
+              "column": 51
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 19
+            },
+            "end": {
+              "line": 3,
+              "column": 52
+            }
+          }
+        },
+        {
+          "value": "./colyseus.js",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 14
+            },
+            "end": {
+              "line": 8,
+              "column": 29
+            }
+          }
+        },
+        {
+          "value": "./colyseus.js",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 9,
+              "column": 29
+            },
+            "end": {
+              "line": 9,
+              "column": 44
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/external/colyseus.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/external/colyseus.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/external/colyseus.js"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/external/colyseus.js": {
+      "mTimestamp": {
+        "mtime": 1745993697801.4412,
+        "uuid": "109b4d8e-a74e-4f76-b0e1-6e426fae68f5"
+      },
+      "chunkId": "84db89546ae252d7486451ca596e3a3468438be7",
+      "imports": [
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_0",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 23
+            },
+            "end": {
+              "line": 1,
+              "column": 56
+            }
+          }
+        }
+      ],
+      "type": "commonjs",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/external/colyseus.mjs?cjs=&original=.js": {
+      "mTimestamp": 1745993697801.4412,
+      "chunkId": "bc4391a7f1d74e6115132f4fc6ad60186249a840",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "./colyseus.js",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 36
+            },
+            "end": {
+              "line": 2,
+              "column": 51
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 19
+            },
+            "end": {
+              "line": 3,
+              "column": 52
+            }
+          }
+        },
+        {
+          "value": "./colyseus.js",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 14
+            },
+            "end": {
+              "line": 8,
+              "column": 29
+            }
+          }
+        },
+        {
+          "value": "./colyseus.js",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 9,
+              "column": 29
+            },
+            "end": {
+              "line": 9,
+              "column": 44
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/external/colyseus.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/external/colyseus.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/external/colyseus.js"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/external/colyseus.js": {
+      "mTimestamp": {
+        "mtime": 1745993697801.4412,
+        "uuid": "cf14a039-5082-44f5-bce8-fd570cf7a9d1"
+      },
+      "chunkId": "7f7aee3ac3955a9e5b5d28c3dd19af7bfdc70ba7",
+      "imports": [
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_0",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 23
+            },
+            "end": {
+              "line": 1,
+              "column": 56
+            }
+          }
+        }
+      ],
+      "type": "commonjs",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/player-state-client.ts": {
+      "mTimestamp": {
+        "mtime": 1746167173762.4583,
+        "uuid": "e3657b58-fecc-4927-b14c-aa113a3a3bcd"
+      },
+      "chunkId": "42cb982e2a2d4c8baa007bd12a8eb8c6e1a66698",
+      "imports": [
+        {
+          "value": "cc"
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/liar-dice-room-state-client.ts": {
+      "mTimestamp": {
+        "mtime": 1746167200248.471,
+        "uuid": "df40166e-ebb0-498f-b03c-cfbeaaeeaae8"
+      },
+      "chunkId": "d1fc69966fd9217bb59144f6353cc511533abb11",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "./player-state-client",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 28
+            },
+            "end": {
+              "line": 5,
+              "column": 51
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/shared/schemas/player-state-client.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/colyseus.mjs?cjs=&original=.js": {
+      "mTimestamp": 1745245079000,
+      "chunkId": "b781d88a0275458ef1259e7aef3c409e967b7f08",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "./colyseus.js",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 36
+            },
+            "end": {
+              "line": 2,
+              "column": 51
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 19
+            },
+            "end": {
+              "line": 3,
+              "column": 52
+            }
+          }
+        },
+        {
+          "value": "./colyseus.js",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 14
+            },
+            "end": {
+              "line": 8,
+              "column": 29
+            }
+          }
+        },
+        {
+          "value": "./colyseus.js",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 9,
+              "column": 29
+            },
+            "end": {
+              "line": 9,
+              "column": 44
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/colyseus.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/colyseus.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/colyseus.js"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/colyseus.js": {
+      "mTimestamp": {
+        "mtime": 1745245079000,
+        "uuid": "8f271900-057c-40c5-ab8b-84396469a253"
+      },
+      "chunkId": "da89c76a2e14671ccbb24ec908d76812ae372fb9",
+      "imports": [
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_0",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 23
+            },
+            "end": {
+              "line": 1,
+              "column": 56
+            }
+          }
+        }
+      ],
+      "type": "commonjs",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.mjs?cjs=&original=.js": {
+      "mTimestamp": 1745245081000,
+      "chunkId": "bcfbb615dc876372d60dc7d5f73c3a98da59650a",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "./colyseus-cocos-creator.js",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 36
+            },
+            "end": {
+              "line": 2,
+              "column": 65
+            }
+          }
+        },
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 19
+            },
+            "end": {
+              "line": 3,
+              "column": 52
+            }
+          }
+        },
+        {
+          "value": "./colyseus-cocos-creator.js",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 14
+            },
+            "end": {
+              "line": 8,
+              "column": 43
+            }
+          }
+        },
+        {
+          "value": "./colyseus-cocos-creator.js",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 9,
+              "column": 29
+            },
+            "end": {
+              "line": 9,
+              "column": 58
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.js"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.js"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/editors/liars_dice_demo/client/assets/scripts/colyseus-cocos-creator.js": {
+      "mTimestamp": 1745245081000,
+      "chunkId": "4e99387cbe14577cadc8965e992c8a9697fa2365",
+      "imports": [
+        {
+          "value": "cce:/internal/ml/cjs-loader.mjs",
+          "resolved": "__unresolved_0",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 23
+            },
+            "end": {
+              "line": 1,
+              "column": 56
+            }
+          }
+        }
+      ],
+      "type": "commonjs",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        }
+      ]
+    }
+  }
+}

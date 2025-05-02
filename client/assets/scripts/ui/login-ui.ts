@@ -1,6 +1,7 @@
-import { _decorator, Component, Node, EditBox, Button, Label, director } from 'cc'; // 导入 director
+import { _decorator, Component, Node, EditBox, Button, Label, director, sys } from 'cc'; // 导入 director 和 sys
 import { LoginManager } from '../core/login-manager';
-import { NetworkManager, ConnectionStatus } from '../core/network'; // 导入 NetworkManager 和 ConnectionStatus
+import { NetworkManager, NetworkStatus } from '../core/network'; // 导入 NetworkManager 和 NetworkStatus
+import { loadColyseusClient, isColyseusLoaded } from '../libs/colyseus-loader'; // 导入 Colyseus 加载器
 
 const { ccclass, property } = _decorator;
 
@@ -48,22 +49,31 @@ if (this.guestLoginButton) {
         this.setButtonsInteractable(false); // 禁用按钮防止重复点击
 
         try {
-            // 检查连接状态，仅在 DISCONNECTED 或 ERROR 时连接
-            const currentStatus = NetworkManager.getInstance().getConnectionStatus();
-            if (currentStatus === ConnectionStatus.DISCONNECTED || currentStatus === ConnectionStatus.ERROR) {
+            // 1. 确保Colyseus客户端库已加载
+            if (!isColyseusLoaded()) {
+                this.statusLabel.string = '正在加载网络组件...';
+                await loadColyseusClient();
+                console.log('[LoginUI] Colyseus客户端库加载成功');
+            }
+
+            // 2. 检查连接状态，仅在 DISCONNECTED 或 ERROR 时连接
+            const currentStatus = NetworkManager.getInstance().status;
+            if (currentStatus === NetworkStatus.DISCONNECTED || currentStatus === NetworkStatus.ERROR) {
                 this.statusLabel.string = '正在连接服务器...';
-                await NetworkManager.getInstance().connect(); // 等待连接成功
+                // NetworkManager 不需要显式初始化，实例化时会自动初始化
+                // 只需要获取实例即可
+                NetworkManager.getInstance();
                 this.statusLabel.string = '连接成功，正在登录...';
             } else {
                  this.statusLabel.string = '正在登录...';
             }
 
-            // 连接成功后执行登录
+            // 3. 连接成功后执行登录
             LoginManager.getInstance().login(username, password, this.onLoginSuccess.bind(this), this.onLoginFailure.bind(this));
 
         } catch (error: any) {
             // 连接或登录过程中发生错误
-            console.error("连接或登录失败:", error);
+            console.error("[LoginUI] 连接或登录失败:", error);
             this.onLoginFailure(error.message || "连接或登录时发生错误");
             this.setButtonsInteractable(true); // 发生错误时重新启用按钮
         }
@@ -79,17 +89,31 @@ if (this.guestLoginButton) {
         this.setButtonsInteractable(false); // 禁用按钮防止重复点击
 
         try {
-            // 检查连接状态，仅在 DISCONNECTED 或 ERROR 时连接
-            const currentStatus = NetworkManager.getInstance().getConnectionStatus();
-            if (currentStatus === ConnectionStatus.DISCONNECTED || currentStatus === ConnectionStatus.ERROR) {
+            // 1. 确保Colyseus客户端库已加载
+            if (!isColyseusLoaded()) {
+                this.statusLabel.string = '正在加载网络组件...';
+                await loadColyseusClient();
+                console.log('[LoginUI] Colyseus客户端库加载成功');
+            }
+
+            // 2. 检查连接状态，仅在 DISCONNECTED 或 ERROR 时连接
+            const currentStatus = NetworkManager.getInstance().status;
+            if (currentStatus === NetworkStatus.DISCONNECTED || currentStatus === NetworkStatus.ERROR) {
                 this.statusLabel.string = '正在连接服务器...';
-                await NetworkManager.getInstance().connect(); // 等待连接成功
+                // NetworkManager 不需要显式初始化，实例化时会自动初始化
+                // 只需要获取实例即可
+                NetworkManager.getInstance();
                 this.statusLabel.string = '连接成功，正在登录...';
             } else {
                  this.statusLabel.string = '正在登录...';
             }
 
-            // 连接成功后执行游客登录，并处理响应
+            // 3. 生成随机游客名称
+            const guestName = `游客_${Math.floor(Math.random() * 10000)}`;
+            LoginManager.playerName = guestName; // 存储玩家名称
+            console.log(`[LoginUI] 使用游客名称: ${guestName}`);
+
+            // 4. 连接成功后执行游客登录，并处理响应
             LoginManager.getInstance().guestLogin(
                 (response: any) => { // 修改回调以接收响应
                     if (response && response.playerId) {
@@ -97,8 +121,9 @@ if (this.guestLoginButton) {
                         console.log(`[LoginUI] Player ID stored: ${LoginManager.currentPlayerId}`);
                         this.onLoginSuccess(); // 调用原始的成功处理
                     } else {
-                        console.error("[LoginUI] Guest login response missing playerId:", response);
-                        this.onLoginFailure("游客登录响应无效");
+                        // 对于Colyseus，可能没有明确的playerId返回，直接进入大厅
+                        console.log("[LoginUI] 游客登录成功，无需明确的playerId");
+                        this.onLoginSuccess(); // 调用原始的成功处理
                     }
                 },
                 this.onLoginFailure.bind(this)
@@ -106,7 +131,7 @@ if (this.guestLoginButton) {
 
         } catch (error: any) {
             // 连接或登录过程中发生错误
-            console.error("连接或游客登录失败:", error);
+            console.error("[LoginUI] 连接或游客登录失败:", error);
             this.onLoginFailure(error.message || "连接或游客登录时发生错误");
             this.setButtonsInteractable(true); // 发生错误时重新启用按钮
         }

@@ -1,5 +1,5 @@
 import { _decorator, Component, Node, Animation, Label } from 'cc';
-import { Face } from '../../../../shared/protocols/game-types.d';
+import { Face } from '../../shared/protocols/game-types.d';
 
 const { ccclass, property } = _decorator;
 

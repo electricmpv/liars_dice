@@ -1,6 +1,6 @@
 import { Clock } from "@colyseus/core";
 import { LiarDiceRoom } from "./LiarDiceRoom"; // Import Room type for context
-import { LiarDiceRoomState } from "./schema/LiarDiceState";
+import { LiarDiceRoomState } from "../../../shared/schemas/LiarDiceState";
 import { AIServiceClient } from "./ai-service-client";
 import { Face, AIActionDecision } from './types/game-types';
 
@@ -28,18 +28,30 @@ export class AIManager {
         if (this.state.activePlayerIds.length === 0) return;
 
         const currentPlayerSessionId = this.state.activePlayerIds[this.state.currentPlayerIndex];
-        const currentPlayer = this.state.players.get(currentPlayerSessionId);
+        // Add check for undefined sessionId
+        if (!currentPlayerSessionId) {
+            console.warn(`[AIManager][${this.room.roomId}] checkAndTriggerAI: currentPlayerSessionId is undefined at index ${this.state.currentPlayerIndex}`);
+            return;
+        }
+        const currentPlayer = this.state.players.get(currentPlayerSessionId); // Now currentPlayerSessionId is confirmed string
 
         if (currentPlayer && currentPlayer.isAI) {
             console.log(`[AIManager][${this.room.roomId}] Current player is AI: ${currentPlayer.name}. Scheduling decision...`);
             // Add a delay to simulate thinking
             this.clock.setTimeout(() => {
                 // Check status again before triggering, in case game ended/changed
-                if (this.state.status === "playing" && this.state.activePlayerIds[this.state.currentPlayerIndex] === currentPlayerSessionId) {
-                   this.triggerAIDecision(currentPlayerSessionId);
-                } else {
+                 const stillCurrentPlayerId = this.state.activePlayerIds[this.state.currentPlayerIndex];
+                 // Add check for undefined stillCurrentPlayerId as well
+                 if (!stillCurrentPlayerId) {
+                     console.warn(`[AIManager][${this.room.roomId}] checkAndTriggerAI (timeout): stillCurrentPlayerId is undefined.`);
+                     return;
+                 }
+                 if (this.state.status === "playing" && stillCurrentPlayerId === currentPlayerSessionId) {
+                    // Pass the confirmed string sessionId
+                    this.triggerAIDecision(currentPlayerSessionId);
+                 } else {
                     console.log(`[AIManager][${this.room.roomId}] AI ${currentPlayer.name}'s turn skipped due to state change during delay.`);
-                }
+                 }
             }, 1000 + Math.random() * 1500); // 1-2.5 second delay
         }
     }
@@ -118,16 +130,8 @@ export class AIManager {
                         this.room.broadcast("playerBid", { sessionId: aiSessionId, value: aiBidValue, count: aiBidCount }, { afterNextPatch: true });
                         // Note: nextTurn and subsequent AI check are handled within gameLogic.processBid -> room.nextTurn
                     } else {
-                         console.error(`[AIManager][${this.room.roomId}] AI ${aiSessionId} returned invalid bid. Applying fallback.`);
-                        this.state.currentBidCount = aiBidCount;
-                        this.state.lastBidderSessionId = aiSessionId;
-                        this.state.moveNumber++;
-                        if (aiBidValue === 1) {
-                            this.state.isOneCalledThisRound = true;
-                        }
-                        this.room.nextTurn(); // Call room's nextTurn
-                    } else {
-                         console.error(`[AIManager][${this.room.roomId}] AI ${aiSessionId} returned invalid bid. Applying fallback.`);
+                         console.error(`[AIManager][${this.room.roomId}] AI ${aiSessionId} returned invalid bid (${aiBidCount}x ${aiBidValue}). Applying fallback.`);
+                         // Get and apply fallback action instead of applying the invalid bid
                          const fallback = this.getFallbackAIAction(aiSessionId);
                          this.applyAIDecision(aiSessionId, fallback);
                     }

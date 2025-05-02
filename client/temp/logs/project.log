@@ -1,0 +1,25 @@
+2025-5-3 01:57:23 - log: Load engine in D:\editors\Creator\3.8.2\resources\resources\3d\engine
+2025-5-3 01:57:23 - log: Profile changed: engine (modules.includeModules: 2d,animation,audio,base,dragon-bones,gfx-webgl,gfx-webgl2,intersection-2d,particle-2d,physics-2d-box2d,profiler,spine,tiled-map,tween,ui,video,webview)
+2025-5-3 01:57:23 - log: Register native engine in D:\editors\Creator\3.8.2\resources\resources\3d\engine\native
+2025-5-3 01:57:47 - log: [Scene] meshopt wasm decoder initialized
+2025-5-3 01:57:47 - log: [Scene] [box2d]:box2d wasm lib loaded.
+2025-5-3 01:57:48 - log: [Scene] [bullet]:bullet wasm lib loaded.
+2025-5-3 01:57:48 - log: [Scene] [PHYSICS]: using builtin.
+2025-5-3 01:57:48 - log: [Scene] Cocos Creator v3.8.2
+2025-5-3 01:57:48 - info: [Scene] Forward render pipeline initialized.
+2025-5-3 01:57:49 - error: [Scene] Unexpected token '{'D:\editors\liars_dice_demo\client\library\de\dea98109-a22e-4446-8c1f-b5645bf228ad.js:724
+    		        static { this.inheritedTypes = new Map(); }
+    		               ^
+
+SyntaxError: Unexpected token '{'
+    at new Script (vm.js:101:7)
+    at createScript (vm.js:262:10)
+    at Object.runInThisContext (vm.js:310:10)
+    at wrapSafe (internal/modules/cjs/loader.js:974:15)
+    at Module._compile (internal/modules/cjs/loader.js:1034:27)
+    at Object.extFunction (D:\editors\Creator\3.8.2\resources\app.asar\node_modules\@editor\creator\dist\require.js:1:2256)
+    at Module.load (internal/modules/cjs/loader.js:935:32)
+    at Module._load (internal/modules/cjs/loader.js:776:14)
+    at Function.f._load (electron/js2c/asar_bundle.js:5:12913)
+    at Function._load (D:\editors\Creator\3.8.2\resources\app.asar\node_modules\cc\preload.ts:127:35)
+2025-5-3 01:57:49 - log: [Scene] [PHYSICS2D]: switch from box2d-wasm to box2d.

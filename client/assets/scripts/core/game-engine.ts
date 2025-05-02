@@ -1,6 +1,6 @@
 import { _decorator, Component, Node, Animation, Label, CCInteger } from 'cc';
 // 移除了大部分导入，特别是与核心游戏逻辑和类型相关的
-// import { Face, Hand, Bid, EmptyBid, PlayerID, BidData, DiceResult, EventEmitter } from '../../../../shared/protocols/game-types.d';
+// import { Face, Hand, Bid, EmptyBid, PlayerID, BidData, DiceResult, EventEmitter } from '../../shared/protocols/game-types.d';
 // import { network } from './network'; // 移除网络依赖，UI层处理
 
 const { ccclass, property } = _decorator;

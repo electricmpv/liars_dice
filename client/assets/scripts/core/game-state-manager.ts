@@ -1,7 +1,7 @@
 import { EventTarget } from 'cc';
-import { Bid, Face } from '../../../../shared/protocols/game-types.d';
-// Import network instance
-import { network } from './network';
+import { Bid, Face } from '../../shared/protocols/game-types.d';
+// Import NetworkManager
+import { NetworkManager } from './network';
 
 // Define the expected payload structure for game:challenge_result
 // (Adjust based on actual server implementation if different)
@@ -90,7 +90,7 @@ export class GameStateManager extends EventTarget {
     private constructor() {
         super();
         // Add listener for challenge results from NetworkManager
-        network.on('game:challenge_result', this.handleChallengeResult.bind(this));
+        NetworkManager.getInstance().on('game:challenge_result', this.handleChallengeResult.bind(this));
         console.log("[GameStateManager] Constructor: Registered listener for 'game:challenge_result'");
     }
 
@@ -403,8 +403,8 @@ export class GameStateManager extends EventTarget {
         this._gameState = null;
         this._playerDices = [];
         this._currentPlayerId = '';
-        // Remove listener
-        network.off('game:challenge_result', this.handleChallengeResult.bind(this));
+        // 移除监听器
+        NetworkManager.getInstance().off('game:challenge_result', this.handleChallengeResult.bind(this));
         console.log("[GameStateManager] Clear: Removed listener for 'game:challenge_result'");
     }
 }

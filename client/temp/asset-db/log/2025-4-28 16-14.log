@@ -1,0 +1,220 @@
+2025-4-28 16:14:09-log: Cannot access game frame or container.
+2025-4-28 16:14:10-debug: asset-db:require-engine-code (1445ms)
+2025-4-28 16:14:10-log: meshopt wasm decoder initialized
+2025-4-28 16:14:10-log: [box2d]:box2d wasm lib loaded.
+2025-4-28 16:14:10-log: [bullet]:bullet wasm lib loaded.
+2025-4-28 16:14:11-log: Cocos Creator v3.8.2
+2025-4-28 16:14:11-debug: [Assets Memory track]: asset-db:worker-init: initEngine start:22.32MB, end 106.64MB, increase: 84.32MB
+2025-4-28 16:14:13-debug: [Assets Memory track]: asset-db-plugin-register: engine-extends start:109.91MB, end 241.01MB, increase: 131.10MB
+2025-4-28 16:14:11-debug: [Assets Memory track]: asset-db-plugin-register: programming start:107.22MB, end 109.87MB, increase: 2.64MB
+2025-4-28 16:14:13-debug: [Assets Memory track]: asset-db-plugin-enable: project start:110.03MB, end 241.02MB, increase: 130.99MB
+2025-4-28 16:14:13-debug: [Assets Memory track]: asset-db-plugin-enable: builder start:110.34MB, end 238.09MB, increase: 127.75MB
+2025-4-28 16:14:13-debug: [Assets Memory track]: asset-db:worker-init: initPlugin start:106.64MB, end 241.16MB, increase: 134.51MB
+2025-4-28 16:14:13-debug: run package(native) handler(enable) start
+2025-4-28 16:14:13-debug: run package(native) handler(enable) success!
+2025-4-28 16:14:13-debug: run package(ohos) handler(enable) start
+2025-4-28 16:14:13-debug: run package(ohos) handler(enable) success!
+2025-4-28 16:14:13-debug: run package(openharmony) handler(enable) start
+2025-4-28 16:14:13-debug: run package(openharmony) handler(enable) success!
+2025-4-28 16:14:13-debug: run package(runtime-dev-tools) handler(enable) success!
+2025-4-28 16:14:13-debug: run package(oppo-mini-game) handler(enable) start
+2025-4-28 16:14:13-debug: run package(oppo-mini-game) handler(enable) success!
+2025-4-28 16:14:13-debug: run package(taobao-creative-app) handler(enable) start
+2025-4-28 16:14:13-debug: run package(taobao-creative-app) handler(enable) success!
+2025-4-28 16:14:13-debug: run package(taobao-mini-game) handler(enable) success!
+2025-4-28 16:14:13-debug: run package(taobao-mini-game) handler(enable) start
+2025-4-28 16:14:13-debug: run package(runtime-dev-tools) handler(enable) start
+2025-4-28 16:14:13-debug: run package(vivo-mini-game) handler(enable) start
+2025-4-28 16:14:13-debug: run package(vivo-mini-game) handler(enable) success!
+2025-4-28 16:14:13-debug: run package(web-desktop) handler(enable) start
+2025-4-28 16:14:13-debug: run package(web-mobile) handler(enable) start
+2025-4-28 16:14:13-debug: run package(web-desktop) handler(enable) success!
+2025-4-28 16:14:13-debug: run package(web-mobile) handler(enable) success!
+2025-4-28 16:14:13-debug: run package(wechatgame) handler(enable) start
+2025-4-28 16:14:13-debug: run package(wechatgame) handler(enable) success!
+2025-4-28 16:14:13-debug: run package(wechatprogram) handler(enable) success!
+2025-4-28 16:14:13-debug: run package(windows) handler(enable) success!
+2025-4-28 16:14:13-debug: run package(wechatprogram) handler(enable) start
+2025-4-28 16:14:13-debug: run package(windows) handler(enable) start
+2025-4-28 16:14:13-debug: run package(cocos-service) handler(enable) success!
+2025-4-28 16:14:13-debug: run package(xiaomi-quick-game) handler(enable) start
+2025-4-28 16:14:13-debug: run package(xiaomi-quick-game) handler(enable) success!
+2025-4-28 16:14:13-debug: run package(im-plugin) handler(enable) start
+2025-4-28 16:14:13-debug: run package(im-plugin) handler(enable) success!
+2025-4-28 16:14:13-debug: run package(cocos-service) handler(enable) start
+2025-4-28 16:14:13-debug: run package(fix-device) handler(enable) success!
+2025-4-28 16:14:13-debug: run package(placeholder) handler(enable) start
+2025-4-28 16:14:13-debug: run package(fix-device) handler(enable) start
+2025-4-28 16:14:13-debug: run package(placeholder) handler(enable) success!
+2025-4-28 16:14:13-debug: asset-db:worker-init: initPlugin (2184ms)
+2025-4-28 16:14:13-debug: [Assets Memory track]: asset-db:worker-init start:22.32MB, end 237.44MB, increase: 215.12MB
+2025-4-28 16:14:13-debug: Run asset db hook programming:beforePreStart ...
+2025-4-28 16:14:13-debug: Run asset db hook programming:beforePreStart success!
+2025-4-28 16:14:13-debug: Run asset db hook engine-extends:beforePreStart success!
+2025-4-28 16:14:13-debug: Run asset db hook engine-extends:beforePreStart ...
+2025-4-28 16:14:14-debug: asset-db:worker-init (5301ms)
+2025-4-28 16:14:14-debug: asset-db-hook-programming-beforePreStart (485ms)
+2025-4-28 16:14:14-debug: asset-db-hook-engine-extends-beforePreStart (484ms)
+2025-4-28 16:14:14-debug: Preimport db internal success
+2025-4-28 16:14:14-debug: Preimport db assets success
+2025-4-28 16:14:14-debug: Run asset db hook programming:afterPreStart ...
+2025-4-28 16:14:14-debug: starting packer-driver...
+2025-4-28 16:14:20-debug: initialize scripting environment...
+2025-4-28 16:14:20-debug: Set detail map pack:///resolution-detail-map.json: {  "./chunks/82/82e5c189723cab957c8c4f398974c450211e3d6b.js": {    "__unresolved_3": {      "error": "Error: 以 file:///D:/editors/liars_dice_demo/client/assets/scripts/ui/room-ui.ts 为起点找不到模块 \"../../../../shared/schemas/LiarDiceState\"",      "messages": [        {          "level": "warn",          "text": "你是否遗漏了扩展名？请注意你不能在模块说明符中省略扩展名。"        }      ]    }  }}
+2025-4-28 16:14:20-debug: Run asset db hook programming:afterPreStart success!
+2025-4-28 16:14:20-debug: Run asset db hook engine-extends:afterPreStart ...
+2025-4-28 16:14:20-debug: asset-db-hook-programming-afterPreStart (6659ms)
+2025-4-28 16:14:21-debug: recompile effect.bin success
+2025-4-28 16:14:21-debug: Run asset db hook engine-extends:afterPreStart success!
+2025-4-28 16:14:21-debug: Start up the 'internal' database...
+2025-4-28 16:14:21-debug: asset-db:worker-effect-data-processing (400ms)
+2025-4-28 16:14:21-debug: asset-db-hook-engine-extends-afterPreStart (401ms)
+2025-4-28 16:14:21-debug: Start up the 'assets' database...
+2025-4-28 16:14:21-debug: asset-db:worker-startup-database[internal] (7343ms)
+2025-4-28 16:14:21-debug: asset-db:worker-startup-database[assets] (7225ms)
+2025-4-28 16:14:21-debug: asset-db:start-database (7749ms)
+2025-4-28 16:14:21-debug: asset-db:ready (15123ms)
+2025-4-28 16:14:21-debug: init worker message success
+2025-4-28 16:14:21-debug: [Build Memory track]: builder:worker-init start:193.38MB, end 205.13MB, increase: 11.75MB
+2025-4-28 16:14:21-debug: programming:execute-script (1ms)
+2025-4-28 16:14:21-debug: builder:worker-init (502ms)
+2025-4-28 16:14:23-debug: programming:execute-script (7ms)
+2025-4-28 16:14:25-debug: refresh db internal success
+2025-4-28 16:14:25-debug: refresh db assets success
+2025-4-28 16:14:25-debug: Run asset db hook engine-extends:afterRefresh success!
+2025-4-28 16:14:25-debug: Run asset db hook engine-extends:afterRefresh ...
+2025-4-28 16:14:25-debug: asset-db:refresh-all-database (191ms)
+2025-4-28 16:14:25-debug: asset-db:worker-effect-data-processing (10ms)
+2025-4-28 16:14:25-debug: asset-db-hook-engine-extends-afterRefresh (10ms)
+2025-4-28 16:14:42-debug: refresh db internal success
+2025-4-28 16:14:42-debug: refresh db assets success
+2025-4-28 16:14:42-debug: Run asset db hook engine-extends:afterRefresh ...
+2025-4-28 16:14:42-debug: Run asset db hook engine-extends:afterRefresh success!
+2025-4-28 16:14:42-debug: asset-db:refresh-all-database (145ms)
+2025-4-28 16:14:42-debug: asset-db:worker-effect-data-processing (2ms)
+2025-4-28 16:14:42-debug: asset-db-hook-engine-extends-afterRefresh (2ms)
+2025-4-28 16:14:51-debug: refresh db internal success
+2025-4-28 16:14:51-debug: refresh db assets success
+2025-4-28 16:14:51-debug: Run asset db hook engine-extends:afterRefresh ...
+2025-4-28 16:14:51-debug: Run asset db hook engine-extends:afterRefresh success!
+2025-4-28 16:14:51-debug: asset-db:refresh-all-database (174ms)
+2025-4-28 16:14:51-debug: asset-db:worker-effect-data-processing (1ms)
+2025-4-28 16:14:51-debug: asset-db-hook-engine-extends-afterRefresh (2ms)
+2025-4-28 16:15:05-debug: refresh db internal success
+2025-4-28 16:15:05-debug: refresh db assets success
+2025-4-28 16:15:05-debug: Run asset db hook engine-extends:afterRefresh ...
+2025-4-28 16:15:05-debug: Run asset db hook engine-extends:afterRefresh success!
+2025-4-28 16:15:05-debug: asset-db:worker-effect-data-processing (1ms)
+2025-4-28 16:15:05-debug: asset-db:refresh-all-database (159ms)
+2025-4-28 16:15:05-debug: asset-db-hook-engine-extends-afterRefresh (2ms)
+2025-4-28 16:16:30-debug: refresh db internal success
+2025-4-28 16:16:30-debug: refresh db assets success
+2025-4-28 16:16:30-debug: Run asset db hook engine-extends:afterRefresh success!
+2025-4-28 16:16:30-debug: Run asset db hook engine-extends:afterRefresh ...
+2025-4-28 16:16:30-debug: asset-db:refresh-all-database (125ms)
+2025-4-28 16:16:30-debug: asset-db:worker-effect-data-processing (1ms)
+2025-4-28 16:16:30-debug: asset-db-hook-engine-extends-afterRefresh (1ms)
+2025-4-28 16:19:04-debug: refresh db internal success
+2025-4-28 16:19:04-debug: refresh db assets success
+2025-4-28 16:19:04-debug: Run asset db hook engine-extends:afterRefresh success!
+2025-4-28 16:19:04-debug: Run asset db hook engine-extends:afterRefresh ...
+2025-4-28 16:19:04-debug: asset-db:refresh-all-database (159ms)
+2025-4-28 16:19:04-debug: asset-db-hook-engine-extends-afterRefresh (1ms)
+2025-4-28 16:19:14-debug: refresh db internal success
+2025-4-28 16:19:14-debug: refresh db assets success
+2025-4-28 16:19:14-debug: Run asset db hook engine-extends:afterRefresh ...
+2025-4-28 16:19:14-debug: Run asset db hook engine-extends:afterRefresh success!
+2025-4-28 16:19:14-debug: asset-db:refresh-all-database (151ms)
+2025-4-28 16:19:14-debug: asset-db:worker-effect-data-processing (1ms)
+2025-4-28 16:19:14-debug: asset-db-hook-engine-extends-afterRefresh (1ms)
+2025-4-28 16:20:29-debug: refresh db internal success
+2025-4-28 16:20:29-debug: refresh db assets success
+2025-4-28 16:20:29-debug: Run asset db hook engine-extends:afterRefresh ...
+2025-4-28 16:20:29-debug: Run asset db hook engine-extends:afterRefresh success!
+2025-4-28 16:20:29-debug: asset-db:refresh-all-database (116ms)
+2025-4-28 16:20:29-debug: asset-db:worker-effect-data-processing (1ms)
+2025-4-28 16:20:29-debug: asset-db-hook-engine-extends-afterRefresh (1ms)
+2025-4-28 16:20:35-debug: refresh db internal success
+2025-4-28 16:20:35-debug: refresh db assets success
+2025-4-28 16:20:35-debug: Run asset db hook engine-extends:afterRefresh ...
+2025-4-28 16:20:35-debug: Run asset db hook engine-extends:afterRefresh success!
+2025-4-28 16:20:35-debug: asset-db:refresh-all-database (115ms)
+2025-4-28 16:20:35-debug: asset-db:worker-effect-data-processing (1ms)
+2025-4-28 16:20:35-debug: asset-db-hook-engine-extends-afterRefresh (1ms)
+2025-4-28 16:21:07-debug: refresh db internal success
+2025-4-28 16:21:07-debug: %cImport%c: D:\editors\liars_dice_demo\client\assets\scripts\ui\room-ui.tsbackground: #aaff85; color: #000;color: #000;
+2025-4-28 16:21:07-debug: Run asset db hook engine-extends:afterRefresh ...
+2025-4-28 16:21:07-debug: Run asset db hook engine-extends:afterRefresh success!
+2025-4-28 16:21:07-debug: refresh db assets success
+2025-4-28 16:21:07-debug: asset-db:refresh-all-database (118ms)
+2025-4-28 16:21:07-debug: asset-db:worker-effect-data-processing (1ms)
+2025-4-28 16:21:07-debug: asset-db-hook-engine-extends-afterRefresh (1ms)
+2025-4-28 16:21:41-debug: refresh db internal success
+2025-4-28 16:21:41-debug: %cImport%c: D:\editors\liars_dice_demo\client\assets\scripts\core\network.tsbackground: #aaff85; color: #000;color: #000;
+2025-4-28 16:21:41-debug: refresh db assets success
+2025-4-28 16:21:41-debug: Run asset db hook engine-extends:afterRefresh ...
+2025-4-28 16:21:41-debug: Run asset db hook engine-extends:afterRefresh success!
+2025-4-28 16:21:41-debug: asset-db:refresh-all-database (157ms)
+2025-4-28 16:21:41-debug: asset-db:worker-effect-data-processing (1ms)
+2025-4-28 16:21:41-debug: asset-db-hook-engine-extends-afterRefresh (1ms)
+2025-4-28 16:22:02-debug: refresh db internal success
+2025-4-28 16:22:02-debug: refresh db assets success
+2025-4-28 16:22:02-debug: Run asset db hook engine-extends:afterRefresh ...
+2025-4-28 16:22:02-debug: Run asset db hook engine-extends:afterRefresh success!
+2025-4-28 16:22:02-debug: asset-db:refresh-all-database (173ms)
+2025-4-28 16:22:02-debug: asset-db-hook-engine-extends-afterRefresh (1ms)
+2025-4-28 16:22:09-debug: refresh db internal success
+2025-4-28 16:22:09-debug: refresh db assets success
+2025-4-28 16:22:09-debug: Run asset db hook engine-extends:afterRefresh ...
+2025-4-28 16:22:09-debug: Run asset db hook engine-extends:afterRefresh success!
+2025-4-28 16:22:09-debug: asset-db:refresh-all-database (150ms)
+2025-4-28 16:23:02-debug: refresh db internal success
+2025-4-28 16:23:02-debug: refresh db assets success
+2025-4-28 16:23:02-debug: Run asset db hook engine-extends:afterRefresh ...
+2025-4-28 16:23:02-debug: Run asset db hook engine-extends:afterRefresh success!
+2025-4-28 16:23:02-debug: asset-db:refresh-all-database (115ms)
+2025-4-28 16:23:11-debug: %cImport%c: D:\editors\liars_dice_demo\client\assets\libs\colyseus.jsbackground: #aaff85; color: #000;color: #000;
+2025-4-28 16:23:11-debug: asset-db:reimport-asset4063c82e-e396-4fa3-b784-e2e1026cb0e7 (13ms)
+2025-4-28 16:23:20-debug: %cImport%c: D:\editors\liars_dice_demo\client\assets\libs\colyseus.jsbackground: #aaff85; color: #000;color: #000;
+2025-4-28 16:23:20-debug: asset-db:reimport-asset4063c82e-e396-4fa3-b784-e2e1026cb0e7 (15ms)
+2025-4-28 16:25:09-debug: refresh db internal success
+2025-4-28 16:25:09-debug: refresh db assets success
+2025-4-28 16:25:09-debug: Run asset db hook engine-extends:afterRefresh ...
+2025-4-28 16:25:09-debug: Run asset db hook engine-extends:afterRefresh success!
+2025-4-28 16:25:09-debug: asset-db:refresh-all-database (159ms)
+2025-4-28 16:25:09-debug: asset-db:worker-effect-data-processing (2ms)
+2025-4-28 16:25:09-debug: asset-db-hook-engine-extends-afterRefresh (2ms)
+2025-4-28 16:27:16-debug: refresh db internal success
+2025-4-28 16:27:16-debug: refresh db assets success
+2025-4-28 16:27:16-debug: Run asset db hook engine-extends:afterRefresh ...
+2025-4-28 16:27:16-debug: Run asset db hook engine-extends:afterRefresh success!
+2025-4-28 16:27:16-debug: asset-db:refresh-all-database (212ms)
+2025-4-28 16:27:16-debug: asset-db-hook-engine-extends-afterRefresh (2ms)
+2025-4-28 16:27:31-debug: refresh db internal success
+2025-4-28 16:27:32-debug: refresh db assets success
+2025-4-28 16:27:32-debug: Run asset db hook engine-extends:afterRefresh ...
+2025-4-28 16:27:32-debug: Run asset db hook engine-extends:afterRefresh success!
+2025-4-28 16:27:32-debug: asset-db:refresh-all-database (118ms)
+2025-4-28 16:27:32-debug: asset-db:worker-effect-data-processing (1ms)
+2025-4-28 16:27:32-debug: asset-db-hook-engine-extends-afterRefresh (1ms)
+2025-4-28 16:29:18-debug: refresh db internal success
+2025-4-28 16:29:18-debug: %cImport%c: D:\editors\liars_dice_demo\client\assets\scripts\shared-exports.tsbackground: #aaff85; color: #000;color: #000;
+2025-4-28 16:29:18-debug: %cImport%c: D:\editors\liars_dice_demo\client\assets\scriptsbackground: #aaff85; color: #000;color: #000;
+2025-4-28 16:29:18-debug: %cImport%c: D:\editors\liars_dice_demo\client\assets\scripts\ui\room-ui.tsbackground: #aaff85; color: #000;color: #000;
+2025-4-28 16:29:18-debug: refresh db assets success
+2025-4-28 16:29:18-debug: Run asset db hook engine-extends:afterRefresh ...
+2025-4-28 16:29:18-debug: Run asset db hook engine-extends:afterRefresh success!
+2025-4-28 16:29:18-debug: asset-db:refresh-all-database (172ms)
+2025-4-28 16:29:18-debug: asset-db:worker-effect-data-processing (1ms)
+2025-4-28 16:29:18-debug: asset-db-hook-engine-extends-afterRefresh (1ms)
+2025-4-28 16:32:30-debug: refresh db internal success
+2025-4-28 16:32:30-debug: %cDestroy%c: D:\editors\liars_dice_demo\client\assets\scripts\shared-exports.tsbackground: #ffb8b8; color: #000;color: #000;
+2025-4-28 16:32:30-debug: %cImport%c: D:\editors\liars_dice_demo\client\assets\scriptsbackground: #aaff85; color: #000;color: #000;
+2025-4-28 16:32:30-debug: %cImport%c: D:\editors\liars_dice_demo\client\assets\scripts\core\network.tsbackground: #aaff85; color: #000;color: #000;
+2025-4-28 16:32:30-debug: %cImport%c: D:\editors\liars_dice_demo\client\assets\scripts\ui\room-ui.tsbackground: #aaff85; color: #000;color: #000;
+2025-4-28 16:32:30-debug: refresh db assets success
+2025-4-28 16:32:30-debug: Run asset db hook engine-extends:afterRefresh ...
+2025-4-28 16:32:30-debug: Run asset db hook engine-extends:afterRefresh success!
+2025-4-28 16:32:30-debug: asset-db:refresh-all-database (212ms)
+2025-4-28 16:32:30-debug: asset-db:worker-effect-data-processing (1ms)
+2025-4-28 16:32:30-debug: asset-db-hook-engine-extends-afterRefresh (1ms)

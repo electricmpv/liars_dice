@@ -23,31 +23,32 @@ Thumbs.db
 *.sublime-workspace
 
 # 新增 Cocos 工程特定忽略规则
-/client/settings/
-/client/temp/
-/client/build/
-/client/profiles/
+!/client/settings/
+!/client/temp/
+!/client/build/
+!/client/profiles/
 /client/assets/**/*.meta
-/client/packages/
+!/client/packages/
 
 # TypeScript 编译输出
-*.js
-*.d.ts
+!*.js
+!*.d.ts
 !*.config.js
 !server/src/**/*.d.ts
+!client/types/*.d.ts
 
 # 测试覆盖率
 coverage/
 .nyc_output/
 
 # 环境文件
-.env
-*.env.local
-*.ini
+!.env
+!*.env.local
+!*.ini
 
 # 调试日志
-*.log
-logs/
+!*.log
+!logs/
 
 # 编辑器临时文件
 *.swp

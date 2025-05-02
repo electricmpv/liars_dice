@@ -1,6 +1,5 @@
 import { _decorator, Component, Node, Label, Color, Sprite } from 'cc';
-import { NetworkStatus } from '../core/network';
-import { network } from '../core/network';
+import { NetworkManager, NetworkStatus } from '../core/network';
 
 const { ccclass, property } = _decorator;
 
@@ -37,7 +36,7 @@ export class ConnectionStatus extends Component {
         this.registerNetworkEvents();
         
         // 初始化UI状态
-        this.updateConnectionStatus(network.status);
+        this.updateConnectionStatus(NetworkManager.getInstance().status);
         
         // 设置重连按钮点击事件
         if (this.reconnectButton) {
@@ -59,12 +58,12 @@ export class ConnectionStatus extends Component {
      * 注册网络事件监听器
      */
     private registerNetworkEvents(): void {
-        network.on('connected', () => this.onConnected());
-        network.on('connecting', () => this.onConnecting());
-        network.on('disconnected', () => this.onDisconnected());
-        network.on('status', (status: NetworkStatus) => this.onStatusChange(status));
-        network.on('error', (error: any) => this.onNetworkError(error));
-        network.on('reconnect_failed', () => this.onReconnectFailed());
+        NetworkManager.getInstance().on('connected', () => this.onConnected());
+        NetworkManager.getInstance().on('connecting', () => this.onConnecting());
+        NetworkManager.getInstance().on('disconnected', () => this.onDisconnected());
+        NetworkManager.getInstance().on('status', (status: NetworkStatus) => this.onStatusChange(status));
+        NetworkManager.getInstance().on('error', (error: any) => this.onNetworkError(error));
+        NetworkManager.getInstance().on('reconnect_failed', () => this.onReconnectFailed());
     }
     
     /**
@@ -72,12 +71,12 @@ export class ConnectionStatus extends Component {
      */
     private unregisterNetworkEvents(): void {
         // 由于SocketAdapter要求同样的回调引用，我们需要重新创建之前注册的匿名函数的空白处理程序
-        network.off('connected', () => {});
-        network.off('connecting', () => {});
-        network.off('disconnected', () => {});
-        network.off('status', () => {});
-        network.off('error', () => {});
-        network.off('reconnect_failed', () => {});
+        NetworkManager.getInstance().off('connected', () => {});
+        NetworkManager.getInstance().off('connecting', () => {});
+        NetworkManager.getInstance().off('disconnected', () => {});
+        NetworkManager.getInstance().off('status', () => {});
+        NetworkManager.getInstance().off('error', () => {});
+        NetworkManager.getInstance().off('reconnect_failed', () => {});
     }
     
     /**
@@ -214,7 +213,8 @@ export class ConnectionStatus extends Component {
         }
         
         // 尝试重新连接
-        network.connect();
+        // 注意：NetworkManager 不需要 connect 方法，它在需要时会自动初始化和连接
+        NetworkManager.getInstance();
     }
     
     /**
@@ -222,7 +222,7 @@ export class ConnectionStatus extends Component {
      */
     public disconnect(): void {
         this.isManualDisconnect = true;
-        network.disconnect();
+        NetworkManager.getInstance().disconnect();
     }
     
     /**
@@ -230,6 +230,7 @@ export class ConnectionStatus extends Component {
      */
     public connect(): void {
         this.isManualDisconnect = false;
-        network.connect();
+        // NetworkManager 不需要 connect 方法，它在需要时会自动初始化和连接
+        NetworkManager.getInstance();
     }
 }

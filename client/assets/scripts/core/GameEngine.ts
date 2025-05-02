@@ -6,7 +6,7 @@ import {
   PlayerID, 
   BidData,
   EventEmitter
-} from '../../../../shared/protocols/game-types.d';
+} from '../../shared/protocols/game-types.d';
 
 /**
  * 简单事件发射器实现

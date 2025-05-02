@@ -1,6 +1,6 @@
 import { _decorator, Component, Node, Label, Button, ScrollView, Prefab, instantiate, Layout, Color, Event } from 'cc';
 import { CountListItem } from '../prefabs/count-list-item';
-import { Bid, Face } from '../../../../shared/protocols/game-types.d';
+import { Bid, Face } from '../../shared/protocols/game-types.d';
 import { BidValidator } from '../utils/bid-validator';
 
 const { ccclass, property } = _decorator;
