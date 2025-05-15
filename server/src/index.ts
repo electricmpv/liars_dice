@@ -29,9 +29,12 @@ async function startServer() {
       origin: ['http://localhost:7456', 'http://127.0.0.1:7456'], // 明确指定Cocos开发服务器
       methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE', 'PATCH'],
       allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
-      credentials: false, // 不使用凭证，避免 CORS 限制
+      credentials: true, // 启用凭证，解决 CORS 问题
       optionsSuccessStatus: 204 // 预检请求成功状态码
     }));
+    
+    // 添加 CORS 预检请求处理
+    app.options('*', cors());
     
     // 添加一个简单的测试端点
     app.get('/health', (req, res) => {

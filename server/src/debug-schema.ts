@@ -2,6 +2,9 @@ import { LiarDiceRoomState, PlayerState } from "../../shared/schemas/LiarDiceSta
 import { ArraySchema, type, Schema, MapSchema } from "@colyseus/schema";
 import * as Reflect from "reflect-metadata";
 
+// 注意：不需要手动调用 Schema.initialize()
+// 在 Colyseus v0.16.x 中，Schema 类已经在导入时自动初始化
+
 /**
  * 调试Schema对象的元数据
  * 这个函数会检查Schema对象的所有属性是否都有正确的元数据
@@ -69,6 +72,9 @@ export function debugSchema(schema: any, name: string): void {
 export function initializeSchemaMetadata(state: LiarDiceRoomState): void {
   try {
     console.log(`[调试] 开始初始化Schema元数据`);
+    
+    // 确保所有 Schema 类都被正确引用，触发元数据生成
+    // 在 Colyseus v0.16.x 中，只需要确保类被正确引用和初始化
     
     // 确保所有属性都已初始化
     state.players = new MapSchema<PlayerState>();

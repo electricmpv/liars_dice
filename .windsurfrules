@@ -48,6 +48,14 @@ By default, all responses must be in Chinese.
    - 必要依赖：express, socket.io, zod, openai, pg
    - 禁止依赖：webpack, react, vue
    By default, all responses must be in Chinese.
+   ## 重要参考文档
+*   `AI_Development_Plan_v1.1.md`
+*   `AI_Development_Plan_v2.1.md`
+*   `AiMvpPRD.md`
+*   `AIplayerRPDv1.0.md`
+*   `AIplayerRPDv2.0.md`
+*   `gamerule.md`
+*   `docs\colyseus-integration-guide.md`
 
 
 ## 文件/目录忽略规则 (File/Directory Ignore Rules)

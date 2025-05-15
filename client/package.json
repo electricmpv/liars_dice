@@ -6,7 +6,6 @@
     "version": "3.8.2"
   },
   "dependencies": {
-    "colyseus.js": "^0.14.0",
     "events": "^3.3.0"
   }
 }

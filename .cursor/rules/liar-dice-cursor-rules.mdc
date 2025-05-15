@@ -1,0 +1,73 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Preferred Language
+By default, all responses must be in Chinese.
+
+# WORKSPACE RULES (D:\editors\liars_dice_demo)
+
+## 核心指令
+1.  **项目路径**: D:\editors\liars_dice_demo. 代码组织遵循PRD模块化设计.
+2.  **技术栈**:
+    *   TypeScript (严格模式, tsconfig.json)
+    *   Node.js >=20.9.0
+    *   Cocos Creator 3.8.2
+    *   Zod (数据验证)
+    *   Yarn (依赖管理)
+    *   Windows PowerShell (禁止使用 "&" 和 "&&" 连接命令)
+    *   禁止修改 .scene 文件.
+3.  **目录结构**:
+    ```
+    liars_dice_demo/
+    ├── client/       # Cocos工程
+    ├── server/       # Node.js后端
+    ├── shared/       # 类型定义
+    └── tools/        # 生成脚本
+    ```
+4.  **关键约束**:
+    *   房间管理: Colyseus (文档: https://0-14-x.docs.colyseus.io/zh_cn/colyseus)
+        *   Colyseus路径: 客户端共享文件位于 `client/shared/`, 服务端共享文件位于项目根目录 `shared/`.
+        *   Colyseus插件: `client/assets/scripts/external/colyseus.js` 已作为顶层作用域插件导入Cocos.
+    *   AI决策通过 `AgentService` 类路由.
+    *   Cocos无法构建 `client/` 目录以外的文件; 禁止客户端直接引用外部文件.
+    *   禁止全局变量.
+    *   多平台适配通过 `EnvChecker`.
+    *   禁止修改 .scene 文件.
+    *   新建文件时注意抽象和单例; 单文件超500行考虑拆分.
+5.  **代码生成**:
+    *   文件名: kebab-case
+    *   类型定义: .d.ts 后缀
+    *   配置文件: `/config` 目录
+    *   日志格式: `[模块名][级别] 消息`
+6.  **依赖白名单**:
+    *   必要: express, socket.io, zod, openai, pg
+    *   禁止: webpack, react, vue
+
+## 重要参考文档
+*   `docs\colyseus-integration-guide.md`
+*   `AI_Development_Plan_v1.1.md`
+*   `AI_Development_Plan_v2.1.md`
+*   `AiMvpPRD.md`
+*   `AIplayerRPDv1.0.md`
+*   `AIplayerRPDv2.0.md`
+*   `gamerule.md`
+
+## 文件/目录忽略规则 (File/Directory Ignore Rules)
+# 防止 cursor 读取或上传这些文件/模式，以节约tokens
+# Prevent cursor from reading or uploading these files/patterns
+
+# Cocos Creator 特定文件 (Cocos Creator specific)
+client/assets/**/*.meta
+client/library/
+
+# 图像资源 (Image Assets)
+client/assets/resources/**/*.png
+client/assets/resources/**/*.jpg
+client/assets/resources/**/*.jpeg
+client/assets/resources/**/*.gif
+
+
+
+
